@@ -19,8 +19,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "~assets/sass/variables.scss";
-
 .product__image {
   max-width: 500px;
   background-color: #555;

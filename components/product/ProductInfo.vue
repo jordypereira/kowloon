@@ -39,8 +39,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "~assets/sass/variables.scss";
-
 .product__info__tags {
   display: flex;
   .product__info__tags__tag {
