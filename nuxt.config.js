@@ -27,7 +27,7 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    '~/assets/css/tailwind.scss',
+    '@/assets/css/tailwind.css',
   ],
 
   /*
@@ -40,6 +40,8 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+      // provide path to the file with resources
+      ['nuxt-sass-resources-loader', '@/assets/css/main.scss'],
   ],
 
   /*
