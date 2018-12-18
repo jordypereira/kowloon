@@ -25,7 +25,7 @@ export default {
 .product__specifications {
   width: 100%;
   padding: 15px 16px;
-  border: 1px solid $faq-background;
+  border: 1px solid $grey-faq;
   .product__specifications__dimensions {
     display: flex;
     .product__specifications__dimensions__dimension {

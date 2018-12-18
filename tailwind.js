@@ -226,7 +226,10 @@ module.exports = {
       'Liberation Mono',
       'Courier New',
       'monospace',
-    ]
+    ],
+    'body': ['"Arial MT"'],
+    'header': ['"Arial Black MT"'],
+    'title': ['"Choplin Medium DEMO"']
   },
 
 
@@ -682,6 +685,7 @@ module.exports = {
     '0': '0',
     '1': '0.25rem',
     '2': '0.5rem',
+    '10px': '10px',
     '3': '0.75rem',
     '4': '1rem',
     '5': '1.25rem',
@@ -689,6 +693,8 @@ module.exports = {
     '8': '2rem',
     '10': '2.5rem',
     '12': '3rem',
+    '49px': '49px',
+    '13': '3.25rem',
     '16': '4rem',
     '20': '5rem',
     '24': '6rem',

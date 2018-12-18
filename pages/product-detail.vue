@@ -1,10 +1,10 @@
 <template>
   <main class="container">
-    <h1 class="title">
+    <div class="text-center mt-52 mb-49">
       <img src="@/assets/images/Kowloon_logo.svg" alt="Kowloon Logo">
-    </h1>
+    </div>
     <div class="product">
-      <div>
+      <div class="productrow">
         <ProductImage/>
         <ProductInfo :productColors="productColors"/>
       </div>
@@ -37,15 +37,17 @@ export default {
 body {
   background-color: #333;
 }
+.productrow {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 27px;
+}
 .container {
   max-width: 1080px;
   min-height: 100vh;
   margin: 0 auto;
   background-color: $grey-content;
   color: $white;
-}
-.title {
-  text-align: center;
 }
 
 .product {
