@@ -1,6 +1,8 @@
 <template>
   <main class="container">
-    <h1 class="title">Kowloon</h1>
+    <h1 class="title">
+      <img src="@/assets/images/Kowloon_logo.svg" alt="Kowloon Logo">
+    </h1>
     <div class="product">
       <div>
         <ProductImage/>
@@ -32,10 +34,14 @@ export default {
 </script>
 
 <style lang="scss">
+body {
+  background-color: #333;
+}
 .container {
   max-width: 1080px;
+  min-height: 100vh;
   margin: 0 auto;
-  background-color: $greyish-brown;
+  background-color: $grey-content;
   color: $white;
 }
 .title {
