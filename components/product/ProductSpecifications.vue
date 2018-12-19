@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full mt-19px mb-50px py-15px px-4 border border-grey">
+  <div class="w-full py-15px px-4 border border-grey">
     <div class="sub-title mb-15px">Specifications</div>
     <div class="my-15px">DIMENSIONS</div>
     <div class="flex">

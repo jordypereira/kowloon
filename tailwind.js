@@ -51,6 +51,7 @@ let colors = {
   'black': '#323232',
   'black-light': '#313131',
   'grey-darkest': '#454545',
+  'grey-darker2': '#565656',
   'grey-darker': '#5f5f5f',
   'grey-dark': '#828282',
   'grey': '#717171',
@@ -117,8 +118,8 @@ module.exports = {
   screens: {
     'sm': '576px',
     'md': '768px',
-    'lg': '992px',
-    'xl': '1200px',
+    'lg': '960px',
+    // 'xl': '1200px',
   },
 
 
@@ -177,7 +178,7 @@ module.exports = {
     ],
     'body': ['"Arial MT"'],
     'header': ['"Arial Black MT"'],
-    'title': ['"Choplin Medium DEMO"']
+    'section': ['Choplin', 'Arial', 'Helvetica', 'sans-serif']
   },
 
 
@@ -203,6 +204,7 @@ module.exports = {
   textSizes: {
     'xs': '.75rem',     // 12px
     'sm': '.875rem',    // 14px
+    '15px': '15px',     // 15px
     'base': '1rem',     // 16px
     'lg': '1.125rem',   // 18px
     'xl': '1.25rem',    // 20px
@@ -654,7 +656,8 @@ module.exports = {
     '49px': '49px',    // 49px
     '50px': '50px',    // 50px
     '13': '3.25rem',   // 52px
-    '16': '4rem',
+    '58px': '58px',   // 58px
+    '16': '4rem',      // 64px
     '20': '5rem',
     '24': '6rem',
     '32': '8rem',

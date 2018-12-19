@@ -1,0 +1,11 @@
+$divider-height: 2px;
+$divider-width: 48px;
+$divider-margin-x: 6px;
+$divider-margin-y: 15px;
+
+.divider {
+  margin: $divider-margin-y $divider-margin-x;
+  height: $divider-height;
+  width: $divider-width;
+  @apply bg-grey-darkest;
+}

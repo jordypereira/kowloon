@@ -1,5 +1,5 @@
 <template>
-  <div class="product__image">
+  <div class="product__image border-primary">
     <div class="product__image__selected">
       <img
         src="@/assets/images/products/dog_cooling_mat.png"
@@ -30,12 +30,6 @@ export default {
 <style lang="scss">
 .product__image {
   min-width: 477px;
-  background-color: #555;
-  border: 1px solid $grey-faq;
-
-  .product__image__selected__image {
-    padding: 6px 5px 4.4px 6px;
-  }
 
   .product__image__gallery {
     display: flex;
