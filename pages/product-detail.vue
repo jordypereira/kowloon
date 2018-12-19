@@ -14,6 +14,7 @@
       </div>
       <ProductSpecifications :dimensions="dimensions" class="mt-19px mb-50px"/>
       <RelatedProducts class="mb-58px"/>
+      <FaqComponent class="mb-49px"/>
     </div>
   </main>
 </template>
@@ -23,6 +24,7 @@ import ProductInfo from '~/components/product/ProductInfo'
 import ProductImage from '~/components/product/ProductImage'
 import ProductSpecifications from '~/components/product/ProductSpecifications'
 import RelatedProducts from '~/components/product/RelatedProducts'
+import FaqComponent from '~/components/FaqComponent'
 
 export default {
   data() {
@@ -36,6 +38,7 @@ export default {
     ProductImage,
     ProductSpecifications,
     RelatedProducts,
+    FaqComponent,
   },
 }
 </script>
