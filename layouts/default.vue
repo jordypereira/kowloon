@@ -1,7 +1,7 @@
 <template>
   <div class="flex">
     <TheNavBar/>
-    <div id="content">
+    <div class="bg-grey-darkest w-full">
       <nuxt/>
     </div>
   </div>
@@ -17,11 +17,3 @@ export default {
   
 }
 </script>
-
-
-<style lang="scss">
-#content {
-  background-color: $grey-content;
-  width: 100%;
-}
-</style>

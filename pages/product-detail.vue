@@ -1,12 +1,16 @@
 <template>
-  <main class="container">
+  <main class="container mx-auto text-white min-h-screen">
     <div class="text-center mt-52 mb-49">
       <img src="@/assets/images/Kowloon_logo.svg" alt="Kowloon Logo">
     </div>
-    <div class="product">
-      <div class="productrow">
-        <ProductImage/>
-        <ProductInfo :productColors="productColors"/>
+    <div class="flex flex-col">
+      <div class="flex -mx-27px mb-10px">
+        <div class="pl-27px">
+          <ProductImage/>
+        </div>
+        <div class="px-27px">
+          <ProductInfo :productColors="productColors"/>
+        </div>
       </div>
       <ProductSpecifications :dimensions="dimensions"/>
     </div>
@@ -32,39 +36,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss">
-body {
-  background-color: #333;
-}
-.productrow {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 27px;
-}
-.container {
-  max-width: 1080px;
-  min-height: 100vh;
-  margin: 0 auto;
-  background-color: $grey-content;
-  color: $white;
-}
-
-.product {
-  display: flex;
-  flex-direction: column;
-}
-
-.bg--white {
-  background-color: $white;
-}
-.bg--blue {
-  background-color: $sapphire;
-}
-.bg--black {
-  background-color: $black;
-}
-.bg--pink {
-  background: $bubble-gum-pink;
-}
-</style>

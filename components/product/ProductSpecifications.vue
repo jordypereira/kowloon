@@ -1,36 +1,20 @@
 <template>
-  <div class="product__specifications">
-    <div class="product__specifications__title">Specifications</div>
-    <div class="product__specifications__dimensions__label">Dimensions</div>
-    <div class="product__specifications__dimensions">
-      <div
-        v-for="(dimension, i) in dimensions"
-        :key="i"
-        class="product__specifications_dimensions_dimension"
-      >{{ dimension }}</div>
+  <div class="w-full mt-19px mb-50px py-15px px-4 border border-grey">
+    <div class="sub-title mb-15px">Specifications</div>
+    <div class="my-15px">DIMENSIONS</div>
+    <div class="flex">
+      <div v-for="(dimension, i) in dimensions" :key="i" class="mr-5">{{ dimension }}</div>
     </div>
+    <div class="my-15px">TITEL</div>
+    <div>hier komt technische tekst</div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "ProductSpecifications",
+  name: 'ProductSpecifications',
   props: {
-    dimensions: Array
+    dimensions: Array,
   },
 }
 </script>
-
-<style lang="scss">
-.product__specifications {
-  width: 100%;
-  padding: 15px 16px;
-  border: 1px solid $grey-faq;
-  .product__specifications__dimensions {
-    display: flex;
-    .product__specifications__dimensions__dimension {
-      margin-right: 20px;
-    }
-  }
-}
-</style>

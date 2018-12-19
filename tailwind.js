@@ -46,87 +46,35 @@ View the full documentation at https://tailwindcss.com.
 let colors = {
   'transparent': 'transparent',
 
-  'black': '#22292f',
-  'grey-darkest': '#3d4852',
-  'grey-darker': '#606f7b',
-  'grey-dark': '#8795a1',
-  'grey': '#b8c2cc',
-  'grey-light': '#dae1e7',
-  'grey-lighter': '#f1f5f8',
-  'grey-lightest': '#f8fafc',
+  'black-darker': '#252525',
+  'black-dark': '#282828',
+  'black': '#323232',
+  'black-light': '#313131',
+  'grey-darkest': '#454545',
+  'grey-darker': '#5f5f5f',
+  'grey-dark': '#828282',
+  'grey': '#717171',
+  'grey-light': '#a2a2a2',
+  'grey-lighter': '#cecece',
+  'grey-lightest': '#cecece',
   'white': '#ffffff',
 
-  'red-darkest': '#3b0d0c',
-  'red-darker': '#621b18',
-  'red-dark': '#cc1f1a',
-  'red': '#e3342f',
-  'red-light': '#ef5753',
-  'red-lighter': '#f9acaa',
-  'red-lightest': '#fcebea',
+  'orange': '#e27500',
 
-  'orange-darkest': '#462a16',
-  'orange-darker': '#613b1f',
-  'orange-dark': '#de751f',
-  'orange': '#f6993f',
-  'orange-light': '#faad63',
-  'orange-lighter': '#fcd9b6',
-  'orange-lightest': '#fff5eb',
+  'beige-dark': '#b8aa91',
+  'beige': '#e6cfb9',
 
-  'yellow-darkest': '#453411',
-  'yellow-darker': '#684f1d',
-  'yellow-dark': '#f2d024',
-  'yellow': '#ffed4a',
-  'yellow-light': '#fff382',
-  'yellow-lighter': '#fff9c2',
-  'yellow-lightest': '#fcfbeb',
+  'yellow': '#ffb93f',
 
-  'green-darkest': '#0f2f21',
-  'green-darker': '#1a4731',
-  'green-dark': '#1f9d55',
   'green': '#38c172',
-  'green-light': '#51d88a',
-  'green-lighter': '#a2f5bf',
-  'green-lightest': '#e3fcec',
+  'green-light': '#7bff81',
 
-  'teal-darkest': '#0d3331',
-  'teal-darker': '#20504f',
-  'teal-dark': '#38a89d',
-  'teal': '#4dc0b5',
-  'teal-light': '#64d5ca',
-  'teal-lighter': '#a0f0ed',
-  'teal-lightest': '#e8fffe',
+  'blue': '#2d4aac',
+  'blue-light': '#7be5ff',
 
-  'blue-darkest': '#12283a',
-  'blue-darker': '#1c3d5a',
-  'blue-dark': '#2779bd',
-  'blue': '#3490dc',
-  'blue-light': '#6cb2eb',
-  'blue-lighter': '#bcdefa',
-  'blue-lightest': '#eff8ff',
+  'indigo': '#8787ff',
 
-  'indigo-darkest': '#191e38',
-  'indigo-darker': '#2f365f',
-  'indigo-dark': '#5661b3',
-  'indigo': '#6574cd',
-  'indigo-light': '#7886d7',
-  'indigo-lighter': '#b2b7ff',
-  'indigo-lightest': '#e6e8ff',
-
-  'purple-darkest': '#21183c',
-  'purple-darker': '#382b5f',
-  'purple-dark': '#794acf',
-  'purple': '#9561e2',
-  'purple-light': '#a779e9',
-  'purple-lighter': '#d6bbfc',
-  'purple-lightest': '#f3ebff',
-
-  'pink-darkest': '#451225',
-  'pink-darker': '#6f213f',
-  'pink-dark': '#eb5286',
-  'pink': '#f66d9b',
-  'pink-light': '#fa7ea8',
-  'pink-lighter': '#ffbbca',
-  'pink-lightest': '#ffebef',
+  'pink': '#ff6f9e',
 }
 
 module.exports = {
@@ -651,9 +599,11 @@ module.exports = {
     '1': '0.25rem',
     '2': '0.5rem',
     '3': '0.75rem',
-    '4': '1rem',
+    '15px': '15px',   // 15px
+    '4': '1rem',      // 16px
     '5': '1.25rem',
     '6': '1.5rem',
+    '27px': '27px',   // 27px
     '8': '2rem',
     '10': '2.5rem',
     '12': '3rem',
@@ -683,18 +633,27 @@ module.exports = {
     'auto': 'auto',
     'px': '1px',
     '0': '0',
-    '1': '0.25rem',
-    '2': '0.5rem',
-    '10px': '10px',
-    '3': '0.75rem',
-    '4': '1rem',
-    '5': '1.25rem',
-    '6': '1.5rem',
-    '8': '2rem',
+    '1': '0.25rem',   // 4px
+    '5px': '5px',     // 5px
+    '6px': '6px',     // 6px
+    '2': '0.5rem',    // 8px
+    '10px': '10px',   // 10px
+    '11px': '11px',   // 11px
+    '3': '0.75rem',   // 12px
+    '14px': '14px',   // 14px
+    '15px': '15px',   // 15px
+    '4': '1rem',      // 16px
+    '18px': '18px',   // 18px
+    '19px': '19px',   // 19px
+    '5': '1.25rem',   // 20px
+    '6': '1.5rem',    // 22px
+    '26px': '26px',   // 26px
+    '8': '2rem',      // 32px
     '10': '2.5rem',
     '12': '3rem',
-    '49px': '49px',
-    '13': '3.25rem',
+    '49px': '49px',    // 49px
+    '50px': '50px',    // 50px
+    '13': '3.25rem',   // 52px
     '16': '4rem',
     '20': '5rem',
     '24': '6rem',
@@ -721,11 +680,14 @@ module.exports = {
     'px': '1px',
     '0': '0',
     '1': '0.25rem',
+    '5px': '5px',   // 5px
     '2': '0.5rem',
     '3': '0.75rem',
     '4': '1rem',
+    '10px': '10px',   // 10px
     '5': '1.25rem',
     '6': '1.5rem',
+    '27px': '27px',   // 27px
     '8': '2rem',
     '10': '2.5rem',
     '12': '3rem',

@@ -32,7 +32,6 @@ export default {
   min-width: 477px;
   background-color: #555;
   border: 1px solid $grey-faq;
-  margin: 0 0 10px 0;
 
   .product__image__selected__image {
     padding: 6px 5px 4.4px 6px;

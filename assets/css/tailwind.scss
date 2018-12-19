@@ -19,6 +19,10 @@
   * @import "tailwindcss/components";
   */
  @tailwind components;
+
+ @import 'components/tags';
+ @import 'components/productColors';
+ @import 'components/productShapes';
  
  /**
   * Here you would add any of your custom component classes; stuff that you'd

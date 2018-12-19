@@ -1,5 +1,5 @@
 <template>
-  <nav class="flex flex-col justify-between">
+  <nav class="flex flex-col justify-between bg-black h-screen">
     <div class="nav__top flex flex-col items-center">
       <div class="nav__toggle flex justify-center items-center">
         <a href="#">
