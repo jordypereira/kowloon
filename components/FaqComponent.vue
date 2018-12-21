@@ -1,14 +1,21 @@
 <template>
   <div>
     <h2 class="section-title">{{ 'Frequently asked questions'.toUpperCase() }}</h2>
-    <div class="faq">
+    <div>
       <div
-        class="faq-closed bg-grey my-10px pl-23px pt-5 pr-5 pb-4 flex justify-between"
+        class="bg-grey my-10px pl-23px pt-5 pr-5 pb-4 hover:cursor-pointer"
         v-for="q in faqQuestions"
         :key="q.id"
+        @click="toggleFaq(q.id)"
       >
-        <div class="faq-title">Dit is een vraag</div>
-        <div class="dropdown">></div>
+        <div class="flex justify-between">
+          <div class="faq-title">Dit is een vraag</div>
+          <div
+            class="dropdown-triangle"
+            :class="[ (activeFaq === q.id) ? 'dropdown-triangle-bot' : 'dropdown-triangle-right']"
+          ></div>
+        </div>
+        <div v-if="activeFaq === q.id" class="ml-19px mt-11px">{{ q.description }}</div>
       </div>
     </div>
   </div>
@@ -19,6 +26,7 @@ export default {
   name: 'FAQ',
   data () {
     return {
+      activeFaq: '',
       faqQuestions: [
         {
           id: 1,
@@ -36,6 +44,11 @@ export default {
           description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit..Lorem ipsum dolor sit amet, consectetur adipisicing elit..Lorem ipsum dolor sit amet, consectetur adipisicing elit..Lorem ipsum dolor sit amet, consectetur adipisicing elit..Lorem ipsum dolor sit amet, consectetur adipisicing elit..'
         },
       ],
+    }
+  },
+  methods: {
+    toggleFaq(id) {
+      this.activeFaq === id ? this.activeFaq = '' : this.activeFaq = id
     }
   },
 }

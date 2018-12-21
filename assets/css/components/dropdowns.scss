@@ -1,0 +1,18 @@
+$dropdown-height: 14px;
+$dropdown-width: 9px;
+$dropdown-color: config('colors.white');
+
+.dropdown-triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  transition: all 0.1s;
+  &-right {
+    border-color: transparent transparent transparent $dropdown-color;
+    border-width: ($dropdown-height / 2) 0 ($dropdown-height / 2) $dropdown-width;
+  }
+  &-bot {
+    border-color: $dropdown-color transparent transparent transparent;
+    border-width: $dropdown-width ($dropdown-height / 2) 0 ($dropdown-height / 2);
+  }
+}
