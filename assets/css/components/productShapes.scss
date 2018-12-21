@@ -1,20 +1,20 @@
 $product-shape-size: 35px;
 
-  .product-shape-square {
-    width: $product-shape-size;
-    height: $product-shape-size;
-    @apply bg-grey-dark border border-grey-darkest;
-  }
-  .product-shape-circle {
-    width: $product-shape-size;
-    height: $product-shape-size;
-    @apply bg-grey-dark border border-grey-darkest rounded-full;
-  }
-  .product-shape-triangle {
-    width: 0;
-    height: 0;
-    border-bottom: $product-shape-size solid;
-    @apply border-grey-dark;
-    border-left: ($product-shape-size / 2) solid transparent;
-    border-right: ($product-shape-size / 2) solid transparent;
-  }
+.product-shape-square {
+  width: $product-shape-size;
+  height: $product-shape-size;
+  @apply bg-grey-dark border border-grey-darkest;
+}
+.product-shape-circle {
+  width: $product-shape-size;
+  height: $product-shape-size;
+  @apply bg-grey-dark border border-grey-darkest rounded-full;
+}
+.product-shape-triangle {
+  width: 0;
+  height: 0;
+  border-bottom: $product-shape-size solid;
+  @apply border-grey-dark;
+  border-left: ($product-shape-size / 2) solid transparent;
+  border-right: ($product-shape-size / 2) solid transparent;
+}
