@@ -639,6 +639,7 @@ module.exports = {
     '1': '0.25rem',   // 4px
     '5px': '5px',     // 5px
     '6px': '6px',     // 6px
+    '7px': '7px',     // 7px
     '2': '0.5rem',    // 8px
     '10px': '10px',   // 10px
     '11px': '11px',   // 11px
@@ -685,6 +686,7 @@ module.exports = {
     '0': '0',
     '1': '0.25rem',
     '5px': '5px',   // 5px
+    '6px': '6px',    // 6px
     '2': '0.5rem',
     '3': '0.75rem',
     '4': '1rem',

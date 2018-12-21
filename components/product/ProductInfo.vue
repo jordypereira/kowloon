@@ -1,12 +1,14 @@
 <template>
   <div class="mb-10px">
-    <div class="product__info__tags flex mb-5">
-      <img src="@/assets/images/k_logo.svg" alt="Kowloong Logo Small" class="mr-6px">
-      <div class="tag">
-        <div class="tag-color bg-pink"></div>
-        <div class="product__info__tags__tag__label">Dogs</div>
-      </div>
-      <div class="product__info__tags__tag tag">Splash 'n Fun</div>
+    <div class="flex mb-5 -mx-6px">
+      <img src="@/assets/images/k_logo.svg" alt="Kowloong Logo Small" class="px-6px">
+      <Tag
+        v-for="tag in tags"
+        :key="tag.id"
+        :tagName="tag.name"
+        :tagColor="tag.color"
+        class="px-6px"
+      />
     </div>
     <h2 class="title mt-5 mb-18px">COOLING MAT</h2>
     <p class="price mb-5 mt-18px">€ 15,49</p>
@@ -32,9 +34,29 @@
 </template>
 
 <script>
+import Tag from '@/components/Tag'
+
 export default {
   props: {
     productColors: Array,
+  },
+  components: {
+    Tag,
+  },
+  data() {
+    return {
+      tags: [
+        {
+          id: 1,
+          name: 'Dogs',
+          color: 'pink'
+        },
+        {
+          id: 2,
+          name: 'Splash \'n Fun',
+        },
+      ],
+    }
   },
 };
 </script>

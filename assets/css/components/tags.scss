@@ -1,12 +1,24 @@
 $tag-size: 10px;
+$tag-color: config('colors.black');
 
-.tag {
-  @apply bg-black flex items-center mr-1;
-  padding: 5px 7px 3px 17px;
+.tag-arrow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 11px 10px 11px 0;
+  border-color: transparent $tag-color transparent transparent;
 }
 
-.tag-color {
-  width: $tag-size;
-  height: $tag-size;
-  @apply rounded-full mr-6px;
+.tag-body {
+  @apply bg-black flex items-center justify-between rounded-r-sm;
+  height: 22px;
+  padding: 0 7px 0 2px;
+  .tag-name-without-color {
+    @apply ml-7px;
+  }
+  .tag-color {
+    width: $tag-size;
+    height: $tag-size;
+    @apply rounded-full mr-6px;
+  }
 }
