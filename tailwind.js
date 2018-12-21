@@ -652,13 +652,13 @@ module.exports = {
     '6': '1.5rem',    // 22px
     '26px': '26px',   // 26px
     '8': '2rem',      // 32px
-    '10': '2.5rem',
-    '12': '3rem',
-    '49px': '49px',    // 49px
-    '50px': '50px',    // 50px
-    '13': '3.25rem',   // 52px
+    '10': '2.5rem',   // 40px
+    '12': '3rem',     // 48px
+    '49px': '49px',   // 49px
+    '50px': '50px',   // 50px
+    '13': '3.25rem',  // 52px
     '58px': '58px',   // 58px
-    '16': '4rem',      // 64px
+    '16': '4rem',     // 64px
     '20': '5rem',
     '24': '6rem',
     '32': '8rem',
@@ -843,7 +843,7 @@ module.exports = {
     borderRadius: ['responsive'],
     borderStyle: ['responsive'],
     borderWidths: ['responsive'],
-    cursor: ['responsive'],
+    cursor: ['responsive', 'hover'],
     display: ['responsive'],
     flexbox: ['responsive'],
     float: ['responsive'],
