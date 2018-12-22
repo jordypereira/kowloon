@@ -7,13 +7,14 @@
         class="product__image__selected__image w-full"
       >
     </div>
-    <div class="product__image__gallery">
+    <div class="product__image__gallery flex justify-around w-full">
       <div v-for="i in 3" :key="i" class="product__image__gallery__image">
         <img
           src="@/assets/images/products/dog_cooling_mat.png"
           :alt="`Image ${i}`"
-          :class="{ 'product__image__gallery__image__image--selected': i === 1 }"
-          class="product__image__gallery__image__image"
+          class="border-2 border-transparent hover:cursor-pointer"
+          :class="{ 'border-white opacity-100': i === selectedImage, 'opacity-38': i !== selectedImage }"
+          @click="selectedImage = i"
         >
         <p class="product__image__gallery__image__description">woordje tekst</p>
       </div>
@@ -23,7 +24,11 @@
 
 <script>
 export default {
-
+  data() {
+    return {
+      selectedImage: 1,
+    }
+  }
 }
 </script>
 
@@ -32,19 +37,8 @@ export default {
   min-width: 477px;
 
   .product__image__gallery {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-
     .product__image__gallery__image {
       padding: 4.4px 4px 5px 4px;
-      .product__image__gallery__image__image {
-        opacity: 0.38;
-      }
-      .product__image__gallery__image__image--selected {
-        border: 2px solid #fff;
-        opacity: 1;
-      }
       .product__image__gallery__image__description {
         margin-top: 5.8px;
         font-size: 12px;
