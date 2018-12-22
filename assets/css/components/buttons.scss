@@ -1,8 +1,10 @@
-
+$btn-input-size: 45px;
 
 
 
 
 .btn-input {
-  @apply bg-black text-white px-11px py-18px;
+  width: $btn-input-size;
+  height: $btn-input-size;
+  @apply bg-black text-white flex justify-center items-center;
 }

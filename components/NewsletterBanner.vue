@@ -9,9 +9,9 @@
     </div>
     <div class="flex flex-col flex-grow justify-center items-center">
       <div>
-        <div class="faq-title">Subscribe to our newsletter</div>
-        <div class="text-grey-lighter">Lorum ipsum dolor sit amet</div>
-        <div>
+        <div class="sub-title">Subscribe to our newsletter</div>
+        <div class="text-grey-lighter mb-5">Lorum ipsum dolor sit amet</div>
+        <div class="flex">
           <input type="text" placeholder="Domain @ name.com" class="input-field">
           <button class="btn-input">OK</button>
         </div>
