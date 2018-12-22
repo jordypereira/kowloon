@@ -178,8 +178,7 @@ module.exports = {
       'Courier New',
       'monospace',
     ],
-    'body': ['"Arial MT"'],
-    'header': ['"Arial Black MT"'],
+    'body': ['Arial'],
     'section': ['Choplin', 'Arial', 'Helvetica', 'sans-serif']
   },
 
@@ -656,7 +655,8 @@ module.exports = {
     '18px': '18px',   // 18px
     '19px': '19px',   // 19px
     '5': '1.25rem',   // 20px
-    '6': '1.5rem',    // 22px
+    '22px': '22px',   // 22px
+    '6': '1.5rem',    // 24px
     '26px': '26px',   // 26px
     '8': '2rem',      // 32px
     '10': '2.5rem',   // 40px

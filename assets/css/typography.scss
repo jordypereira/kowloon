@@ -3,64 +3,43 @@
   src: url('~assets/fonts/Choplin-Medium-DEMO.otf')
 }
 
-@font-face {
-  font-family: 'ArialBoldMT';
-  src: url('~assets/fonts/Arial-BoldMT.ttf')
-}
-
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.5;
+  @apply font-body font-normal text-sm leading-normal text-white;
   letter-spacing: -0.28px;
-  color: $white;
 }
 
 .title {
-  font-family: Choplin, Arial, Helvetica, sans-serif;
+  @apply font-section font-medium text-white leading-none uppercase;
   font-size: 40px;
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1;
   letter-spacing: -0.8px;
-  color: $white;
 }
 
 .sub-title {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
+  @apply text-white text-xl leading-none;
   line-height: 1.1;
   letter-spacing: -0.4px;
-  color: $white;
 }
 
 .section-title {
-  font-family: Choplin, Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 2;
+  @apply font-section font-medium text-white text-xl leading-none uppercase;
   letter-spacing: -0.4px;
-  color: $white;
 }
 
 .faq-title {
-  font-family: ArialBoldMT, Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  font-weight: bold;
+  @apply font-bold text-white text-xl;
   line-height: 0.95;
   letter-spacing: -0.4px;
-  color: $white;
 }
 
 .price {
-  font-family: Arial, sans-serif;
+  @apply font-bold text-white;
   font-size: 26px;
-  font-weight: bold;
   line-height: 0.85;
   letter-spacing: -0.5px;
-  color: $white;
+}
+
+.product-description {
+  @apply text-xs leading-none;
+  letter-spacing: -0.2px;
+  margin-top: 5.8px;
 }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="section-title">GERELATEERDE PRODUCTEN</h2>
+    <h2 class="section-title mb-22px">Gerelateerde Producten</h2>
     <div v-swiper:mySwiper="swiperOption">
       <div class="swiper-wrapper">
         <div

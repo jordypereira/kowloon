@@ -12,7 +12,7 @@
         />
       </div>
     </div>
-    <h2 class="title mt-5 mb-18px">COOLING MAT</h2>
+    <h2 class="title mt-5 mb-18px">Cooling mat</h2>
     <p class="price mb-5 mt-18px">€ 15,49</p>
     <div class="mt-20px mb-14px sub-title">Colors</div>
     <div class="flex mt-5 mb-14px">

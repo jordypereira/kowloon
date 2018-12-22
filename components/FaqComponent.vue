@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="section-title">{{ 'Frequently asked questions'.toUpperCase() }}</h2>
+    <h2 class="section-title">Frequently asked questions</h2>
     <div>
       <div
         class="bg-grey my-10px pl-23px pt-5 pr-5 pb-4 hover:cursor-pointer"

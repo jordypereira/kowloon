@@ -1,6 +1,6 @@
 <template>
   <main class="container mx-auto text-white">
-    <div class="text-center mt-52 mb-49">
+    <div class="text-center mt-13 mb-49px">
       <img src="@/assets/images/Kowloon_logo.svg" alt="Kowloon Logo">
     </div>
     <div class="flex flex-col">
