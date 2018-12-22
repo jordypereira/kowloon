@@ -7,6 +7,7 @@
     >
     <div class="flex -mx-2">
       <div v-for="i in 3" :key="i" class="flex flex-col px-2">
+        <div class="product-image-deselected"></div>
         <img
           src="@/assets/images/products/dog_cooling_mat.png"
           :alt="`Image ${i}`"
