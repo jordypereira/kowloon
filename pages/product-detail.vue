@@ -14,7 +14,7 @@
       </div>
       <ProductSpecifications :dimensions="dimensions" class="mt-19px mb-50px"/>
       <RelatedProducts class="mb-58px"/>
-      <FaqComponent class="mb-49px"/>
+      <FaqComponent class="mb-17px"/>
       <NewsletterBanner class="mb-4"/>
     </div>
   </main>
