@@ -1,0 +1,9 @@
+$input-height: 45px;
+
+.input-field {
+  @apply border-2 border-grey-light2;
+  height: $input-height;
+  &::placeholder {
+    @apply pl-2 text-black-dark2;
+  }
+}

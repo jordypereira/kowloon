@@ -15,6 +15,7 @@
       <ProductSpecifications :dimensions="dimensions" class="mt-19px mb-50px"/>
       <RelatedProducts class="mb-58px"/>
       <FaqComponent class="mb-49px"/>
+      <NewsletterBanner class="mb-4"/>
     </div>
   </main>
 </template>
@@ -25,6 +26,7 @@ import ProductImage from '~/components/product/ProductImage'
 import ProductSpecifications from '~/components/product/ProductSpecifications'
 import RelatedProducts from '~/components/product/RelatedProducts'
 import FaqComponent from '~/components/FaqComponent'
+import NewsletterBanner from '~/components/NewsletterBanner'
 
 export default {
   data() {
@@ -39,6 +41,7 @@ export default {
     ProductSpecifications,
     RelatedProducts,
     FaqComponent,
+    NewsletterBanner,
   },
 }
 </script>
