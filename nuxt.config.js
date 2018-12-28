@@ -27,7 +27,8 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    'swiper/dist/css/swiper.css'
+    'swiper/dist/css/swiper.css',
+    '~/assets/css/main.scss'
   ],
 
   /*
@@ -42,7 +43,6 @@ module.exports = {
   */
   modules: [
       // provide path to the file with resources
-      ['nuxt-sass-resources-loader', '@/assets/css/main.scss'],
   ],
 
   /*

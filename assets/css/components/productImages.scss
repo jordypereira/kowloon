@@ -1,8 +1,19 @@
-.product-image {
-  min-width: 467px;
+$product-image-selected-width: 467px;
+$product-image-width: 149.3px;
+$product-image-height: 89.4px;
+
+
+.product-image-selected {
+  min-width: $product-image-selected-width;
   height: auto;
   margin-bottom: 8.8px;
 }
 .product-image-deselected {
-  background: rgba($color: #ffffff, $alpha: 0.38)
+  @apply bg-white opacity-38 absolute pin-l pin-t w-full h-full;
+}
+
+.product-image {
+  width: $product-image-width;
+  height: $product-image-height;
+    transition: 0.5s ease;
 }

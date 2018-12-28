@@ -1,36 +1,55 @@
 <template>
   <div class="border-primary flex flex-col">
-    <img
-      src="@/assets/images/products/dog_cooling_mat.png"
-      alt="Highlighted Image"
-      class="product-image"
-    >
+    <img :src="selectedImage.url" alt="Highlighted Image" class="product-image-selected">
     <div class="flex -mx-2">
-      <div v-for="i in 3" :key="i" class="flex flex-col px-2">
-        <div class="product-image-deselected"></div>
-        <img
-          src="@/assets/images/products/dog_cooling_mat.png"
-          :alt="`Image ${i}`"
-          class="border-2 border-transparent hover:cursor-pointer"
-          :class="{ 'border-white opacity-100': i === selectedImage, 'opacity-38': i !== selectedImage }"
-          @click="selectedImage = i"
+      <div v-for="item in productImages" :key="item.id" class="flex flex-col px-2">
+        <div
+          class="relative hover:cursor-pointer border-2 border-transparent"
+          @click="setSelectedImage(item)"
+          :class="{ 'border-white': item.id === selectedImage.id }"
         >
-        <p class="product-description">woordje tekst</p>
+          <img :src="item.url" :alt="`Image ${item.id}`" class="block">
+          <div v-if="item.id !== selectedImage.id" class="product-image-deselected"/>
+        </div>
+        <p class="product-description">{{ item.description }}</p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import dogCoolingMat from "@/assets/images/products/dog_cooling_mat.png";
+
 export default {
   data() {
     return {
-      selectedImage: 1,
+      productImages: [
+        {
+          id: 1,
+          url: dogCoolingMat,
+          description: 'woordje tekst',
+        },
+        {
+          id: 2,
+          url: dogCoolingMat,
+          description: 'Ander woordje tekst',
+        },
+        {
+          id: 3,
+          url: dogCoolingMat,
+          description: 'Opnieuw woordje tekst',
+        },
+      ],
+      selectedImage: {},
     }
-  }
+  },
+  methods: {
+    setSelectedImage(image) {
+      this.selectedImage = image
+    }
+  },
+  mounted() {
+    this.selectedImage = this.productImages[0]
+  },
 }
 </script>
-
-<style lang="scss">
-</style>
-
