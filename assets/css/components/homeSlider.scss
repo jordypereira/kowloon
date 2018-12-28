@@ -1,0 +1,9 @@
+$home-bullet-border-color: rgba(149, 149, 149, 0.4);
+
+.home-bullet {
+  @apply bg-white opacity-100 mr-15px border-none rounded-full w-2 h-2 inline-block;
+  box-shadow: 0 0 0 3px $home-bullet-border-color;
+}
+.home-bullet-active {
+  @apply bg-black;
+}

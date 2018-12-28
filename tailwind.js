@@ -351,6 +351,7 @@ module.exports = {
     default: '1px',
     '0': '0',
     '2': '2px',
+    '3': '3px',
     '4': '4px',
     '8': '8px',
   },
@@ -663,6 +664,7 @@ module.exports = {
     '12': '3rem',     // 48px
     '49px': '49px',   // 49px
     '50px': '50px',   // 50px
+    '51px': '51px',   // 51px
     '13': '3.25rem',  // 52px
     '58px': '58px',   // 58px
     '16': '4rem',     // 64px
