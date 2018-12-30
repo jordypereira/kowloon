@@ -1,5 +1,5 @@
 <template>
-  <div v-swiper:mySwiper="swiperOption">
+  <div v-swiper:mySwiper="swiperOption" class="max-h-480px">
     <div class="swiper-wrapper">
       <div class="swiper-slide" v-for="item in images" :key="item.id">
         <img :src="item.url" class="w-full">
