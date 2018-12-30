@@ -1,32 +1,32 @@
 <template>
-  <div class="flex -mx-6px">
-    <div v-for="item in getAmountOfItems(itemsToShow)" :key="item.id" class="px-6px">
-      <HotProduct :item="item">
+  <div class="flex -mx-3px">
+    <div v-for="item in getAmountOfItems(itemsToShow)" :key="item.id" class="px-3px">
+      <ProductThumbnail v-bind="item" class="hot-product">
         <ProductColors class="absolute pin-t pin-l m-10px" :colors="item.colors"/>
-      </HotProduct>
+      </ProductThumbnail>
     </div>
 
-    <div>
-      <HotProduct :item="getRestOfItems(itemsToShow)[0]">
+    <div v-if="(items.length > itemsToShow + 1)" class="px-3px">
+      <ProductThumbnail v-bind="getRestOfItems(itemsToShow)[0]" class="hot-product">
         <div
           class="absolute pin-t pin-l m-10px btn-rounded bg-white text-grey-900 font-bold"
         >{{ items.length - itemsToShow }}</div>
-      </HotProduct>
+      </ProductThumbnail>
     </div>
   </div>
 </template>
 
 <script>
-import HotProduct from '@/components/product/HotProduct'
+import ProductThumbnail from '@/components/product/ProductThumbnail'
 import ProductColors from '@/components/product/ProductColors'
 
 export default {
-  name: 'HotProducts',
+  name: 'ProductThumbnails',
   props: {
       items: Array,
   },
   components: {
-      HotProduct,
+      ProductThumbnail,
       ProductColors,
   },
   data() {
@@ -36,6 +36,9 @@ export default {
   },
   methods: {
     getAmountOfItems(amount) {
+      if (this.items.length === amount + 1) {
+        return this.items.slice(0, amount + 1)
+      }
       return this.items.slice(0, amount)
     },
     getRestOfItems(amount) {

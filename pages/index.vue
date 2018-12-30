@@ -8,11 +8,17 @@
     </header>
     <div class="container mx-auto text-white">
       <p class="text-center w-3/4 mx-auto mt-51px">{{ introText }}</p>
+
       <Categories class="mt-10"/>
+
       <div v-if="hotItems" class="mt-16">
-        <div class="title uppercase mb-28px">Hot Items</div>
+        <div class="title uppercase mb-28px">Hot Items.</div>
         <HotProducts :items="hotItems"/>
+        <div class="text-right w-full mt-22px">
+          <a href="#" class="section-link">Visit the store</a>
+        </div>
       </div>
+
       <NewsletterBanner class="mt-34px mb-24"/>
     </div>
   </section>

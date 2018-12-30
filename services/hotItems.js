@@ -6,6 +6,7 @@ export default [
     name: 'Cooling mat',
     price: '15,49',
     img: dogCoolingMat,
+    imgAlt: 'Dog Cooling Mat',
     colors: [
       'white',
       'black',
@@ -17,6 +18,7 @@ export default [
     name: 'Cooling mat',
     price: '15,49',
     img: dogCoolingMat,
+    imgAlt: 'Dog Cooling Mat',
     colors: [
       'white',
       'black',
@@ -28,6 +30,7 @@ export default [
     name: 'Cooling mat',
     price: '15,49',
     img: dogCoolingMat,
+    imgAlt: 'Dog Cooling Mat',
     colors: [
       'white',
       'black',
@@ -39,6 +42,7 @@ export default [
     name: 'Cooling mat',
     price: '15,49',
     img: dogCoolingMat,
+    imgAlt: 'Dog Cooling Mat',
     colors: [
       'white',
       'black',
@@ -50,6 +54,7 @@ export default [
     name: 'Cooling mat',
     price: '15,49',
     img: dogCoolingMat,
+    imgAlt: 'Dog Cooling Mat',
     colors: [
       'white',
       'black',
@@ -61,6 +66,7 @@ export default [
     name: 'Cooling mat',
     price: '15,49',
     img: dogCoolingMat,
+    imgAlt: 'Dog Cooling Mat',
     colors: [
       'white',
       'black',
@@ -72,6 +78,7 @@ export default [
     name: 'Cooling mat',
     price: '15,49',
     img: dogCoolingMat,
+    imgAlt: 'Dog Cooling Mat',
     colors: [
       'white',
       'black',
