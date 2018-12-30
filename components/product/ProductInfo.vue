@@ -37,25 +37,11 @@ import ProductColors from '@/components/product/ProductColors'
 export default {
   props: {
     productColors: Array,
+    tags: Array,
   },
   components: {
     Tag,
     ProductColors,
-  },
-  data() {
-    return {
-      tags: [
-        {
-          id: 1,
-          name: 'Dogs',
-          color: 'pink'
-        },
-        {
-          id: 2,
-          name: 'Splash \'n Fun',
-        },
-      ],
-    }
   },
 };
 </script>

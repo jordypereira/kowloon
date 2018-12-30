@@ -73,7 +73,7 @@ export default {
         },
         {
           color: 'blue-light',
-          name: 'hamster',
+          name: 'small-animals',
           svg: HamsterSymbol,
         },
       ],

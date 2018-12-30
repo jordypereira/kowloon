@@ -4,7 +4,8 @@
     <div v-swiper:mySwiper="swiperOption">
       <div class="swiper-wrapper">
         <div
-          class="swiper-slide border-primary flex justify-center hover:bg-pink"
+          class="swiper-slide border-primary flex justify-center"
+          :class="`hover:bg-${category.color}`"
           v-for="i in 20"
           :key="i"
         >
@@ -23,6 +24,9 @@
 <script>
 export default {
   name: 'RelatedProducts',
+  props: {
+      category: Object,
+  },
   data () {
       return {
         swiperOption: {
