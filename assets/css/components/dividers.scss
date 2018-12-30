@@ -7,7 +7,7 @@ $divider-margin-y: 15px;
   margin: $divider-margin-y $divider-margin-x;
   height: $divider-height;
   width: $divider-width;
-  @apply bg-grey-darkest;
+  @apply bg-grey-900;
 }
 
 .divider-vertical {

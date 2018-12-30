@@ -1,5 +1,5 @@
 <template>
-  <div class="flex bg-grey-darker">
+  <div class="flex bg-grey-700">
     <div class="relative">
       <img src="@/assets/images/newsletterbanner.png" alt="Discover Amazing Kowloon Deals!">
       <div class="absolute pin-t pin-l flex flex-col items-center w-full h-full text-center">
@@ -10,7 +10,7 @@
     <div class="flex flex-col flex-grow justify-center items-center">
       <div>
         <div class="sub-title">Subscribe to our newsletter</div>
-        <div class="text-grey-lighter mb-5">Lorum ipsum dolor sit amet</div>
+        <div class="text-grey-400er mb-5">Lorum ipsum dolor sit amet</div>
         <div class="flex">
           <input type="text" placeholder="Domain @ name.com" class="input-field">
           <button class="btn-input">OK</button>

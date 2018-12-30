@@ -2,7 +2,7 @@ $input-height: 45px;
 $input-width: 234px;
 
 .input-field {
-  @apply border-2 border-grey-light2 pl-4;
+  @apply border-2 border-grey-300 pl-4;
   height: $input-height;
   width: $input-width;
   &::placeholder {
