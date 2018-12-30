@@ -763,6 +763,7 @@ module.exports = {
     '38': '.38',
     '50': '.5',
     '75': '.75',
+    '86': '.86',
     '100': '1',
   },
 
@@ -851,7 +852,7 @@ module.exports = {
     minHeight: ['responsive'],
     minWidth: ['responsive'],
     negativeMargin: ['responsive'],
-    opacity: ['responsive'],
+    opacity: ['responsive', 'hover'],
     outline: ['focus'],
     overflow: ['responsive'],
     padding: ['responsive'],
