@@ -9,3 +9,9 @@ $divider-margin-y: 15px;
   width: $divider-width;
   @apply bg-grey-darkest;
 }
+
+.divider-vertical {
+  width: 1px;
+  height: 89px;
+  @apply bg-grey-650;
+}

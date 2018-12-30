@@ -1,6 +1,12 @@
 @font-face {
   font-family: 'Choplin';
-  src: url('~assets/fonts/Choplin-Medium-DEMO.otf')
+  src: url('~assets/fonts/Choplin-Medium-DEMO.otf');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Choplin';
+  src: url('~assets/fonts/Choplin-ExtraLight-DEMO.otf');
+  font-weight: 200;
 }
 
 body {
@@ -22,6 +28,11 @@ body {
 
 .section-title {
   @apply font-section font-medium text-white text-xl leading-none uppercase;
+  letter-spacing: -0.4px;
+}
+
+.category-title {
+  @apply font-section font-thin text-white text-xl leading-none uppercase;
   letter-spacing: -0.4px;
 }
 

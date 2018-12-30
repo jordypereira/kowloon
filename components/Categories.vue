@@ -1,13 +1,20 @@
 <template>
   <div>
-    <div v-for="item in categoryList" :key="item.id">
-      <CategoryItem :category="item"/>
+    <div class="flex justify-between">
+      <CategoryItem v-for="item in categoryList" :key="item.id" :category="item"/>
+      <div></div>
     </div>
   </div>
 </template>
 
 <script>
 import CategoryItem from '@/components/CategoryItem'
+import dogsSymbol from '@/assets/images/symbols/dog.svg'
+import catsSymbol from '@/assets/images/symbols/cat.svg'
+import fishSymbol from '@/assets/images/symbols/fish.svg'
+import birdsSymbol from '@/assets/images/symbols/bird.svg'
+import smallAnimalsSymbol from '@/assets/images/symbols/hamster.svg'
+import otherSymbol from '@/assets/images/symbols/other.svg'
 
 export default {
   components: {
