@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import dogCoolingMat from "@/assets/images/products/dog_cooling_mat.png";
+import dogCoolingMat from "@/assets/images/products/dog_cooling_mat.jpg";
 
 export default {
   data() {

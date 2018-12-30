@@ -30,8 +30,8 @@ import HomeSlider from '@/components/HomeSlider'
 import NewsletterBanner from '@/components/NewsletterBanner'
 import HotProducts from '@/components/product/HotProducts'
 
-import HomeSliderImage1 from '@/assets/images/home/home-visual-1.png'
-import HomeSliderImage2 from '@/assets/images/home/home-visual-2.png'
+import HomeSliderImage1 from '@/assets/images/home/home-visual-1.jpg'
+import HomeSliderImage2 from '@/assets/images/home/home-visual-2.jpg'
 import hotItems from '@/services/hotItems'
 
 export default {
