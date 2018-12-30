@@ -48,7 +48,7 @@ export default {
           url: HomeSliderImage2,
         },
         {
-          id: 1,
+          id: 3,
           url: HomeSliderImage1,
         },
       ],

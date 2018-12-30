@@ -2,9 +2,9 @@
   <nav class="flex flex-col justify-between bg-black h-screen">
     <div class="flex flex-col items-center">
       <div class="nav-toggle flex justify-center items-center">
-        <a href="#">
+        <nuxt-link to="/">
           <img src="@/assets/images/hamburger_icon.svg" alt="Hamburger Icon">
-        </a>
+        </nuxt-link>
       </div>
       <div class="nav-search">
         <a href="#">
@@ -19,9 +19,13 @@
       <hr class="divider">
       <div class="nav-items" v-for="(item, i) in navItems" :key="i">
         <div class="nav-item">
-          <a href="#">
-            <img :src="item.img" :alt="item.alt">
-          </a>
+          <nuxt-link :to="`/products/${item.name}`">
+            <component
+              :is="item.svg"
+              class="text-white fill-current w-full"
+              :class="navItemClass(item)"
+            />
+          </nuxt-link>
         </div>
       </div>
     </div>
@@ -34,37 +38,54 @@
 </template>
 
 <script>
-const navDog = require('@/assets/images/nav/dog.svg')
-const navCat = require('@/assets/images/nav/cat.svg')
-const navFish = require('@/assets/images/nav/fish.svg')
-const navHamster = require('@/assets/images/nav/hamster.svg')
-const navBird = require('@/assets/images/nav/bird.svg')
+import DogSymbol from '@/components/symbols/dog'
+import CatSymbol from '@/components/symbols/cat'
+import FishSymbol from '@/components/symbols/fish'
+import BirdSymbol from '@/components/symbols/bird'
+import HamsterSymbol from '@/components/symbols/hamster'
 
 export default {
+  components: {
+      BirdSymbol,
+  },
   data() {
     return {
       navItems: [
         {
-          img: navDog,
-          alt: 'Nav item - Dog',
+          color: 'pink',
+          name: 'dog',
+          svg: DogSymbol,
         },
         {
-          img: navCat,
-          alt: 'Nav item - Cat',
+          color: 'indigo',
+          name: 'cat',
+          svg: CatSymbol,
         },
         {
-          img: navFish,
-          alt: 'Nav item - Fish',
+          color: 'yellow',
+          name: 'fish',
+          svg: FishSymbol,
         },
         {
-          img: navHamster,
-          alt: 'Nav item - Hamster',
+          color: 'green-light',
+          name: 'bird',
+          svg: BirdSymbol,
         },
         {
-          img: navBird,
-          alt: 'Nav item - Bird',
+          color: 'blue-light',
+          name: 'hamster',
+          svg: HamsterSymbol,
         },
-      ]
+      ],
+    }
+  },
+  methods: {
+    navItemClass(item) {
+      if(this.$route.params.details === item.name) {
+        return `hover:text-${item.color} text-${item.color}`
+      } else {
+        return `hover:text-${item.color}`
+      }
     }
   },
 }

@@ -38,6 +38,9 @@ nav {
   .nav-items {
     .nav-item {
       padding: $nav-item-padding-y $nav-item-padding-x;
+      svg {
+        transition: 0.5s all;
+      }
     }
   }
   .nav-logo {
