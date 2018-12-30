@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <div class="flex justify-between">
-      <CategoryItem v-for="item in categoryList" :key="item.id" :category="item"/>
-      <div></div>
+  <div class="flex justify-between">
+    <div v-for="item in categoryList" :key="item.id" class="flex">
+      <CategoryItem :category="item"/>
+      <div v-if="item.id !== categoryList.length" class="divider-vertical"></div>
     </div>
   </div>
 </template>
@@ -52,6 +52,14 @@ export default {
           name: 'Small Animals',
           url: smallAnimalsSymbol,
           color: 'blue-light',
+          fontSize: '15px',
+        },
+        {
+          id: 6,
+          name: 'Other',
+          url: otherSymbol,
+          color: 'white',
+          fontSize: '15px',
         },
       ],
     }

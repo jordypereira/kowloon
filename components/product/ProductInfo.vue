@@ -12,17 +12,12 @@
         />
       </div>
     </div>
-    <h2 class="title mt-5 mb-18px">Cooling mat</h2>
+    <h2 class="title uppercase mt-5 mb-18px">Cooling mat</h2>
     <p class="price mb-5 mt-18px">€ 15,49</p>
+
     <div class="mt-20px mb-14px sub-title">Colors</div>
-    <div class="flex mt-5 mb-14px">
-      <div
-        v-for="(color, i) in productColors"
-        :key="i"
-        class="product-color"
-        :class="`bg-${color}`"
-      ></div>
-    </div>
+    <ProductColors :colors="productColors" class="mt-5 mb-14px"/>
+
     <div class="mt-5 mb-11px sub-title">Description</div>
     <div
       class="mt-11px mb-26px"
@@ -37,6 +32,7 @@
 
 <script>
 import Tag from '@/components/Tag'
+import ProductColors from '@/components/product/ProductColors'
 
 export default {
   props: {
@@ -44,6 +40,7 @@ export default {
   },
   components: {
     Tag,
+    ProductColors,
   },
   data() {
     return {

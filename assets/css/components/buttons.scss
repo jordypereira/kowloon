@@ -5,3 +5,11 @@ $btn-input-size: 45px;
   height: $btn-input-size;
   @apply bg-black text-white flex justify-center items-center;
 }
+
+$btn-rounded-size: 34px;
+
+.btn-rounded {
+  width: $btn-rounded-size;
+  height: $btn-rounded-size;
+  @apply rounded-full text-xl flex justify-center items-center;
+}
