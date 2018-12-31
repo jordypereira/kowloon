@@ -8,7 +8,7 @@
       </div>
       <div class="nav-search">
         <a href="#">
-          <img src="@/assets/images/search_icon.svg" alt="Search Icon">
+          <img src="@/assets/images/Search_icon.svg" alt="Search Icon">
         </a>
       </div>
       <div class="nav-faq">
