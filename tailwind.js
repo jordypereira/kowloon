@@ -555,6 +555,7 @@ module.exports = {
     'full': '100%',
     '136px': '136px',
     '158px': '158px',
+    '185px': '185px',
     '480px': '480px',
     'screen': '100vh',
   },
@@ -644,6 +645,7 @@ module.exports = {
     '8': '2rem',      // 32px
     '34px': '34px',   // 34px
     '10': '2.5rem',   // 40px
+    '42px': '42px',   // 42px
     '12': '3rem',     // 48px
     '49px': '49px',   // 49px
     '50px': '50px',   // 50px

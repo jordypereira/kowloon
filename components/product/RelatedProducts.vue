@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="section-title mb-22px">Gerelateerde Producten</h2>
+    <h2 class="section-title uppercase mb-22px">Gerelateerde Producten</h2>
     <div v-swiper:mySwiper="swiperOption">
       <div class="swiper-wrapper">
         <div class="swiper-slide" v-for="i in 20" :key="i">
