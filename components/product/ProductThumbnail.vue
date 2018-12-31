@@ -5,7 +5,7 @@
       <slot/>
       <div
         class="opacity-0 absolute pin-l pin-t w-full h-full flex justify-center items-center"
-        :class="categoryColorHoverClass(categoryColor)"
+        :class="[categoryColorHoverClass(categoryColor), { 'max-h-158px': md, 'max-h-136px': sm }]"
       >
         <div class="flex flex-col mt-6">
           <div class="mx-auto">
@@ -33,6 +33,14 @@ export default {
       name: String,
       price: String,
       categoryColor: String,
+      md: {
+        type: Boolean,
+        default: false,
+      },
+      sm: {
+        type: Boolean,
+        default: false,
+      },
   },
   methods: {
     categoryColorHoverClass(color = 'pink') {

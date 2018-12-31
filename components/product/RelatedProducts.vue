@@ -8,6 +8,7 @@
             :img="dogCoolingMat"
             imgAlt="Dog cooling mat"
             :categoryColor="category.color"
+            sm
           />
         </div>
       </div>

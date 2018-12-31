@@ -1,7 +1,7 @@
 <template>
   <div class="flex -mx-3px">
     <div v-for="item in getAmountOfItems(itemsToShow)" :key="item.id" class="px-3px">
-      <ProductThumbnail v-bind="item" class="hot-product">
+      <ProductThumbnail v-bind="item" class="hot-product" md>
         <ProductColors class="absolute pin-t pin-l m-10px" :colors="item.colors"/>
       </ProductThumbnail>
     </div>
