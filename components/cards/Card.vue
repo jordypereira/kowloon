@@ -1,5 +1,5 @@
 <template>
-  <div class="card" :class="{ 'card-md': md, 'card-sm': sm }">
+  <div class="card" :class="{ 'card-md': md, 'card-sm': sm, 'card-lg': lg }">
     <div class="relative hover:cursor-pointer">
       <img :src="img" :alt="imgAlt" class="w-full">
       <slot/>
@@ -25,11 +25,15 @@ export default {
       price: String,
       categoryColor: String,
       hoverFrame: String,
+      sm: {
+        type: Boolean,
+        default: false,
+      },
       md: {
         type: Boolean,
         default: false,
       },
-      sm: {
+      lg: {
         type: Boolean,
         default: false,
       },

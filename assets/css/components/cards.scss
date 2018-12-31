@@ -4,6 +4,9 @@ $card-padding-right: 5px;
 $card-padding-bottom: 6px;
 $card-padding-left: 5px;
 
+$card-md-width: 237px;
+$card-lg-width: 477px;
+
 // Hover Frame
 $card-sm-hover-frame-max-height: 136px;
 $card-md-hover-frame-max-height: 158px;
@@ -21,13 +24,14 @@ $card-lg-hover-frame-max-height: 267px;
 }
 
 .card-md {
-  width: 237px;
+  width: $card-md-width;
   .card-hover {
     max-height: $card-md-hover-frame-max-height;
   }
 }
 
 .card-lg{
+  width: $card-lg-width;
   .card-hover {
     max-height: $card-lg-hover-frame-max-height;
   }
