@@ -1,0 +1,17 @@
+.card {
+  @apply bg-grey-800 border border-grey;
+  padding: 5px 5px 6px 5px;
+}
+
+.card-md {
+  width: 237px;
+  .card-hover {
+    @apply max-h-158px;
+  }
+}
+
+.card-sm {
+  .card-hover {
+    @apply max-h-136px;
+  }
+}

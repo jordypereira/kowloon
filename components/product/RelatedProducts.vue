@@ -4,10 +4,11 @@
     <div v-swiper:mySwiper="swiperOption">
       <div class="swiper-wrapper">
         <div class="swiper-slide" v-for="i in 20" :key="i">
-          <ProductThumbnail
+          <Card
             :img="dogCoolingMat"
             imgAlt="Dog cooling mat"
             :categoryColor="category.color"
+            hoverFrame="details"
             sm
           />
         </div>
@@ -22,7 +23,7 @@
 </template>
 
 <script>
-import ProductThumbnail from '@/components/product/ProductThumbnail'
+import Card from '@/components/cards/Card'
 import dogCoolingMat from '@/assets/images/products/dog_cooling_mat--thumbnail.png'
 
 export default {
@@ -31,7 +32,7 @@ export default {
       category: Object,
   },
   components: {
-      ProductThumbnail,
+      Card,
   },
   data () {
       return {

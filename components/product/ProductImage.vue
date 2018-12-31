@@ -1,5 +1,5 @@
 <template>
-  <div class="border-primary flex flex-col">
+  <div class="card flex flex-col">
     <img :src="selectedImage.url" alt="Highlighted Image" class="product-image-selected">
     <div class="flex -mx-2">
       <div v-for="item in productImages" :key="item.id" class="flex flex-col px-2">

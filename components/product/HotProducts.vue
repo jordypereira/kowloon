@@ -1,23 +1,23 @@
 <template>
   <div class="flex -mx-3px">
     <div v-for="item in getAmountOfItems(itemsToShow)" :key="item.id" class="px-3px">
-      <ProductThumbnail v-bind="item" class="hot-product" md>
+      <Card v-bind="item" class="hot-product" hoverFrame="details" md>
         <ProductColors class="absolute pin-t pin-l m-10px" :colors="item.colors"/>
-      </ProductThumbnail>
+      </Card>
     </div>
 
     <div v-if="(items.length > itemsToShow + 1)" class="px-3px">
-      <ProductThumbnail v-bind="getRestOfItems(itemsToShow)[0]" class="hot-product">
+      <Card v-bind="getRestOfItems(itemsToShow)[0]" md>
         <div
           class="absolute pin-t pin-l m-10px btn-rounded bg-white text-grey-900 font-bold"
         >{{ items.length - itemsToShow }}</div>
-      </ProductThumbnail>
+      </Card>
     </div>
   </div>
 </template>
 
 <script>
-import ProductThumbnail from '@/components/product/ProductThumbnail'
+import Card from '@/components/cards/Card'
 import ProductColors from '@/components/product/ProductColors'
 
 export default {
@@ -26,7 +26,7 @@ export default {
       items: Array,
   },
   components: {
-      ProductThumbnail,
+      Card,
       ProductColors,
   },
   data() {
