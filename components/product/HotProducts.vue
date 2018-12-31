@@ -7,7 +7,7 @@
     </div>
 
     <div v-if="(items.length > itemsToShow + 1)" class="px-3px">
-      <Card v-bind="getRestOfItems(itemsToShow)[0]" md>
+      <Card v-bind="getRestOfItems(itemsToShow)[0]" md stacked>
         <div
           class="absolute pin-t pin-l m-10px btn-rounded bg-white text-grey-900 font-bold"
         >{{ items.length - itemsToShow }}</div>

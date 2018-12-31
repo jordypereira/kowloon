@@ -5,6 +5,7 @@ $card-padding-bottom: 6px;
 $card-padding-left: 5px;
 
 $card-md-width: 237px;
+$card-md-height: 200px;
 $card-lg-width: 477px;
 
 // Hover Frame
@@ -12,27 +13,52 @@ $card-sm-hover-frame-max-height: 136px;
 $card-md-hover-frame-max-height: 158px;
 $card-lg-hover-frame-max-height: 267px;
 
+// Stacked Card
+$card-md-stacked-width: 218px;
+$card-md-stacked-height: 185px;
+
 .card {
-  @apply bg-grey-800 border border-grey;
-  padding: $card-padding-top $card-padding-right $card-padding-bottom $card-padding-left;
-}
-
-.card-sm {
-  .card-hover {
-    max-height: $card-sm-hover-frame-max-height;
+  
+  &-body {
+    @apply bg-grey-800 border border-grey;
+    padding: $card-padding-top $card-padding-right $card-padding-bottom $card-padding-left;
   }
-}
-
-.card-md {
-  width: $card-md-width;
-  .card-hover {
-    max-height: $card-md-hover-frame-max-height;
+  &-sm {
+    .card-hover {
+      max-height: $card-sm-hover-frame-max-height;
+    }
   }
-}
 
-.card-lg{
-  width: $card-lg-width;
-  .card-hover {
-    max-height: $card-lg-hover-frame-max-height;
+  &-md {
+    width: $card-md-width;
+    .card-hover {
+      max-height: $card-md-hover-frame-max-height;
+    }
+    &-stacked {
+      width: $card-md-stacked-width;
+      height: $card-md-stacked-height;
+      margin-top: $card-md-height - $card-md-stacked-height;
+      @apply relative;
+    }
+    &-stacked-1 {
+      @apply bg-grey-900 absolute pin-b border-r-5 border-t-5 border-grey-550;
+      width: $card-md-stacked-width - 10px + 8px;
+      height: $card-md-stacked-height + 8px;
+      margin-left: 10px;
+      z-index: 5;
+    }
+    &-stacked-2 {
+      @apply bg-grey-900 absolute pin-b border-r-5 border-t-5 border-grey-100;
+      width: $card-md-stacked-width - 20px + 16px;
+      height: $card-md-stacked-height + 16px;
+      margin-left: 20px;
+    }
+  }
+
+  &-lg{
+    width: $card-lg-width;
+    .card-hover {
+      max-height: $card-lg-hover-frame-max-height;
+    }
   }
 }
