@@ -42,7 +42,7 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
-      // provide path to the file with resources
+    // provide path to the file with resources
   ],
 
   /*
