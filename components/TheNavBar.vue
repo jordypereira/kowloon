@@ -19,7 +19,7 @@
       <hr class="divider">
       <div class="nav-items" v-for="(item, i) in navItems" :key="i">
         <div class="nav-item">
-          <nuxt-link :to="`/products/${item.name}`">
+          <nuxt-link :to="`/products/${item.name[0]}`">
             <component
               :is="item.svg"
               class="text-white fill-current w-full"
@@ -55,27 +55,27 @@ export default {
       navItems: [
         {
           color: 'pink',
-          name: 'dogs',
+          name: ['dogs', 'dog', 'Dog', 'Dogs'],
           svg: DogSymbol,
         },
         {
           color: 'indigo',
-          name: 'cats',
+          name: ['cats', 'cat', 'Cat', 'Cats'],
           svg: CatSymbol,
         },
         {
           color: 'yellow',
-          name: 'fish',
+          name: ['fish', 'Fish'],
           svg: FishSymbol,
         },
         {
           color: 'green-light',
-          name: 'birds',
+          name: ['birds', 'Birds', 'Bird', 'bird'],
           svg: BirdSymbol,
         },
         {
           color: 'blue-light',
-          name: 'small-animals',
+          name: ['small-animals', 'small animals', 'Small-Animals', 'Small Animals'],
           svg: HamsterSymbol,
         },
       ],
@@ -83,7 +83,7 @@ export default {
   },
   methods: {
     navItemClass(item) {
-      if(this.$route.params.details === item.name) {
+      if(item.name.includes(this.$route.params.details)) {
         return `hover:text-${item.color} text-${item.color}`
       } else {
         return `hover:text-${item.color}`
