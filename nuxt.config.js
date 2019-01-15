@@ -1,4 +1,5 @@
 const pkg = require('./package')
+import purgecss from '@fullhuman/postcss-purgecss'
 
 module.exports = {
   mode: 'universal',
@@ -45,15 +46,21 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
-    'nuxt-imagemin'
+    // provide path to the file with resources
   ],
 
   /*
   ** Build configuration
   */
   build: {
-    /*
-    ** You can extend webpack config here
-    */
+    postcss: {
+      plugins: [
+        purgecss({
+          content: ['./pages/**/*.vue', './layouts/**/*.vue', './components/**/*.vue', './content/**/*.md', './content/**/*.json'],
+          whitelist: ['html', 'body', 'has-navbar-fixed-top', 'nuxt-link-exact-active', 'nuxt-progress'],
+          whitelistPatternsChildren: [/__layout/, /__nuxt/],
+        })
+      ]
+    },
   }
 }
