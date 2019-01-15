@@ -45,14 +45,14 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
-    // provide path to the file with resources
+    'nuxt-purgecss',
   ],
 
   /*
   ** Build configuration
   */
   build: {
-    extend(config, {isDev, isClient}) {
+    extend(config) {
       config.module.rules.forEach(rule => {
         if (String(rule.test) === String(/\.(png|jpe?g|gif|svg|webp)$/)) {
           // add a second loader when loading images
