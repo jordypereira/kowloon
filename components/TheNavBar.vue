@@ -31,7 +31,9 @@
     </div>
     <div>
       <div class="nav-logo flex justify-center">
-        <img src="@/assets/images/k_logo.svg" alt="Kowloon Logo">
+        <nuxt-link to="/about">
+          <img src="@/assets/images/k_logo.svg" alt="Kowloon Logo">
+        </nuxt-link>
       </div>
     </div>
   </nav>
@@ -53,12 +55,12 @@ export default {
       navItems: [
         {
           color: 'pink',
-          name: 'dog',
+          name: 'dogs',
           svg: DogSymbol,
         },
         {
           color: 'indigo',
-          name: 'cat',
+          name: 'cats',
           svg: CatSymbol,
         },
         {
@@ -68,7 +70,7 @@ export default {
         },
         {
           color: 'green-light',
-          name: 'bird',
+          name: 'birds',
           svg: BirdSymbol,
         },
         {

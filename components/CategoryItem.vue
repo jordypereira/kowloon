@@ -1,7 +1,9 @@
 <template>
   <div class="flex flex-col justify-between max-w-100px mx-49px">
     <div class="flex-1 flex justify-center items-center">
-      <img :src="category.url" :alt="`Symbol of the category ${category.name}`">
+      <nuxt-link :to="`/products/${category.name}`">
+        <img :src="category.url" :alt="`Symbol of the category ${category.name}`">
+      </nuxt-link>
     </div>
     <p
       class="category-title mt-5 text-center"

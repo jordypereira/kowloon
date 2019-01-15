@@ -57,37 +57,54 @@ export default {
     getCategory(name) {
       switch (name) {
         case 'dog':
+        case 'Dog':
+        case 'dogs':
+        case 'Dogs':
           return {
             name: 'Dogs',
             color: 'pink',
           }
           break;
         case 'cat':
+        case 'Cat':
+        case 'cats':
+        case 'Cats':
           return {
             name: 'Cats',
             color: 'indigo',
           }
           break;
         case 'fish':
+        case 'Fish':
           return {
             name: 'Fishes',
             color: 'yellow',
           }
           break;
         case 'bird':
+        case 'Bird':
+        case 'birds':
+        case 'Birds':
           return {
             name: 'Birds',
             color: 'green-light',
           }
           break;
         case 'small-animals':
+        case 'small animals':
+        case 'Small-Animals':
+        case 'Small Animals':
           return {
             name: 'Small Animals',
             color: 'blue-light',
           }
           break;
       
-        default: 'pink'
+        default: 
+          return {
+              name: 'Other',
+              color: 'beige',
+            }
           break;
       }
     }

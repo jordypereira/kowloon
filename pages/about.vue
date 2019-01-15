@@ -5,11 +5,9 @@
       <div class="mt-13 absolute z-10">
         <img src="@/assets/images/Kowloon_logo.svg" alt="Kowloon Logo">
       </div>
-      <img
-        src="~assets/images/about/header.jpg"
-        alt="Slider Image of a dog"
-        class="max-h-480px w-full"
-      >
+      <div class="w-full max-h-480px">
+        <img src="~assets/images/about/header.jpg" alt="Slider Image of a dog">
+      </div>
     </header>
     <div class="container mx-auto text-white mt-16">
       <!-- Tag -->

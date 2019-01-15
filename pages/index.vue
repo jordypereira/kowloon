@@ -1,16 +1,21 @@
 <template>
   <section>
+    <!-- Slider -->
     <header class="relative flex justify-center w-full">
       <div class="mt-13 absolute z-10">
         <img src="@/assets/images/Kowloon_logo.svg" alt="Kowloon Logo">
       </div>
       <HomeSlider :images="homeSliderImages"/>
     </header>
+
     <div class="container mx-auto text-white">
+      <!-- Description -->
       <p class="text-center w-3/4 mx-auto mt-51px">{{ introText }}</p>
 
+      <!-- Categories -->
       <Categories class="mt-10"/>
 
+      <!-- Hot Items -->
       <div v-if="hotItems" class="mt-16">
         <div class="title uppercase mb-28px">Hot Items.</div>
         <HotProducts :items="hotItems"/>
@@ -19,6 +24,7 @@
         </div>
       </div>
 
+      <!-- NewsletterBanner -->
       <NewsletterBanner class="mt-34px mb-24"/>
     </div>
   </section>
