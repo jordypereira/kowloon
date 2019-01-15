@@ -12,7 +12,7 @@
         <div class="sub-title">Subscribe to our newsletter</div>
         <div class="text-grey-400er mb-5">Lorum ipsum dolor sit amet</div>
         <div class="flex">
-          <label>
+          <label aria-label="Enter your email for the newsletter">
             <input type="text" placeholder="Domain @ name.com" class="input-text">
           </label>
           <button class="btn-input" aria-label="Signs you up for the news letter.">OK</button>

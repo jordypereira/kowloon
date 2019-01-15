@@ -15,7 +15,7 @@
         <div class="nav-item">
           <nuxt-link
             :to="`/products/${item.name[0]}/view`"
-            @aria-label="`Links to the ${item.name[0]} product page.`"
+            :aria-label="`Links to the ${item.name[0]} product page.`"
           >
             <component
               :is="item.svg"
