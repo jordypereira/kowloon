@@ -9,7 +9,7 @@
         @click="toggleFaq(q.id)"
       >
         <div class="flex justify-between">
-          <div class="faq-title">Dit is een vraag</div>
+          <div class="faq-title">{{ q.title }}</div>
           <div
             class="dropdown-triangle"
             :class="[ (activeFaq === q.id) ? 'dropdown-triangle-bot' : 'dropdown-triangle-right']"
@@ -29,7 +29,7 @@ export default {
   name: 'FAQ',
   data () {
     return {
-      activeFaq: '',
+      activeFaq: 2,
       faqQuestions: [
         {
           id: 1,

@@ -1,4 +1,12 @@
+$btn-padding-x: 96px;
+$btn-padding-y: 13px;
+
 $btn-input-size: 45px;
+
+@mixin btn {
+  @extend .text-button;
+  padding: $btn-padding-y $btn-padding-x;
+}
 
 .btn-input {
   width: $btn-input-size;
@@ -12,4 +20,9 @@ $btn-rounded-size: 34px;
   width: $btn-rounded-size;
   height: $btn-rounded-size;
   @apply rounded-full text-xl flex justify-center items-center;
+}
+
+.btn-primary {
+  @include btn;
+  @apply bg-pink text-white;
 }

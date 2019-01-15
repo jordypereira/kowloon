@@ -2,7 +2,7 @@
   <div v-swiper:mySwiper="swiperOption" class="max-h-480px">
     <div class="swiper-wrapper">
       <div class="swiper-slide" v-for="item in images" :key="item.id">
-        <img :src="item.url" class="w-full">
+        <img :src="item.url" alt="Slider Image of a dog" class="w-full">
 
         <div class="swiper-pagination w-full pin-b mb-22px" slot="pagination"></div>
       </div>

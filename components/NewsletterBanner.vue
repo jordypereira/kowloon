@@ -12,7 +12,7 @@
         <div class="sub-title">Subscribe to our newsletter</div>
         <div class="text-grey-400er mb-5">Lorum ipsum dolor sit amet</div>
         <div class="flex">
-          <input type="text" placeholder="Domain @ name.com" class="input-field">
+          <input type="text" placeholder="Domain @ name.com" class="input-text">
           <button class="btn-input">OK</button>
         </div>
       </div>

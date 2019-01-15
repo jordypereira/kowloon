@@ -1,11 +1,19 @@
 $input-height: 45px;
 $input-width: 234px;
 
-.input-field {
-  @apply border-2 border-grey-300 pl-4;
+.input {
+  @apply border-2 border-grey-300 p-4;
+  &::placeholder {
+    @apply text-black-dark2 text-base;
+  }
+}
+
+.input-text {
+  @extend .input;
   height: $input-height;
   width: $input-width;
-  &::placeholder {
-    @apply pl-2 text-black-dark2;
-  }
+}
+
+.input-textarea {
+  @extend .input;
 }
