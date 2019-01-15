@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <section>
     <h2 class="section-title uppercase mb-22px">Gerelateerde Producten</h2>
     <div v-swiper:mySwiper="swiperOption">
       <div class="swiper-wrapper">
@@ -19,7 +19,7 @@
     <div class="text-right w-full mt-14px">
       <a href="#" class="section-link">view more</a>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

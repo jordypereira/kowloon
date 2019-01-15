@@ -1,9 +1,9 @@
 <template>
-  <main class="container mx-auto text-white">
-    <div class="text-center mt-13 mb-49px">
+  <div class="container mx-auto text-white">
+    <header class="text-center mt-13 mb-49px">
       <img src="@/assets/images/Kowloon_logo.svg" alt="Kowloon Logo">
-    </div>
-    <div class="flex flex-col">
+    </header>
+    <section class="flex flex-col">
       <div class="flex -mx-27px mb-10px">
         <div class="pl-27px">
           <ProductImage/>
@@ -16,8 +16,8 @@
       <RelatedProducts class="mb-58px" :category="getCategory(this.$route.params.details)"/>
       <FaqComponent class="mb-17px"/>
       <NewsletterBanner class="mb-4"/>
-    </div>
-  </main>
+    </section>
+  </div>
 </template>
 
 <script>

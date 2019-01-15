@@ -1,6 +1,6 @@
 <template>
   <div class="w-full py-15px px-4 border border-grey">
-    <div class="sub-title mb-15px">Specifications</div>
+    <h3 class="sub-title mb-15px">Specifications</h3>
     <div class="my-15px">{{ 'Dimensions'.toUpperCase() }}</div>
     <div class="flex">
       <div v-for="(dimension, i) in dimensions" :key="i" class="mr-5">{{ dimension }}</div>

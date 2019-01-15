@@ -12,7 +12,7 @@
         />
       </div>
     </div>
-    <h2 class="title uppercase mt-5 mb-18px">Cooling mat</h2>
+    <h1 class="title uppercase mt-5 mb-18px">Cooling mat</h1>
     <p class="price mb-5 mt-18px">€ 15,49</p>
 
     <div class="mt-20px mb-14px sub-title">Colors</div>

@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <div>
     <!-- Header Image -->
     <header class="relative flex justify-center w-full">
       <div class="mt-13 absolute z-10">
@@ -9,7 +9,7 @@
         <img src="~assets/images/about/header.jpg" alt="Slider Image of a dog">
       </div>
     </header>
-    <div class="container mx-auto text-white mt-16">
+    <main class="container mx-auto text-white mt-16">
       <!-- Tag -->
       <div class="flex">
         <img src="@/assets/images/k_logo.svg" alt="Kowloong Logo Small" class="mr-5px">
@@ -19,23 +19,23 @@
       <h1 class="title uppercase mb-42px mt-10">About Us</h1>
 
       <!-- Description and contact info -->
-      <div class="mb-20 flex flex-col md:flex-row justify-between">
+      <section class="mb-20 flex flex-col md:flex-row justify-between">
         <div class="flex-1">
           <h2 class="section-title uppercase mb-14px">Kowloon</h2>
           <div v-html="introText"></div>
         </div>
-        <div class="w-236px pb-5 pl-5 border-l border-b border-grey-650">
+        <address class="w-236px pb-5 pl-5 border-l border-b border-grey-650">
           <h2 class="section-title uppercase mb-14px">Contact</h2>
           <ul>
             <li>Decks Johan</li>
             <li>Bosdreef 7</li>
             <li>2200 Herentals</li>
           </ul>
-        </div>
-      </div>
+        </address>
+      </section>
 
       <!-- Message form -->
-      <div class="my-20">
+      <section class="my-20">
         <h2 class="section-title uppercase mb-28px">Leave us a message</h2>
         <form>
           <div class="flex flex-col mb-8">
@@ -54,12 +54,12 @@
           </div>
           <button class="btn-primary">Send</button>
         </form>
-      </div>
+      </section>
 
       <!-- FAQ -->
       <FaqComponent class="my-20"/>
-    </div>
-  </section>
+    </main>
+  </div>
 </template>
 
 <script>

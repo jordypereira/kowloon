@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <section>
     <h2 class="section-title uppercase">Frequently asked questions</h2>
     <div>
       <div
@@ -21,7 +21,7 @@
     <div class="text-right w-full">
       <a href="#" class="section-link">More questions?</a>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

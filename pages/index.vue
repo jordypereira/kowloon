@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <div>
     <!-- Slider -->
     <header class="relative flex justify-center w-full">
       <div class="mt-13 absolute z-10">
@@ -8,7 +8,7 @@
       <HomeSlider :images="homeSliderImages"/>
     </header>
 
-    <div class="container mx-auto text-white">
+    <main class="container mx-auto text-white">
       <!-- Description -->
       <p class="text-center w-3/4 mx-auto mt-51px">{{ introText }}</p>
 
@@ -16,18 +16,18 @@
       <Categories class="mt-10"/>
 
       <!-- Hot Items -->
-      <div v-if="hotItems" class="mt-16">
-        <div class="title uppercase mb-28px">Hot Items.</div>
+      <section v-if="hotItems" class="mt-16">
+        <h1 class="title uppercase mb-28px">Hot Items.</h1>
         <HotProducts :items="hotItems"/>
         <div class="text-right w-full mt-22px">
           <a href="#" class="section-link">Visit the store</a>
         </div>
-      </div>
+      </section>
 
       <!-- NewsletterBanner -->
       <NewsletterBanner class="mt-34px mb-24"/>
-    </div>
-  </section>
+    </main>
+  </div>
 </template>
 
 <script>
