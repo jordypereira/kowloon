@@ -36,36 +36,22 @@ import HomeSlider from '@/components/HomeSlider'
 import NewsletterBanner from '@/components/NewsletterBanner'
 import HotProducts from '@/components/product/HotProducts'
 
-import HomeSliderImage1 from '@/assets/images/home/home-visual-1.jpg'
-import HomeSliderImage2 from '@/assets/images/home/home-visual-2.jpg'
 import hotItems from '@/services/hotItems'
+import homeSliderImages from '@/services/homeSliderImages'
 
 export default {
   name: 'Home',
   components: {
-      HomeSlider,
-      Categories,
-      NewsletterBanner,
-      HotProducts,
+    HomeSlider,
+    Categories,
+    NewsletterBanner,
+    HotProducts,
   },
   data() {
     return {
-      homeSliderImages: [
-        {
-          id: 1,
-          url: HomeSliderImage1,
-        },
-        {
-          id: 2,
-          url: HomeSliderImage2,
-        },
-        {
-          id: 3,
-          url: HomeSliderImage1,
-        },
-      ],
       introText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       hotItems,
+      homeSliderImages,
     }
   },
 }

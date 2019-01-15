@@ -1,7 +1,7 @@
 <template>
   <div class="container mx-auto text-white">
-    <header class="text-center mt-13 mb-49px">
-      <img src="@/assets/images/Kowloon_logo.svg" alt="Kowloon Logo">
+    <header class="flex justify-center mt-13 mb-49px">
+      <i class="icon icon-kowloon"></i>
     </header>
     <section class="flex flex-col">
       <div class="flex -mx-27px mb-10px">
@@ -44,7 +44,7 @@ export default {
       productTags: [
         {
           id: 1,
-          ...this.getCategory(this.$route.params.details)
+          ...this.getCategory(this.$route.params.name)
         },
         {
           id: 2,

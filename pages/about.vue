@@ -12,7 +12,7 @@
     <main class="container mx-auto text-white mt-16">
       <!-- Tag -->
       <div class="flex">
-        <img src="@/assets/images/k_logo.svg" alt="Kowloong Logo Small" class="mr-5px">
+        <i class="mr-5px icon icon-k"></i>
         <Tag tagName="about us" class="px-1"/>
       </div>
 

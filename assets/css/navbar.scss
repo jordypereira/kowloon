@@ -1,7 +1,6 @@
 $nav-width: 60px;
 $nav-height: 100vh;
-$nav-item-padding-y: 17px;
-$nav-item-padding-x: 15px;
+$nav-item-margin-top: 17px;
 
 // Nav toggle
 $nav-toggle-margin-b: 12px;
@@ -37,7 +36,7 @@ nav {
   }
   .nav-items {
     .nav-item {
-      padding: $nav-item-padding-y $nav-item-padding-x;
+      margin: $nav-item-margin-top 0 0 0;
       svg {
         transition: 0.5s all;
       }

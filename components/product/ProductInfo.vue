@@ -1,7 +1,7 @@
 <template>
   <div class="mb-10px">
     <div class="flex mb-5">
-      <img src="@/assets/images/k_logo.svg" alt="Kowloong Logo Small" class="mr-6px">
+      <i class="icon icon-k mr-6px"></i>
       <div class="flex -mx-1">
         <Tag
           v-for="tag in tags"

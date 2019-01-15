@@ -13,6 +13,10 @@ h3 {
   font-weight: inherit;
 }
 
+address {
+  font-style: inherit;
+}
+
 body {
   @apply font-body font-normal text-sm leading-normal text-white;
   letter-spacing: -0.28px;

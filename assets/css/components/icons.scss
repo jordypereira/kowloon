@@ -1,0 +1,137 @@
+.icon {
+  background-repeat: no-repeat;
+  &-k {
+    width: 24px;
+    height: 22px;
+    background-image: url(~assets/images/k_logo.svg);
+    &.icon-small {
+      width: 24px;
+      height: 22px;
+      background-image: url(~assets/images/k_logo.svg);
+    }
+  }
+
+  &-kowloon {
+    width: 288px;
+    height: 89px;
+    background-image: url(~assets/images/Kowloon_logo.svg);
+  }
+  
+  &-hamburger {
+    width: 28px;
+    height: 22px;
+    background-image: url(~assets/images/hamburger_icon.svg);
+  }
+  
+  &-search {
+    width: 29px;
+    height: 29px;
+    background-image: url(~assets/images/Search_icon.svg);
+  }
+  
+  &-faq {
+    width: 20px;
+    height: 33px;
+    background-image: url(~assets/images/FAQ_icon.svg);
+  }
+  
+  &-dog {
+    background-image: url(~assets/images/symbols/dog.svg);
+    width: 27px;
+    height: 29px;
+    &.icon-small {
+      width: 27px;
+      height: 29px;
+    }
+    &-small {
+      width: 27px;
+      height: 29px;
+    }
+    &.icon-large {
+      width: 60px;
+      height: 64px;
+    }
+  }
+
+  &-cat {
+    background-image: url(~assets/images/symbols/cat.svg);
+    width: 27px;
+    height: 31px;
+    &.icon-small {
+      width: 27px;
+      height: 31px;
+    }
+    &-small {
+      width: 27px;
+      height: 31px;
+    }
+    &.icon-large {
+      width: 53px;
+      height: 61px;
+    }
+  }
+
+  &-fish {
+    background-image: url(~assets/images/symbols/fish.svg);
+    width: 28px;
+    height: 28px;
+    &.icon-small {
+      width: 28px;
+      height: 28px;
+    }
+    &-small {
+      width: 28px;
+      height: 28px;
+    }
+    &.icon-large {
+      width: 59px;
+      height: 59px;
+    }
+  }
+
+  &-bird {
+    background-image: url(~assets/images/symbols/bird.svg);
+    width: 24px;
+    height: 38px;
+    &.icon-small {
+      width: 24px;
+      height: 38px;
+    }
+    &-small {
+      width: 24px;
+      height: 38px;
+    }
+    &.icon-large {
+      width: 42px;
+      height: 67px;
+    }
+  }
+
+  &-small-animal {
+    background-image: url(~assets/images/symbols/hamster.svg);
+    width: 27px;
+    height: 30px;
+    &.icon-small {
+      width: 27px;
+      height: 30px;
+    }
+    &-small {
+      width: 27px;
+      height: 30px;
+    }
+    &.icon-large {
+      width: 47px;
+      height: 51px;
+    }
+  }
+
+  &-other {
+    background-image: url(~assets/images/symbols/other.svg);
+    width: 32px;
+    height: 32px;
+    &.icon-large {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}

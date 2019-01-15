@@ -21,16 +21,18 @@
  @tailwind components;
 
  @import 'components/tags';
- @import 'components/productColors';
- @import 'components/productShapes';
- @import 'components/productImages';
+ @import 'components/icons';
  @import 'components/cards';
  @import 'components/links';
  @import 'components/dividers';
  @import 'components/dropdowns';
  @import 'components/buttons';
  @import 'components/forms';
+ 
  @import 'components/homeSlider';
+ @import 'components/productColors';
+ @import 'components/productShapes';
+ @import 'components/productImages';
  
  /**
   * Here you would add any of your custom component classes; stuff that you'd

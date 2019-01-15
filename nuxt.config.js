@@ -1,5 +1,4 @@
 const pkg = require('./package')
-import purgecss from '@fullhuman/postcss-purgecss'
 
 module.exports = {
   mode: 'universal',
@@ -53,14 +52,25 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    postcss: {
-      plugins: [
-        purgecss({
-          content: ['./pages/**/*.vue', './layouts/**/*.vue', './components/**/*.vue', './content/**/*.md', './content/**/*.json'],
-          whitelist: ['html', 'body', 'has-navbar-fixed-top', 'nuxt-link-exact-active', 'nuxt-progress'],
-          whitelistPatternsChildren: [/__layout/, /__nuxt/],
-        })
-      ]
-    },
+    extend(config, {isDev, isClient}) {
+      config.module.rules.forEach(rule => {
+        if (String(rule.test) === String(/\.(png|jpe?g|gif|svg|webp)$/)) {
+          // add a second loader when loading images
+          rule.use.push({
+            loader: 'image-webpack-loader',
+            options: {
+              svgo: {
+                plugins: [
+                  // use these settings for internet explorer for proper scalable SVGs
+                  // https://css-tricks.com/scale-svg/
+                  { removeViewBox: false },
+                  { removeDimensions: true }
+                ]
+              }
+            }
+          })
+        }
+      })
+    }
   }
 }
