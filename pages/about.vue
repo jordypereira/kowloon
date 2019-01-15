@@ -40,7 +40,7 @@
         <form>
           <div class="flex flex-col mb-8">
             <label for="email" class="mb-3 sub-title">E-mail</label>
-            <input type="text" class="input-text" placeholder="name@domain.com">
+            <input type="text" class="input-text" placeholder="name@domain.com" name="email">
           </div>
           <div class="flex flex-col mb-8">
             <label for="message" class="mb-3 sub-title">Your message</label>
@@ -52,7 +52,7 @@
               placeholder="Write your message here."
             ></textarea>
           </div>
-          <button class="btn-primary">Send</button>
+          <button class="btn-primary" aria-labelledby="Sends your message to us.">Send</button>
         </form>
       </section>
 

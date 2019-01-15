@@ -2,7 +2,7 @@
   <nav class="flex flex-col justify-between bg-black h-screen">
     <div class="flex flex-col items-center">
       <div class="nav-toggle flex justify-center items-center">
-        <nuxt-link to="/" class="icon icon-hamburger"></nuxt-link>
+        <nuxt-link to="/" class="icon icon-hamburger" aria-label="Toggle the navigation pane."></nuxt-link>
       </div>
       <div class="flex nav-search">
         <i class="icon icon-search"></i>
@@ -13,7 +13,10 @@
       <hr class="divider">
       <div class="nav-items" v-for="(item, i) in navItems" :key="i">
         <div class="nav-item">
-          <nuxt-link :to="`/products/${item.name[0]}/view`">
+          <nuxt-link
+            :to="`/products/${item.name[0]}/view`"
+            @aria-label="`Links to the ${item.name[0]} product page.`"
+          >
             <component
               :is="item.svg"
               class="text-white fill-current w-full"
@@ -25,7 +28,7 @@
     </div>
     <div>
       <div class="nav-logo flex justify-center">
-        <nuxt-link to="/about" class="icon icon-k"></nuxt-link>
+        <nuxt-link to="/" class="icon icon-k" aria-label="Links to the home page"></nuxt-link>
       </div>
     </div>
   </nav>
