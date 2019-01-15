@@ -48,6 +48,10 @@ module.exports = {
     'nuxt-purgecss',
   ],
 
+  purgeCSS: {
+    mode: 'postcss',
+  },
+
   /*
   ** Build configuration
   */
