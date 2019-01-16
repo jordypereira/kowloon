@@ -10,9 +10,27 @@ $dropdown-color: config('colors.white');
   &-right {
     border-color: transparent transparent transparent $dropdown-color;
     border-width: ($dropdown-height / 2) 0 ($dropdown-height / 2) $dropdown-width;
+    &.dropdown-grey-300 {
+      $dropdown-color: config('colors.grey-300');
+      border-color: transparent transparent transparent $dropdown-color;
+    }
+    &.dropdown-small {
+      $dropdown-height: 10px;
+      $dropdown-width: 7px;
+      border-width: ($dropdown-height / 2) 0 ($dropdown-height / 2) $dropdown-width;
+    }
   }
   &-bot {
     border-color: $dropdown-color transparent transparent transparent;
     border-width: $dropdown-width ($dropdown-height / 2) 0 ($dropdown-height / 2);
+    &.dropdown-grey-300 {
+      $dropdown-color: config('colors.grey-300');
+      border-color: $dropdown-color transparent transparent transparent;
+    }
+    &.dropdown-small {
+      $dropdown-height: 10px;
+      $dropdown-width: 7px;
+      border-width: $dropdown-width ($dropdown-height / 2) 0 ($dropdown-height / 2);
+    }
   }
 }
