@@ -10,6 +10,9 @@
       <div class="flex nav-faq">
         <i class="icon icon-faq"></i>
       </div>
+      <div class="flex">
+        <nuxt-link to="/about" class="icon icon-mail"></nuxt-link>
+      </div>
       <hr class="divider">
       <div class="nav-items" v-for="(item, i) in navItems" :key="i">
         <div class="nav-item">
