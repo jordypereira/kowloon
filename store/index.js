@@ -47,6 +47,8 @@ export const getters = {
       return state.categories.cat
     case 'fish':
     case 'Fish':
+    case 'fishes':
+    case 'Fishes':
       return state.categories.fish
     case 'bird':
     case 'Bird':

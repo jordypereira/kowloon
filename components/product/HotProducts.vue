@@ -1,15 +1,20 @@
 <template>
   <div class="flex flex-wrap -mx-3px">
     <div v-for="item in getAmountOfItems(itemsToShow)" :key="item.id" class="px-3px mb-5">
-      <Card
-        v-bind="item"
-        :categoryColor="categoryColor"
-        class="hot-product"
-        hoverFrame="details"
-        md
+      <nuxt-link
+        :to="`/products/${categoryName(category)}/details`"
+        class="text-white no-underline"
       >
-        <ProductColors class="absolute pin-t pin-l m-10px" :colors="item.colors"/>
-      </Card>
+        <Card
+          v-bind="item"
+          :categoryColor="category ? category.color : 'pink'"
+          class="hot-product"
+          hoverFrame="details"
+          md
+        >
+          <ProductColors class="absolute pin-t pin-l m-10px" :colors="item.colors"/>
+        </Card>
+      </nuxt-link>
     </div>
 
     <div v-if="(items.length > itemsToShow + 1)" class="px-3px mb-5">
@@ -30,7 +35,7 @@ export default {
   name: 'HotProducts',
   props: {
       items: Array,
-      categoryColor: String,
+      category: Object,
   },
   components: {
       Card,
@@ -51,6 +56,13 @@ export default {
     getRestOfItems(amount) {
       return this.items.filter(item => item.id === amount+1)
     },
+    categoryName(category) {
+      if(category) {
+        return category.name
+      } else {
+        return 'dog'
+      }
+    }
   },
 }
 </script>

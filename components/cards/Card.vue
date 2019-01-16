@@ -11,15 +11,26 @@
     >
       <div class="relative hover:cursor-pointer">
         <img :src="img" :alt="imgAlt" class="w-full">
+        <!-- Absolute placed buttons appear here -->
         <slot/>
         <hoverDetailsFrame v-if="hoverFrame === 'details'" :color="categoryColor"/>
       </div>
 
-      <div v-if="name" class="flex justify-between text-base mx-10px">
+      <div v-if="md && name" class="flex justify-between text-base mx-10px">
         <p class="font-bold">{{ name }}</p>
         <p>€ {{ price }}</p>
       </div>
+      <div v-if="lg && name" class="ml-10px">
+        <p class="price mb-2 mt-2">{{ name }}</p>
+        <p class="pr-5">{{ description }}</p>
+        <div class="flex justify-between items-center mt-4">
+          <p class="text-base">€ {{ price }}</p>
+          <button class="btn btn-sm btn-primary">Want to know more?</button>
+        </div>
+      </div>
     </div>
+
+    <!-- Stacked effect -->
     <div v-if="stacked" :class="{ 'card-md-stacked-1': (md && stacked) }"></div>
     <div v-if="stacked" :class="{ 'card-md-stacked-2': (md && stacked) }"></div>
   </div>
@@ -37,6 +48,7 @@ export default {
       price: String,
       categoryColor: String,
       hoverFrame: String,
+      description: String,
       sm: {
         type: Boolean,
         default: false,

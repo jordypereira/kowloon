@@ -3,6 +3,10 @@ $btn-padding-y: 13px;
 
 $btn-input-size: 45px;
 
+// small
+$btn-sm-padding-x: 21px;
+$btn-sm-padding-y: 9px;
+
 @mixin btn {
   @extend .text-button;
   padding: $btn-padding-y $btn-padding-x;
@@ -25,4 +29,8 @@ $btn-rounded-size: 34px;
 .btn-primary {
   @include btn;
   @apply bg-pink text-white;
+  &.btn-sm {
+    @apply text-sm;
+    padding: $btn-sm-padding-y $btn-sm-padding-x;
+  }
 }

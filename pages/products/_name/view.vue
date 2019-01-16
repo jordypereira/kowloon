@@ -2,7 +2,7 @@
   <div>
     <header class="relative flex justify-center w-full">
       <i class="mt-13 absolute z-10 icon-k-large"/>
-      <!-- <HomeSlider :images="homeSliderImages"/> -->
+      <HomeSlider :images="homeSliderImages"/>
     </header>
     <main class="container mx-auto text-white">
       <!-- Tags -->
@@ -61,12 +61,15 @@
         <div class="w-1/2">
           <HotProducts
             :items="hotItems"
-            :categoryColor="this.$store.getters.getCategory(this.$route.params.name).color"
+            :category="this.$store.getters.getCategory(this.$route.params.name)"
           />
         </div>
-        <div class="w-1/2">
+        <div class="w-1/2 pl-6px">
           <Card
-            :img="dogCoolingMat"
+            :img="dogCoolingMatLarge"
+            :name="highlightedProduct.name"
+            :description="highlightedProduct.description"
+            :price="highlightedProduct.price"
             imgAlt="Dog cooling mat"
             :categoryColor="this.$store.getters.getCategory(this.$route.params.name).color"
             hoverFrame="details"
@@ -91,6 +94,7 @@ import Card from '@/components/cards/Card'
 import ProductColors from '@/components/product/ProductColors'
 
 import dogCoolingMat from '@/assets/images/products/dog_cooling_mat--thumbnail.png'
+import dogCoolingMatLarge from '@/assets/images/products/dog_cooling_mat.jpg'
 
 import homeSliderImages from '@/services/homeSliderImages'
 import collections from '@/services/productOptions'
@@ -110,6 +114,7 @@ export default {
       homeSliderImages,
       collections,
       dogCoolingMat,
+      dogCoolingMatLarge,
       hotItems,
       tags: [
         {
@@ -121,6 +126,11 @@ export default {
           name: 'Splash \'n Fun',
         },
       ],
+      highlightedProduct: {
+        name: 'Cooling mat',
+        description: 'Hier komt een deel van de beschrijvende tekst die bij elk product hoort. Ook terug te vinden in het product detail.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius..',
+        price: '15,49',
+      },
       toggleFilter: true,
       minPrice: 8,
       maxPrice: 499,

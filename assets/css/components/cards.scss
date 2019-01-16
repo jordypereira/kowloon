@@ -4,9 +4,15 @@ $card-padding-right: 5px;
 $card-padding-bottom: 6px;
 $card-padding-left: 5px;
 
+// md
 $card-md-width: 237px;
 $card-md-height: 200px;
+
+// lg
 $card-lg-width: 477px;
+$card-lg-padding-bottom: 3px;
+$card-lg-padding-right: 3px;
+$card-lg-img-padding-right: 2px;
 
 // Hover Frame
 $card-sm-hover-frame-max-height: 136px;
@@ -57,6 +63,11 @@ $card-md-stacked-height: 185px;
 
   &-lg{
     width: $card-lg-width;
+    padding-bottom: $card-lg-padding-bottom;
+    padding-right: $card-lg-padding-right;
+    img {
+      padding-right: $card-lg-img-padding-right;
+    }
     .card-hover {
       max-height: $card-lg-hover-frame-max-height;
     }

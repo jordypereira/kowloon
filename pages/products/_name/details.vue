@@ -15,7 +15,7 @@
       <ProductSpecifications :dimensions="dimensions" class="mt-19px mb-50px"/>
       <RelatedProducts
         class="mb-58px"
-        :category="this.$store.getters.getCategory(this.$route.params.details)"
+        :category="this.$store.getters.getCategory(this.$route.params.name)"
       />
       <FaqComponent class="mb-17px"/>
       <NewsletterBanner class="mb-4"/>
