@@ -7,9 +7,19 @@ $btn-input-size: 45px;
 $btn-sm-padding-x: 21px;
 $btn-sm-padding-y: 9px;
 
-@mixin btn {
+.btn {
   @extend .text-button;
   padding: $btn-padding-y $btn-padding-x;
+  @apply text-white;
+  // Sizes
+  &.btn-sm {
+    @apply text-sm;
+    padding: $btn-sm-padding-y $btn-sm-padding-x;
+  }
+  // Colors
+  &.btn-primary {
+    @apply bg-pink;
+  }
 }
 
 .btn-input {
@@ -24,13 +34,4 @@ $btn-rounded-size: 34px;
   width: $btn-rounded-size;
   height: $btn-rounded-size;
   @apply rounded-full text-xl flex justify-center items-center;
-}
-
-.btn-primary {
-  @include btn;
-  @apply bg-pink text-white;
-  &.btn-sm {
-    @apply text-sm;
-    padding: $btn-sm-padding-y $btn-sm-padding-x;
-  }
 }

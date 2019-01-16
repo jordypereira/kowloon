@@ -25,7 +25,7 @@
         <p class="pr-5">{{ description }}</p>
         <div class="flex justify-between items-center mt-4">
           <p class="text-base">€ {{ price }}</p>
-          <button class="btn btn-sm btn-primary">Want to know more?</button>
+          <button class="btn btn-sm" :class="`bg-${categoryColor}`">Want to know more?</button>
         </div>
       </div>
     </div>

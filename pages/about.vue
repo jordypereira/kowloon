@@ -52,7 +52,7 @@
               placeholder="Write your message here."
             ></textarea>
           </div>
-          <button class="btn-primary" aria-labelledby="Sends your message to us.">Send</button>
+          <button class="btn btn-primary" aria-labelledby="Sends your message to us.">Send</button>
         </form>
       </section>
 
