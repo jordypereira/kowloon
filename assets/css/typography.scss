@@ -20,6 +20,7 @@ address {
 body {
   @apply font-body font-normal text-sm leading-normal text-white;
   letter-spacing: -0.28px;
+  overflow-x: hidden;
 }
 
 .title {

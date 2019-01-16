@@ -7,3 +7,7 @@ $home-bullet-border-color: rgba(149, 149, 149, 0.4);
 .home-bullet-active {
   @apply bg-black;
 }
+
+.swiper-container {
+  max-width: calc(100vw - 60px);
+}

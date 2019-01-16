@@ -21,16 +21,19 @@ export default {
         swiperOption: {
           spaceBetween: 30,
           centeredSlides: true,
-          // autoplay: {
-          //   delay: 2500,
-          //   disableOnInteraction: false
-          // },
+          autoplay: {
+            delay: 2500,
+            disableOnInteraction: false
+          },
+          roundLengths: true,
           pagination: {
             el: '.swiper-pagination',
             clickable: true,
             bulletClass: 'home-bullet',
             bulletActiveClass: 'home-bullet-active',
           },
+          watchSlidesProgress: true,
+          watchSlidesVisibility: true,
         },
       }
     },

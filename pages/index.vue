@@ -1,10 +1,8 @@
 <template>
   <div>
     <!-- Slider -->
-    <header class="relative flex justify-center w-full">
-      <div class="mt-13 absolute z-10">
-        <img src="@/assets/images/Kowloon_logo.svg" alt="Kowloon Logo">
-      </div>
+    <header class="relative flex justify-center max-w-full">
+      <i class="mt-13 absolute z-10 icon icon-kowloon"></i>
       <HomeSlider :images="homeSliderImages"/>
     </header>
 
