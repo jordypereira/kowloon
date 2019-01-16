@@ -21,6 +21,7 @@
 import dogCoolingMat from "@/assets/images/products/dog_cooling_mat.jpg";
 
 export default {
+  name: 'ProductImage',
   data() {
     return {
       productImages: [

@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: 'RelatedProducts',
+  name: 'HomeSlider',
   props: {
       images: Array,
   },

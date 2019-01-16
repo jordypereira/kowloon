@@ -45,6 +45,7 @@ import BirdSymbol from '@/components/symbols/bird'
 import HamsterSymbol from '@/components/symbols/hamster'
 
 export default {
+  name: 'TheNavBar',
   components: {
       BirdSymbol,
   },

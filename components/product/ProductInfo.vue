@@ -35,6 +35,7 @@ import Tag from '@/components/Tag'
 import ProductColors from '@/components/product/ProductColors'
 
 export default {
+  name: 'ProductInfo',
   props: {
     productColors: Array,
     tags: Array,

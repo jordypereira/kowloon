@@ -13,7 +13,10 @@
         </div>
       </div>
       <ProductSpecifications :dimensions="dimensions" class="mt-19px mb-50px"/>
-      <RelatedProducts class="mb-58px" :category="getCategory(this.$route.params.details)"/>
+      <RelatedProducts
+        class="mb-58px"
+        :category="this.$store.getters.getCategory(this.$route.params.details)"
+      />
       <FaqComponent class="mb-17px"/>
       <NewsletterBanner class="mb-4"/>
     </section>
@@ -44,69 +47,13 @@ export default {
       productTags: [
         {
           id: 1,
-          ...this.getCategory(this.$route.params.name)
+          ...this.$store.getters.getCategory(this.$route.params.name)
         },
         {
           id: 2,
           name: 'Splash \'n Fun',
         },
       ],
-    }
-  },
-  methods: {
-    getCategory(name) {
-      switch (name) {
-        case 'dog':
-        case 'Dog':
-        case 'dogs':
-        case 'Dogs':
-          return {
-            name: 'Dogs',
-            color: 'pink',
-          }
-          break;
-        case 'cat':
-        case 'Cat':
-        case 'cats':
-        case 'Cats':
-          return {
-            name: 'Cats',
-            color: 'indigo',
-          }
-          break;
-        case 'fish':
-        case 'Fish':
-          return {
-            name: 'Fishes',
-            color: 'yellow',
-          }
-          break;
-        case 'bird':
-        case 'Bird':
-        case 'birds':
-        case 'Birds':
-          return {
-            name: 'Birds',
-            color: 'green-light',
-          }
-          break;
-        case 'small-animals':
-        case 'small animals':
-        case 'Small-Animals':
-        case 'Small Animals':
-          return {
-            name: 'Small Animals',
-            color: 'blue-light',
-          }
-          break;
-      
-        default: 
-          return {
-              name: 'Other',
-              color: 'beige',
-            }
-          break;
-      }
     }
   },
 }

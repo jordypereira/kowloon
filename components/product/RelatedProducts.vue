@@ -29,22 +29,22 @@ import dogCoolingMat from '@/assets/images/products/dog_cooling_mat--thumbnail.p
 export default {
   name: 'RelatedProducts',
   props: {
-      category: Object,
+    category: Object,
   },
   components: {
-      Card,
+    Card,
   },
   data () {
-      return {
-        swiperOption: {
-          loop: true,
-          slidesPerView: 'auto',
-          centeredSlides: false,
-          spaceBetween: 10,
-        },
-        dogCoolingMat,
-      }
-    },
+    return {
+      swiperOption: {
+        loop: true,
+        slidesPerView: 'auto',
+        centeredSlides: false,
+        spaceBetween: 10,
+      },
+      dogCoolingMat,
+    }
+  },
 }
 </script>
 

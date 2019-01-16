@@ -17,6 +17,7 @@ import smallAnimalsSymbol from '@/assets/images/symbols/hamster.svg'
 import otherSymbol from '@/assets/images/symbols/other.svg'
 
 export default {
+  name: 'Categories',
   components: {
       CategoryItem,
   },
