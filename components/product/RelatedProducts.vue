@@ -13,8 +13,20 @@
           />
         </div>
       </div>
-      <div v-if="arrows" class="swiper-button-prev" slot="button-prev"></div>
-      <div v-if="arrows" class="swiper-button-next" slot="button-next"></div>
+      <div v-if="arrows" class="swiper-button-prev" slot="button-prev">
+        <div class="z-10 relative w-4/5 h-full flex justify-center items-center">
+          <div class="icon icon-arrow icon-arrow-prev"></div>
+        </div>
+        <div class="swiper-button-background"></div>
+      </div>
+      <div v-if="arrows" class="swiper-button-next" slot="button-next">
+        <div class="z-10 w-4/5 h-full flex justify-center items-center absolute">
+          <div class="absolute pin-r">
+            <div class="icon icon-arrow icon-arrow-next"></div>
+          </div>
+        </div>
+        <div class="swiper-button-background"></div>
+      </div>
     </div>
     <div class="text-right w-full mt-14px">
       <a href="#" class="section-link">view more</a>
@@ -43,6 +55,10 @@ export default {
         slidesPerView: 'auto',
         centeredSlides: false,
         spaceBetween: 10,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
       },
       dogCoolingMat,
     }

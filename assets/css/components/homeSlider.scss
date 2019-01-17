@@ -1,5 +1,10 @@
 $home-bullet-border-color: rgba(149, 149, 149, 0.4);
 
+// Swiper Arrows
+$swiper-button-size: 35px;
+$swiper-button-distance: 15px;
+$swiper-button-background-size: 5px;
+
 .home-bullet {
   @apply bg-white opacity-100 mr-15px border-none rounded-full w-2 h-2 inline-block;
   box-shadow: 0 0 0 3px $home-bullet-border-color;
@@ -16,4 +21,29 @@ $home-bullet-border-color: rgba(149, 149, 149, 0.4);
 
 .home-swiper-wrapper {
   min-height: 175px;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  background: none;
+  @apply bg-white rounded-full;
+  width: $swiper-button-size;
+  height: $swiper-button-size;
+
+  .swiper-button-background {
+    background: rgba(225, 225, 225, 0.21);
+    @apply absolute rounded-full;
+
+    width: $swiper-button-size + $swiper-button-background-size * 2;
+    height: $swiper-button-size + $swiper-button-background-size * 2;
+
+    top: - $swiper-button-background-size;
+    left: - $swiper-button-background-size;
+  }
+}
+
+.swiper-button-prev {
+  left: $swiper-button-distance;
+}
+.swiper-button-next {
+  right: $swiper-button-distance;
 }

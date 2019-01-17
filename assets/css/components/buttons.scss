@@ -1,11 +1,14 @@
 $btn-padding-x: 96px;
 $btn-padding-y: 13px;
 
-$btn-input-size: 45px;
-
 // small
 $btn-sm-padding-x: 21px;
 $btn-sm-padding-y: 9px;
+
+// Others
+$btn-input-size: 45px;
+$btn-rounded-size: 34px;
+
 
 .btn {
   @extend .text-button;
@@ -30,8 +33,6 @@ $btn-sm-padding-y: 9px;
   height: $btn-input-size;
   @apply bg-black text-white flex justify-center items-center;
 }
-
-$btn-rounded-size: 34px;
 
 .btn-rounded {
   width: $btn-rounded-size;

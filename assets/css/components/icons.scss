@@ -61,6 +61,17 @@
     height: 48px;
     background-image: url(~assets/images/symbols/loader.svg);
   }
+
+  &-arrow {
+    width: 14px;
+    height: 25px;
+    &-prev {
+      background-image: url(~assets/images/symbols/prev.png);
+    }
+    &-next {
+      background-image: url(~assets/images/symbols/next.png);
+    }
+  }
   
   &-dog {
     background-image: url(~assets/images/symbols/dog.svg);
