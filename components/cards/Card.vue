@@ -3,6 +3,7 @@
     <div
       class="card-body z-10"
       :class="{ 
+      'card-xs': xs, 
       'card-md': md, 
       'card-sm': sm, 
       'card-lg': lg, 
@@ -63,6 +64,10 @@ export default {
       url: {
         type: String,
         default: '',
+      },
+      xs: {
+        type: Boolean,
+        default: false,
       },
       sm: {
         type: Boolean,

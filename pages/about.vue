@@ -7,7 +7,7 @@
         <img src="~assets/images/about/header.jpg" alt="Header image of a girl hugging a white dog">
       </div>
     </header>
-    <main class="container mx-auto px-4 md:px-0 text-white mt-8 md:mt-16">
+    <main class="container mx-auto px-4 lg:px-0 text-white mt-8 md:mt-16">
       <!-- Icon and Tag -->
       <div class="flex">
         <i class="mr-5px icon icon-k"></i>

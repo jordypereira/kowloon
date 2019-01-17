@@ -1,0 +1,11 @@
+.container {
+  @screen xs {
+    max-width: 576px;
+  }
+  @screen md {
+    max-width: 768px;
+  }
+  @screen lg {
+    max-width: 960px;
+  }
+}

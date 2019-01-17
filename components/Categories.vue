@@ -1,9 +1,29 @@
 <template>
-  <div class="flex flex-wrap justify-between">
-    <div v-for="item in categoryList" :key="item.id" class="flex">
-      <CategoryItem :category="item" class/>
-      <div v-if="item.id !== categoryList.length" class="divider-vertical mx-49px"></div>
-    </div>
+  <div
+    class="flex flex-wrap justify-between md:justify-start lg:justify-around items-center md:items-end"
+  >
+    <template v-for="item in categoryList">
+      <div
+        :key="`category-${item.id}`"
+        class="w-full xs:w-1/3 sm:w-1/6 md:w-1/5 lg:w-auto flex justify-center items-center mt-8"
+        :class="[(item.id % 2 !== 0) ? 'xs:justify-start sm:justify-center' : 'xs:justify-end sm:justify-center']"
+      >
+        <CategoryItem :category="item"/>
+      </div>
+
+      <div
+        :key="`divider-desktop-${item.id}`"
+        v-if="item.id !== categoryList.length"
+        class="hidden sm:block divider-vertical"
+      ></div>
+      <div
+        :key="`divider-mobile-${item.id}`"
+        v-if="item.id % 2 !== 0"
+        class="hidden xs:flex sm:hidden xs:w-1/3 sm:w-auto justify-center mt-8"
+      >
+        <div class="divider-vertical"></div>
+      </div>
+    </template>
   </div>
 </template>
 

@@ -11,6 +11,7 @@
  */
  @tailwind preflight;
 
+ 
  /**
   * This injects any component classes registered by plugins.
   *
@@ -29,12 +30,13 @@
  @import 'components/buttons';
  @import 'components/forms';
  @import 'components/images';
+ @import 'components/container';
  
  @import 'components/homeSlider';
  @import 'components/productColors';
  @import 'components/productShapes';
  @import 'components/productImages';
- 
+
  /**
   * Here you would add any of your custom component classes; stuff that you'd
   * want loaded *before* the utilities so that the utilities could still

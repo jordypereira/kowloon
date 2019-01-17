@@ -3,7 +3,7 @@
     <header class="flex justify-center mt-13 mb-49px">
       <i class="icon icon-kowloon"></i>
     </header>
-    <main class="flex flex-col px-4 md:px-0">
+    <main class="flex flex-col px-4 lg:px-0">
       <div class="flex -mx-27px mb-10px">
         <div class="pl-27px">
           <ProductImage/>

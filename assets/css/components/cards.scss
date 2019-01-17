@@ -4,20 +4,25 @@ $card-padding-right: 5px;
 $card-padding-bottom: 6px;
 $card-padding-left: 5px;
 
+// xs
+$card-xs-width: 80px;
+$card-xs-height: 80px;
+$card-xs-hover-frame-max-height: 80px;
+
+// sm
+$card-sm-hover-frame-max-height: 136px;
+
 // md
 $card-md-width: 235px;
 $card-md-min-height: 94px;
 $card-md-height: 200px;
+$card-md-hover-frame-max-height: 158px;
 
 // lg
 $card-lg-width: 477px;
 $card-lg-padding-bottom: 3px;
 $card-lg-padding-right: 3px;
 $card-lg-img-padding-right: 2px;
-
-// Hover Frame
-$card-sm-hover-frame-max-height: 136px;
-$card-md-hover-frame-max-height: 158px;
 $card-lg-hover-frame-max-height: 267px;
 
 // Stacked Card
@@ -30,6 +35,15 @@ $card-md-stacked-height: 185px;
     @apply bg-grey-800 border border-grey;
     padding: $card-padding-top $card-padding-right $card-padding-bottom $card-padding-left;
   }
+
+  &-xs {
+    width: $card-xs-width;
+    height: $card-xs-height;
+    .card-hover {
+      max-height: $card-xs-hover-frame-max-height;
+    }
+  }
+    
   &-sm {
     .card-hover {
       max-height: $card-sm-hover-frame-max-height;

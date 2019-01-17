@@ -6,15 +6,15 @@
       <HomeSlider :images="homeSliderImages"/>
     </header>
 
-    <main class="container px-4 md:px-0 mx-auto text-white">
+    <main class="container px-4 lg:px-0 mx-auto text-white">
       <!-- Description -->
       <p class="hidden md:block text-center w-3/4 mx-auto mt-51px">{{ introText.web }}</p>
-      <p class="mx-auto mt-28px">{{ introText.mobile }}</p>
+      <p class="md:hidden mx-auto mt-28px">{{ introText.mobile }}</p>
 
       <!-- Categories -->
-      <Categories class="mt-10 mx-12 md:mx-0"/>
+      <Categories class="mt-10 xs:mx-12 md:mx-0"/>
 
-      <!-- Hot Items -->
+      <!-- Hot Items Desktop -->
       <section v-if="hotItems" class="hidden md:block mt-16">
         <h1 class="title uppercase mb-28px">Hot Items.</h1>
         <HotProducts :items="hotItems" :itemsToShow="3"/>
@@ -23,13 +23,15 @@
         </div>
       </section>
 
+      <!-- Hot Items Mobile -->
       <section class="block md:hidden mt-16">
         <h1 class="title uppercase mb-28px">Hot Items.</h1>
-        <RelatedProducts
-          class="mb-58px"
+        <MiniSlider
+          class="mb-4"
           :category="this.$store.getters.getCategory(this.$route.params.name)"
           :url="`/products/${this.$store.getters.getCategory(this.$route.params.name).name}/details`"
         />
+        <a href="#" class="section-link mt-4">Visit the store</a>
       </section>
 
       <!-- NewsletterBanner -->
@@ -43,7 +45,7 @@ import Categories from '@/components/Categories'
 import HomeSlider from '@/components/HomeSlider'
 import NewsletterBanner from '@/components/NewsletterBanner'
 import HotProducts from '@/components/product/HotProducts'
-import RelatedProducts from '~/components/product/RelatedProducts'
+import MiniSlider from '~/components/product/MiniSlider'
 
 import hotItems from '@/services/hotItems'
 import homeSliderImages from '@/services/homeSliderImages'
@@ -55,7 +57,7 @@ export default {
     Categories,
     NewsletterBanner,
     HotProducts,
-    RelatedProducts,
+    MiniSlider,
   },
   data() {
     return {
