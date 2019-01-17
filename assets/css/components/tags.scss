@@ -1,6 +1,12 @@
 $tag-size: 10px;
 $tag-color: config('colors.black');
 
+// Padding
+$tag-padding-top: 6px;
+$tag-padding-right: 10px;
+$tag-padding-bottom: 6px;
+$tag-padding-left: 2px;
+
 .tag-arrow {
   width: 0;
   height: 0;
@@ -12,7 +18,7 @@ $tag-color: config('colors.black');
 .tag-body {
   @apply bg-black flex items-center justify-between rounded-r-sm;
   height: 22px;
-  padding: 0 7px 0 2px;
+  padding: $tag-padding-top $tag-padding-right $tag-padding-bottom $tag-padding-left;
   .tag-name-without-color {
     @apply ml-7px;
   }

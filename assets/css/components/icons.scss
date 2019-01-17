@@ -17,9 +17,13 @@
   }
 
   &-kowloon {
-    width: 288px;
-    height: 89px;
+    width: 208px;
+    height: 64px;
     background-image: url(~assets/images/Kowloon_logo.svg);
+    @screen md {
+      width: 288px;
+      height: 89px;
+    }
   }
   
   &-hamburger {

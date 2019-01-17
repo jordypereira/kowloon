@@ -10,7 +10,10 @@ $btn-sm-padding-y: 9px;
 .btn {
   @extend .text-button;
   padding: $btn-padding-y $btn-padding-x;
-  @apply text-white;
+  @apply text-white w-full;
+  @screen md {
+    @apply .w-auto;
+  }
   // Sizes
   &.btn-sm {
     @apply text-sm;

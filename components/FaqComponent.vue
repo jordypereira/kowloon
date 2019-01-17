@@ -18,7 +18,7 @@
         <div v-if="activeFaq === q.id" class="ml-19px mt-11px">{{ q.description }}</div>
       </div>
     </div>
-    <div class="text-right w-full">
+    <div class="mt-8 md:mt-0 text-center md:text-right w-full">
       <a href="#" class="section-link">More questions?</a>
     </div>
   </section>

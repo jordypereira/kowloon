@@ -2,15 +2,13 @@
   <div>
     <!-- Header Image -->
     <header class="relative flex justify-center w-full">
-      <div class="mt-13 absolute z-10">
-        <img src="@/assets/images/Kowloon_logo.svg" alt="Kowloon Logo">
-      </div>
-      <div class="w-full max-h-480px">
-        <img src="~assets/images/about/header.jpg" alt="Slider Image of a dog">
+      <i class="icon icon-kowloon mt-8 md:mt-13 absolute z-10"></i>
+      <div class="header-image">
+        <img src="~assets/images/about/header.jpg" alt="Header image of a girl hugging a white dog">
       </div>
     </header>
-    <main class="container mx-auto text-white mt-16">
-      <!-- Tag -->
+    <main class="container mx-auto px-4 text-white mt-16">
+      <!-- Icon and Tag -->
       <div class="flex">
         <i class="mr-5px icon icon-k"></i>
         <Tag tagName="about us" class="px-1"/>
@@ -24,7 +22,7 @@
           <h2 class="section-title uppercase mb-14px">Kowloon</h2>
           <div v-html="introText"></div>
         </div>
-        <address class="w-236px pb-5 pl-5 border-l border-b border-grey-650">
+        <address class="mt-12 md:mt-0 w-236px pb-5 pl-5 border-l border-b border-grey-650">
           <h2 class="section-title uppercase mb-14px">Contact</h2>
           <ul>
             <li>Decks Johan</li>
@@ -35,7 +33,7 @@
       </section>
 
       <!-- Message form -->
-      <section class="my-20">
+      <section class="my-12 md:my-20">
         <h2 class="section-title uppercase mb-28px">Leave us a message</h2>
         <form>
           <div class="flex flex-col mb-8">

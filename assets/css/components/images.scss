@@ -1,0 +1,13 @@
+.header-image {
+  height: 175px;
+  width: 100vw;
+  img {
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+  }
+  @screen md {
+    height: 480px;
+  }
+}

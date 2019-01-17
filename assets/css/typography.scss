@@ -26,8 +26,11 @@ body {
 
 .title {
   @apply font-section font-medium text-white leading-none;
-  font-size: 40px;
+  font-size: 25px;
   letter-spacing: -0.8px;
+  @screen md {
+    font-size: 40px;
+  }
 }
 
 .sub-title {
@@ -37,8 +40,11 @@ body {
 }
 
 .section-title {
-  @apply font-section font-medium text-white text-xl leading-none;
+  @apply font-section font-medium text-white text-lg leading-none;
   letter-spacing: -0.4px;
+  @screen md {
+    @apply text-xl;
+  }
 }
 
 .category-title {
