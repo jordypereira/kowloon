@@ -5,8 +5,7 @@
     <template v-for="item in categoryList">
       <div
         :key="`category-${item.id}`"
-        class="w-full xs:w-1/3 sm:w-1/6 md:w-1/5 lg:w-auto flex justify-center items-center mt-8"
-        :class="[(item.id % 2 !== 0) ? 'xs:justify-start sm:justify-center' : 'xs:justify-end sm:justify-center']"
+        class="w-full xs:w-2/5 sm:w-1/6 md:w-1/5 lg:w-auto flex justify-center items-center mt-8"
       >
         <CategoryItem :category="item"/>
       </div>
@@ -19,7 +18,7 @@
       <div
         :key="`divider-mobile-${item.id}`"
         v-if="item.id % 2 !== 0"
-        class="hidden xs:flex sm:hidden xs:w-1/3 sm:w-auto justify-center mt-8"
+        class="hidden xs:flex sm:hidden xs:w-1/5 sm:w-auto justify-center mt-8"
       >
         <div class="divider-vertical"></div>
       </div>

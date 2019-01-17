@@ -12,8 +12,7 @@
       <p class="md:hidden mx-auto mt-28px">{{ introText.mobile }}</p>
 
       <!-- Categories -->
-      <Categories class="mt-10 xs:mx-12 md:mx-0"/>
-
+      <Categories class="mt-10 md:mx-0"/>
       <!-- Hot Items Desktop -->
       <section v-if="hotItems" class="hidden md:block mt-16">
         <h1 class="title uppercase mb-28px">Hot Items.</h1>
