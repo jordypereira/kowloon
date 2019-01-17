@@ -8,10 +8,11 @@
 
     <main class="container px-4 md:px-0 mx-auto text-white">
       <!-- Description -->
-      <p class="text-center w-3/4 mx-auto mt-51px">{{ introText }}</p>
+      <p class="hidden md:block text-center w-3/4 mx-auto mt-51px">{{ introText.web }}</p>
+      <p class="mx-auto mt-28px">{{ introText.mobile }}</p>
 
       <!-- Categories -->
-      <Categories class="mt-10"/>
+      <Categories class="mt-10 mx-12 md:mx-0"/>
 
       <!-- Hot Items -->
       <section v-if="hotItems" class="hidden md:block mt-16">
@@ -58,7 +59,10 @@ export default {
   },
   data() {
     return {
-      introText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      introText: {
+        web: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        mobile: 'Hier komt een tekst, let wel deze is korter en bondiger dan de desktop en tabletversie. dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qu deserunt mollit anim id est laborum.',
+      },
       hotItems,
       homeSliderImages,
     }
