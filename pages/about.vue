@@ -35,7 +35,7 @@
       <!-- Message form -->
       <section class="my-12 md:my-20">
         <h2 class="section-title uppercase mb-28px">Leave us a message</h2>
-        <form>
+        <form name="contact" method="POST" data-netlify="true">
           <div class="flex flex-col mb-8">
             <label for="email" class="mb-3 sub-title">E-mail</label>
             <input type="text" class="input-text" placeholder="name@domain.com" name="email">
