@@ -1,8 +1,8 @@
 <template>
   <div class="flex flex-wrap justify-between">
     <div v-for="item in categoryList" :key="item.id" class="flex">
-      <CategoryItem :category="item"/>
-      <div v-if="item.id !== categoryList.length" class="divider-vertical"></div>
+      <CategoryItem :category="item" class/>
+      <div v-if="item.id !== categoryList.length" class="divider-vertical mx-49px"></div>
     </div>
   </div>
 </template>

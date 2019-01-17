@@ -3,7 +3,7 @@
     <header class="flex justify-center mt-13 mb-49px">
       <i class="icon icon-kowloon"></i>
     </header>
-    <section class="flex flex-col">
+    <main class="flex flex-col px-4 md:px-0">
       <div class="flex -mx-27px mb-10px">
         <div class="pl-27px">
           <ProductImage/>
@@ -13,16 +13,17 @@
         </div>
       </div>
       <ProductSpecifications :dimensions="dimensions" class="mt-19px mb-50px"/>
-      <h2 class="section-title uppercase mb-22px">Gerelateerde Producten</h2>
-      <RelatedProducts
-        class="mb-58px"
-        :category="this.$store.getters.getCategory(this.$route.params.name)"
-        :url="`/products/${this.$store.getters.getCategory(this.$route.params.name).name}/details`"
-        arrows
-      />
+      <section class="mb-58px">
+        <h2 class="section-title uppercase mb-22px">Gerelateerde Producten</h2>
+        <RelatedProducts
+          :category="this.$store.getters.getCategory(this.$route.params.name)"
+          :url="`/products/${this.$store.getters.getCategory(this.$route.params.name).name}/details`"
+          arrows
+        />
+      </section>
       <FaqComponent class="mb-17px"/>
       <NewsletterBanner class="mb-4"/>
-    </section>
+    </main>
   </div>
 </template>
 
