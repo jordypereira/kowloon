@@ -1,4 +1,5 @@
 export const state = () => ({
+  navToggle: false,
   categories: {
     dog: {
       name: 'Dogs',
@@ -31,6 +32,15 @@ export const state = () => ({
     },
   }
 })
+
+export const mutations = {
+  closeNav (state) {
+    state.navToggle = false
+  },
+  toggleNav (state) {
+    state.navToggle = !state.navToggle
+  },
+}
 
 export const getters = {
   getCategory: state => name => {

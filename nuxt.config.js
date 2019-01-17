@@ -52,6 +52,10 @@ module.exports = {
     mode: 'postcss',
   },
 
+  router: {
+    middleware: 'nav'
+  },
+
   /*
   ** Build configuration
   */

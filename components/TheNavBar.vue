@@ -4,7 +4,7 @@
       <div class="h-screen flex flex-col justify-between">
         <div class="flex flex-col">
           <!-- Nav Toggler -->
-          <div class="relative z-10" @click="navToggle = !navToggle">
+          <div class="relative z-10" @click="toggleNav()">
             <div class="nav-toggle" :class="[navToggle ? 'hidden md:flex' : 'flex']">
               <i
                 class="icon icon-hamburger hover:cursor-pointer"
@@ -74,6 +74,8 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+
 import DogSymbol from '@/components/symbols/dog'
 import CatSymbol from '@/components/symbols/cat'
 import FishSymbol from '@/components/symbols/fish'
@@ -119,7 +121,11 @@ export default {
           svg: HamsterSymbol,
         },
       ],
-      navToggle: false,
+    }
+  },
+  computed: {
+    navToggle() {
+      return this.$store.state.navToggle
     }
   },
   methods: {
@@ -129,7 +135,10 @@ export default {
       } else {
         return `hover:text-${item.color} ${item.icon}`
       }
-    }
+    },
+    ...mapMutations([
+      'toggleNav',
+    ]),
   },
 }
 </script>
