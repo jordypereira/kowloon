@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="23" viewBox="0 0 24 23">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="X_close" data-name="X close" class="cls-1" d="M284.161,36l6.571-8.017q0.375-.471,1.25-1.726,0.589,0.832,1.143,1.538L299.714,36H304l-9.911-12.159L303.286,13h-3.768l-5.268,6.1a30.142,30.142,0,0,0-2.071,2.62,33.626,33.626,0,0,0-2.108-2.824l-4.75-5.9H281.2l8.929,11.014L280,36h4.161Z" transform="translate(-280 -13)"/>
+</svg>

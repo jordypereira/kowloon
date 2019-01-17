@@ -4,6 +4,7 @@ $nav-item-margin-top: 17px;
 
 // Open
 $nav-open-width: 217px;
+$nav-mobile-open-width: 265px;
 
 // Nav toggle
 $nav-toggle-margin-b: 12px;
@@ -25,14 +26,26 @@ nav {
   height: $nav-height;
   transition: 1s;
   &.nav-open {
-    width: $nav-open-width;
-    // @apply pin-l pin-t z-10 justify-start;
+    width: $nav-mobile-open-width;
+    @apply static bg-black;
+    @screen md {
+      width: $nav-open-width;
+    }
   }
   .nav-toggle {
-    width: 60px;
-    height: 52px;
+    padding: 7px;
     margin-bottom: $nav-toggle-margin-b;
-    @apply bg-black-darker;
+    @screen md {
+      padding: 15px;
+      width: 60px;
+      height: 52px;
+      @apply bg-black-darker;
+    }
+  }
+  .nav-toggle-x {
+    right: -35px;
+    top: 13px;
+    @apply absolute text-3xl z-10;
   }
   .nav-search {
     padding: $nav-search-padding-t $nav-search-padding-r $nav-search-padding-b

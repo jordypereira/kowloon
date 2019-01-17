@@ -1,56 +1,66 @@
 <template>
   <div class="relative">
-    <nav
-      class="static flex flex-col justify-between bg-black h-full"
-      :class="{'nav-open': navToggle}"
-    >
-      <div class="flex flex-col">
-        <div class="nav-toggle flex justify-center items-center">
-          <i
-            class="icon icon-hamburger hover:cursor-pointer"
-            aria-label="Toggle the navigation pane."
-            @click="navToggle = !navToggle"
-          ></i>
-        </div>
-        <div class="flex items-center nav-search">
-          <div class="w-60px flex justify-center">
-            <i class="icon icon-search"></i>
+    <nav class="absolute md:static md:bg-black h-full" :class="{'nav-open': navToggle}">
+      <div class="h-screen flex flex-col justify-between">
+        <div class="flex flex-col">
+          <!-- Nav Toggler -->
+          <div class="relative z-10" @click="navToggle = !navToggle">
+            <div class="nav-toggle" :class="[navToggle ? 'hidden md:flex' : 'flex']">
+              <i
+                class="icon icon-hamburger hover:cursor-pointer"
+                aria-label="Toggle the navigation pane."
+              ></i>
+            </div>
+            <i v-if="navToggle" class="block md:hidden icon icon-x-close nav-toggle-x"/>
           </div>
-          <span v-if="navToggle" class="text-nav text-grey-400">Search</span>
-        </div>
-        <div class="flex items-center nav-faq">
-          <div class="w-60px flex justify-center">
-            <i class="icon icon-faq"></i>
+          <!-- Icon Search -->
+          <div class="items-center nav-search" :class="[!navToggle ? 'hidden md:flex' : 'flex']">
+            <div class="w-60px flex justify-center">
+              <i class="icon icon-search"></i>
+            </div>
+            <span v-if="navToggle" class="text-nav text-grey-400">Search</span>
           </div>
-          <span v-if="navToggle" class="text-nav text-grey-400">FAQ</span>
-        </div>
-        <hr class="divider">
-        <div class="flex items-center">
-          <div class="w-60px flex justify-center">
-            <nuxt-link to="/about" class="icon icon-mail"></nuxt-link>
+          <!-- Icon FAQ -->
+          <div class="items-center nav-faq" :class="[!navToggle ? 'hidden md:flex' : 'flex']">
+            <div class="w-60px flex justify-center">
+              <i class="icon icon-faq"></i>
+            </div>
+            <span v-if="navToggle" class="text-nav text-grey-400">FAQ</span>
           </div>
-          <span v-if="navToggle" class="text-nav text-grey-400">Contact</span>
-        </div>
-        <hr class="divider">
-        <div class="nav-items" v-for="(item, i) in navItems" :key="i">
-          <div class="nav-item">
-            <nuxt-link
-              :to="`/products/${item.name[0]}/view`"
-              :aria-label="`Links to the ${item.name[0]} product page.`"
-              class="text-white no-underline flex items-center"
-            >
-              <component
-                :is="item.svg"
-                class="text-white fill-current w-60px"
-                :class="navItemClass(item)"
-              />
-              <span v-if="navToggle" class="text-nav">{{ item.name[3] }}</span>
-            </nuxt-link>
+          <!-- Icon Contact -->
+          <hr class="divider" :class="[!navToggle ? 'hidden md:block' : 'block']">
+          <div class="items-center" :class="[!navToggle ? 'hidden md:flex' : 'flex']">
+            <div class="w-60px flex justify-center">
+              <nuxt-link to="/about" class="icon icon-mail"></nuxt-link>
+            </div>
+            <span v-if="navToggle" class="text-nav text-grey-400">Contact</span>
+          </div>
+          <hr class="divider" :class="[!navToggle ? 'hidden md:block' : 'block']">
+          <!-- Icons Categories -->
+          <div
+            class="nav-items"
+            v-for="(item, i) in navItems"
+            :key="i"
+            :class="[!navToggle ? 'hidden md:block' : 'block']"
+          >
+            <div class="nav-item">
+              <nuxt-link
+                :to="`/products/${item.name[0]}/view`"
+                :aria-label="`Links to the ${item.name[0]} product page.`"
+                class="text-white no-underline flex items-center"
+              >
+                <component
+                  :is="item.svg"
+                  class="text-white fill-current w-60px"
+                  :class="navItemClass(item)"
+                />
+                <span v-if="navToggle" class="text-nav">{{ item.name[3] }}</span>
+              </nuxt-link>
+            </div>
           </div>
         </div>
-      </div>
-      <div>
-        <div class="nav-logo flex justify-center">
+        <!-- Icon Logo -->
+        <div class="nav-logo pl-4" :class="[!navToggle ? 'hidden md:flex' : 'flex']">
           <nuxt-link
             to="/"
             class="icon"
@@ -109,7 +119,7 @@ export default {
           svg: HamsterSymbol,
         },
       ],
-      navToggle: true,
+      navToggle: false,
     }
   },
   methods: {

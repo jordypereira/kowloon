@@ -7,7 +7,8 @@
         "extends",
         "tailwind",
         "mixin",
-        "include"
+        "include",
+        "screen"
       ]
     }],
     "block-no-empty": null,
