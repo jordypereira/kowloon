@@ -51,7 +51,12 @@
       </div>
       <div>
         <div class="nav-logo flex justify-center">
-          <nuxt-link to="/" class="icon icon-k" aria-label="Links to the home page"></nuxt-link>
+          <nuxt-link
+            to="/"
+            class="icon"
+            :class="[ navToggle ? 'icon-k-full' : 'icon-k' ]"
+            aria-label="Links to the home page"
+          ></nuxt-link>
         </div>
       </div>
     </nav>
