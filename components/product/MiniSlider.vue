@@ -2,20 +2,10 @@
   <section>
     <div v-swiper:mySwiper="swiperOption" class="bg-grey-800 border border-grey m-0">
       <div class="swiper-wrapper">
-        <div v-for="i in 10" :key="i">
-          <!-- <Card
-            :img="dogCoolingMat"
-            imgAlt="Dog cooling mat"
-            :category="category"
-            :url="url"
-            hoverFrame
-            xs
-          />-->
-          <div class="card-xs border border-grey m-7px">
-            <nuxt-link :to="url" class="text-white no-underline">
-              <img :src="dogCoolingMat" imgAlt="Dog cooling mat" class="img-cover">
-            </nuxt-link>
-          </div>
+        <div class="swiper-slide card-xs border border-grey m-7px mr-0" v-for="i in 10" :key="i">
+          <nuxt-link :to="url" class="text-white no-underline">
+            <img :src="dogCoolingMat" imgAlt="Dog cooling mat" class="img-cover">
+          </nuxt-link>
         </div>
       </div>
       <div v-if="arrows" class="swiper-button-prev" slot="button-prev"></div>
@@ -43,7 +33,6 @@ export default {
       swiperOption: {
         slidesPerView: 'auto',
         centeredSlides: false,
-        spaceBetween: 10,
       },
       dogCoolingMat,
     }
