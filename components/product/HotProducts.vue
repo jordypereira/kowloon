@@ -1,6 +1,11 @@
 <template>
   <div class="flex flex-wrap -mx-3px">
-    <div v-for="item in getAmountOfItems(itemsToShow)" :key="item.id" class="px-3px mb-5">
+    <!-- Normal wrapping cards  -->
+    <div
+      v-for="item in $store.getters.getAmountOfItems(items, itemsToShow)"
+      :key="item.id"
+      class="px-3px mb-5"
+    >
       <Card
         v-bind="item"
         :category="category"
@@ -13,7 +18,8 @@
       </Card>
     </div>
 
-    <div v-if="(items.length > itemsToShow + 1)" class="px-3px mb-5">
+    <!-- Rest of the cards stacked  -->
+    <div v-if="(items.length > itemsToShow + 1 && itemsToShow !== 0)" class="px-3px mb-5">
       <Card
         v-bind="getRestOfItems(itemsToShow)[0]"
         :url="`/products/${category.name}/details`"
@@ -38,6 +44,10 @@ export default {
   name: 'HotProducts',
   props: {
       items: Array,
+      itemsToShow: {
+        type: Number,
+        default: 3,
+      },
       category: {
         type: Object,
         default: function () {
@@ -52,18 +62,7 @@ export default {
       Card,
       ProductColors,
   },
-  data() {
-    return {
-      itemsToShow: 3,
-    }
-  },
   methods: {
-    getAmountOfItems(amount) {
-      if (this.items.length === amount + 1) {
-        return this.items.slice(0, amount + 1)
-      }
-      return this.items.slice(0, amount)
-    },
     getRestOfItems(amount) {
       return this.items.filter(item => item.id === amount+1)
     },

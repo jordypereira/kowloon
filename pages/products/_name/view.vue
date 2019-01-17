@@ -58,8 +58,9 @@
       <!-- Articles -->
       <section v-if="hotItems" class="mt-16 flex justify-between">
         <div class="w-1/2">
-          <HotProducts :items="hotItems" :category="category"/>
+          <HotProducts :items="hotItems" :category="category" :itemsToShow="3"/>
         </div>
+        <!-- Highlighted Article -->
         <div class="w-1/2 pl-6px">
           <Card
             :img="dogCoolingMatLarge"
@@ -79,6 +80,19 @@
           </Card>
         </div>
       </section>
+
+      <!-- Extra cards loaded  -->
+      <HotProducts :items="dogArticles" :category="category" :itemsToShow="itemsToShow"/>
+
+      <!-- Load more placeholder -->
+      <section
+        v-if="this.enableSroll"
+        class="flex -mx-3px relative justify-center"
+        ref="placeholder"
+      >
+        <Card md class="px-3px" v-for="i in 4" :key="i"></Card>
+        <i class="icon icon-loader absolute self-center"></i>
+      </section>
     </main>
   </div>
 </template>
@@ -96,6 +110,7 @@ import dogCoolingMatLarge from '@/assets/images/products/dog_cooling_mat.jpg'
 import homeSliderImages from '@/services/homeSliderImages'
 import collections from '@/services/productOptions'
 import hotItems from '@/services/hotItems'
+import dogArticles from '@/services/dogArticles'
 
 export default {
   name: 'ProductView',
@@ -113,6 +128,7 @@ export default {
       dogCoolingMat,
       dogCoolingMatLarge,
       hotItems,
+      dogArticles,
       tags: [
         {
           id: 1,
@@ -131,12 +147,30 @@ export default {
       toggleFilter: true,
       minPrice: 8,
       maxPrice: 499,
+      itemsToShow: 0,
     }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.scrollListener)
   },
   computed: {
     category() {
       return this.$store.getters.getCategory(this.$route.params.name)
+    },
+    enableSroll() {
+      return this.dogArticles.length > this.itemsToShow
     }
-  }
+  },
+  methods: {
+    scrollListener(){
+      if(this.enableSroll) {
+        if (this.$refs.placeholder.getBoundingClientRect().bottom < window.innerHeight + 1) {
+          this.itemsToShow === 0 ? this.itemsToShow += 3 : this.itemsToShow += 4;
+        }
+      } else {
+         window.removeEventListener('scroll', this.scrollListener)
+      }
+    }
+  },
 }
 </script>

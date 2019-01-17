@@ -64,5 +64,11 @@ export const getters = {
     default: 
       return state.categories.other
     }
-  }
+  },
+  getAmountOfItems: () => (items, amount) => {
+    if (items.length === amount + 1) {
+      return items.slice(0, amount + 1)
+    }
+    return items.slice(0, amount)
+  },
 }

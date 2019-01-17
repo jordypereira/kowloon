@@ -548,6 +548,7 @@ module.exports = {
   padding: {
     'px': '1px',
     '0': '0',
+    '2px': '2px',   // 2px
     '3px': '3px',   // 3px
     '1': '0.25rem',
     '6px': '6px',   // 6px
@@ -646,6 +647,7 @@ module.exports = {
   negativeMargin: {
     'px': '1px',
     '0': '0',
+    '2px': '2px',     // 2px
     '3px': '3px',     // 3px
     '1': '0.25rem',
     '5px': '5px',   // 5px

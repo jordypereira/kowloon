@@ -16,7 +16,7 @@
       <!-- Hot Items -->
       <section v-if="hotItems" class="mt-16">
         <h1 class="title uppercase mb-28px">Hot Items.</h1>
-        <HotProducts :items="hotItems"/>
+        <HotProducts :items="hotItems" :itemsToShow="3"/>
         <div class="text-right w-full mt-22px">
           <a href="#" class="section-link">Visit the store</a>
         </div>

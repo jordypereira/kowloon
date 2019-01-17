@@ -12,11 +12,11 @@
       <!-- Image Area -->
       <div class="relative hover:cursor-pointer">
         <nuxt-link :to="url" class="text-white no-underline">
-          <img :src="img" :alt="imgAlt" class="w-full">
+          <img v-if="img" :src="img" :alt="imgAlt" class="w-full">
           <!-- Absolute placed buttons appear here -->
           <slot/>
           <hoverDetailsFrame
-            v-if="hoverFrame"
+            v-if="hoverFrame && category"
             :color="category.color"
           >{{ hoverFrame === 'details' ? 'View details' : hoverFrame}}</hoverDetailsFrame>
         </nuxt-link>
@@ -60,7 +60,10 @@ export default {
       category: Object,
       hoverFrame: String,
       description: String,
-      url: String,
+      url: {
+        type: String,
+        default: '',
+      },
       sm: {
         type: Boolean,
         default: false,

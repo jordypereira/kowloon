@@ -5,7 +5,8 @@ $card-padding-bottom: 6px;
 $card-padding-left: 5px;
 
 // md
-$card-md-width: 237px;
+$card-md-width: 235px;
+$card-md-min-height: 94px;
 $card-md-height: 200px;
 
 // lg
@@ -37,6 +38,7 @@ $card-md-stacked-height: 185px;
 
   &-md {
     width: $card-md-width;
+    min-height: $card-md-min-height;
     .card-hover {
       max-height: $card-md-hover-frame-max-height;
     }
