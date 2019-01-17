@@ -2,12 +2,12 @@
   <div>
     <!-- Header Image -->
     <header class="relative flex justify-center w-full">
-      <i class="icon icon-kowloon mt-8 md:mt-13 absolute z-10"></i>
+      <i class="icon icon-kowloon mt-13 absolute z-10"></i>
       <div class="header-image">
         <img src="~assets/images/about/header.jpg" alt="Header image of a girl hugging a white dog">
       </div>
     </header>
-    <main class="container mx-auto px-4 text-white mt-16">
+    <main class="container mx-auto px-4 text-white mt-8 md:mt-16">
       <!-- Icon and Tag -->
       <div class="flex">
         <i class="mr-5px icon icon-k"></i>
