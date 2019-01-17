@@ -1,13 +1,13 @@
 <template>
-  <div class="flex bg-grey-700 max-h-185px">
-    <div class="relative">
+  <div class="flex flex-wrap bg-grey-700 md:max-h-185px">
+    <div class="relative newsletter-image">
       <img src="@/assets/images/newsletterbanner.png" alt="Discover Amazing Kowloon Deals!">
       <div class="absolute pin-t pin-l flex flex-col items-center w-full text-center">
-        <div class="title w-3/5 mt-34px">discover amazing Kowloon deals!</div>
-        <div class="section-title mt-42px">only in our newsletter</div>
+        <div class="text-newsletter md:w-3/5 mt-8 md:mt-34px">discover amazing Kowloon deals!</div>
+        <div class="section-title mt-5 md:mt-42px">only in our newsletter</div>
       </div>
     </div>
-    <div class="flex flex-col flex-grow justify-center items-center">
+    <div class="flex flex-col flex-grow justify-center items-center my-28px">
       <div>
         <div class="sub-title">Subscribe to our newsletter</div>
         <div class="text-grey-400er mb-5">Lorum ipsum dolor sit amet</div>

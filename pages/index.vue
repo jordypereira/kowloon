@@ -6,7 +6,7 @@
       <HomeSlider :images="homeSliderImages"/>
     </header>
 
-    <main class="container mx-auto text-white">
+    <main class="container px-4 mx-auto text-white">
       <!-- Description -->
       <p class="text-center w-3/4 mx-auto mt-51px">{{ introText }}</p>
 
@@ -14,12 +14,21 @@
       <Categories class="mt-10"/>
 
       <!-- Hot Items -->
-      <section v-if="hotItems" class="mt-16">
+      <section v-if="hotItems" class="hidden md:block mt-16">
         <h1 class="title uppercase mb-28px">Hot Items.</h1>
         <HotProducts :items="hotItems" :itemsToShow="3"/>
         <div class="text-right w-full mt-22px">
           <a href="#" class="section-link">Visit the store</a>
         </div>
+      </section>
+
+      <section class="block md:hidden mt-16">
+        <h1 class="title uppercase mb-28px">Hot Items.</h1>
+        <RelatedProducts
+          class="mb-58px"
+          :category="this.$store.getters.getCategory(this.$route.params.name)"
+          :url="`/products/${this.$store.getters.getCategory(this.$route.params.name).name}/details`"
+        />
       </section>
 
       <!-- NewsletterBanner -->
@@ -33,6 +42,7 @@ import Categories from '@/components/Categories'
 import HomeSlider from '@/components/HomeSlider'
 import NewsletterBanner from '@/components/NewsletterBanner'
 import HotProducts from '@/components/product/HotProducts'
+import RelatedProducts from '~/components/product/RelatedProducts'
 
 import hotItems from '@/services/hotItems'
 import homeSliderImages from '@/services/homeSliderImages'
@@ -44,6 +54,7 @@ export default {
     Categories,
     NewsletterBanner,
     HotProducts,
+    RelatedProducts,
   },
   data() {
     return {

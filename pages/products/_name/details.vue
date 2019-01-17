@@ -13,10 +13,12 @@
         </div>
       </div>
       <ProductSpecifications :dimensions="dimensions" class="mt-19px mb-50px"/>
+      <h2 class="section-title uppercase mb-22px">Gerelateerde Producten</h2>
       <RelatedProducts
         class="mb-58px"
         :category="this.$store.getters.getCategory(this.$route.params.name)"
         :url="`/products/${this.$store.getters.getCategory(this.$route.params.name).name}/details`"
+        arrows
       />
       <FaqComponent class="mb-17px"/>
       <NewsletterBanner class="mb-4"/>

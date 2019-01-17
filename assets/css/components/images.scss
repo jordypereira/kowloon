@@ -11,3 +11,17 @@
     height: 480px;
   }
 }
+
+.newsletter-image {
+  height: 140px;
+  // width: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+  }
+  @screen md {
+    height: auto;
+  }
+}

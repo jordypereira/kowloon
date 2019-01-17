@@ -1,6 +1,5 @@
 <template>
   <section>
-    <h2 class="section-title uppercase mb-22px">Gerelateerde Producten</h2>
     <div v-swiper:mySwiper="swiperOption">
       <div class="swiper-wrapper">
         <div class="swiper-slide" v-for="i in 20" :key="i">
@@ -14,8 +13,8 @@
           />
         </div>
       </div>
-      <div class="swiper-button-prev" slot="button-prev"></div>
-      <div class="swiper-button-next" slot="button-next"></div>
+      <div v-if="arrows" class="swiper-button-prev" slot="button-prev"></div>
+      <div v-if="arrows" class="swiper-button-next" slot="button-next"></div>
     </div>
     <div class="text-right w-full mt-14px">
       <a href="#" class="section-link">view more</a>
@@ -32,6 +31,7 @@ export default {
   props: {
     category: Object,
     url: String,
+    arrows: Boolean,
   },
   components: {
     Card,
