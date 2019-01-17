@@ -17,7 +17,7 @@
       <h1 class="title uppercase mb-42px mt-10">About Us</h1>
 
       <!-- Description and contact info -->
-      <section class="mb-20 flex flex-col md:flex-row justify-between">
+      <section class="mb-12 md:mb-20 flex flex-col md:flex-row justify-between">
         <div class="flex-1">
           <h2 class="section-title uppercase mb-14px">Kowloon</h2>
           <div v-html="introText"></div>
@@ -55,7 +55,7 @@
       </section>
 
       <!-- FAQ -->
-      <FaqComponent class="my-20"/>
+      <FaqComponent class="my-12 md:my-20"/>
     </main>
   </div>
 </template>
