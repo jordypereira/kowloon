@@ -71,4 +71,7 @@ export const getters = {
     }
     return items.slice(0, amount)
   },
+  getRestOfItems: () => (items, amount) => {
+    return items.filter(item => item.id === amount + 1)
+  },
 }

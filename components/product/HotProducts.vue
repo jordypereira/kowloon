@@ -21,7 +21,7 @@
     <!-- Rest of the cards stacked  -->
     <div v-if="(items.length > itemsToShow + 1 && itemsToShow !== 0)" class="px-3px mb-5">
       <Card
-        v-bind="getRestOfItems(itemsToShow)[0]"
+        v-bind="$store.getters.getRestOfItems(items, itemsToShow)[0]"
         :url="`/products/${category.name}/details`"
         :category="category"
         hoverFrame="View more"
@@ -61,11 +61,6 @@ export default {
   components: {
       Card,
       ProductColors,
-  },
-  methods: {
-    getRestOfItems(amount) {
-      return this.items.filter(item => item.id === amount+1)
-    },
   },
 }
 </script>

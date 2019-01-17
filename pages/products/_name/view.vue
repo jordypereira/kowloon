@@ -58,7 +58,11 @@
       <!-- Articles -->
       <section v-if="hotItems" class="mt-16 flex justify-between">
         <div class="w-1/2">
-          <HotProducts :items="hotItems" :category="category" :itemsToShow="3"/>
+          <HotProducts
+            :items="$store.getters.getAmountOfItems(dogArticles, itemsToShow === 0 ? dogArticles.length : 4)"
+            :category="category"
+            :itemsToShow="3"
+          />
         </div>
         <!-- Highlighted Article -->
         <div class="w-1/2 pl-6px">
@@ -82,7 +86,11 @@
       </section>
 
       <!-- Extra cards loaded  -->
-      <HotProducts :items="dogArticles" :category="category" :itemsToShow="itemsToShow"/>
+      <HotProducts
+        :items="$store.getters.getAmountOfItems(dogArticles, dogArticles.length - 3)"
+        :category="category"
+        :itemsToShow="itemsToShow"
+      />
 
       <!-- Load more placeholder -->
       <section
@@ -158,14 +166,14 @@ export default {
       return this.$store.getters.getCategory(this.$route.params.name)
     },
     enableSroll() {
-      return this.dogArticles.length > this.itemsToShow
+      return this.dogArticles.length - 3 > this.itemsToShow
     }
   },
   methods: {
     scrollListener(){
       if(this.enableSroll) {
         if (this.$refs.placeholder.getBoundingClientRect().bottom < window.innerHeight + 1) {
-          this.itemsToShow === 0 ? this.itemsToShow += 3 : this.itemsToShow += 4;
+          this.itemsToShow === 0 ? this.itemsToShow += 3 : this.itemsToShow += 4
         }
       } else {
          window.removeEventListener('scroll', this.scrollListener)
