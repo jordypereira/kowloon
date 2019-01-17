@@ -1,40 +1,61 @@
 <template>
-  <nav class="flex flex-col justify-between bg-black h-screen">
-    <div class="flex flex-col items-center">
-      <div class="nav-toggle flex justify-center items-center">
-        <nuxt-link to="/" class="icon icon-hamburger" aria-label="Toggle the navigation pane."></nuxt-link>
-      </div>
-      <div class="flex nav-search">
-        <i class="icon icon-search"></i>
-      </div>
-      <div class="flex nav-faq">
-        <i class="icon icon-faq"></i>
-      </div>
-      <div class="flex">
-        <nuxt-link to="/about" class="icon icon-mail"></nuxt-link>
-      </div>
-      <hr class="divider">
-      <div class="nav-items" v-for="(item, i) in navItems" :key="i">
-        <div class="nav-item">
-          <nuxt-link
-            :to="`/products/${item.name[0]}/view`"
-            :aria-label="`Links to the ${item.name[0]} product page.`"
-          >
-            <component
-              :is="item.svg"
-              class="text-white fill-current w-full"
-              :class="navItemClass(item)"
-            />
-          </nuxt-link>
+  <div class="relative">
+    <nav
+      class="static flex flex-col justify-between bg-black h-full"
+      :class="{'nav-open': navToggle}"
+    >
+      <div class="flex flex-col">
+        <div class="nav-toggle flex justify-center items-center">
+          <i
+            class="icon icon-hamburger hover:cursor-pointer"
+            aria-label="Toggle the navigation pane."
+            @click="navToggle = !navToggle"
+          ></i>
+        </div>
+        <div class="flex items-center nav-search">
+          <div class="w-60px flex justify-center">
+            <i class="icon icon-search"></i>
+          </div>
+          <span v-if="navToggle" class="text-nav text-grey-400">Search</span>
+        </div>
+        <div class="flex items-center nav-faq">
+          <div class="w-60px flex justify-center">
+            <i class="icon icon-faq"></i>
+          </div>
+          <span v-if="navToggle" class="text-nav text-grey-400">FAQ</span>
+        </div>
+        <hr class="divider">
+        <div class="flex items-center">
+          <div class="w-60px flex justify-center">
+            <nuxt-link to="/about" class="icon icon-mail"></nuxt-link>
+          </div>
+          <span v-if="navToggle" class="text-nav text-grey-400">Contact</span>
+        </div>
+        <hr class="divider">
+        <div class="nav-items" v-for="(item, i) in navItems" :key="i">
+          <div class="nav-item">
+            <nuxt-link
+              :to="`/products/${item.name[0]}/view`"
+              :aria-label="`Links to the ${item.name[0]} product page.`"
+              class="text-white no-underline flex items-center"
+            >
+              <component
+                :is="item.svg"
+                class="text-white fill-current w-60px"
+                :class="navItemClass(item)"
+              />
+              <span v-if="navToggle" class="text-nav">{{ item.name[3] }}</span>
+            </nuxt-link>
+          </div>
         </div>
       </div>
-    </div>
-    <div>
-      <div class="nav-logo flex justify-center">
-        <nuxt-link to="/" class="icon icon-k" aria-label="Links to the home page"></nuxt-link>
+      <div>
+        <div class="nav-logo flex justify-center">
+          <nuxt-link to="/" class="icon icon-k" aria-label="Links to the home page"></nuxt-link>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </div>
 </template>
 
 <script>
@@ -66,13 +87,13 @@ export default {
         },
         {
           color: 'yellow',
-          name: ['fish', 'Fish', 'Fishes', 'fishes'],
+          name: ['fish', 'Fish', 'fishes', 'Fishes'],
           icon: 'icon-fish-small',
           svg: FishSymbol,
         },
         {
           color: 'green-light',
-          name: ['birds', 'Birds', 'Bird', 'bird'],
+          name: ['birds', 'Bird', 'bird', 'Birds'],
           icon: 'icon-bird-small',
           svg: BirdSymbol,
         },
@@ -83,6 +104,7 @@ export default {
           svg: HamsterSymbol,
         },
       ],
+      navToggle: true,
     }
   },
   methods: {

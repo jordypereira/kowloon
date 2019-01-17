@@ -1,25 +1,33 @@
 $nav-width: 60px;
-$nav-height: 100vh;
+$nav-height: 100%;
 $nav-item-margin-top: 17px;
+
+// Open
+$nav-open-width: 217px;
 
 // Nav toggle
 $nav-toggle-margin-b: 12px;
 
 // Nav search_icon
 $nav-search-padding-t: 12px;
-$nav-search-padding-r: 15px;
+$nav-search-padding-r: 0;
 $nav-search-padding-b: 10px;
-$nav-search-padding-l: 16px;
+$nav-search-padding-l: 0;
 
 // Nav faq_icon
 $nav-faq-padding-t: 10px;
-$nav-faq-padding-r: 21px;
+$nav-faq-padding-r: 0;
 $nav-faq-padding-b: 15px;
-$nav-faq-padding-l: 19px;
+$nav-faq-padding-l: 0;
 
 nav {
   width: $nav-width;
   height: $nav-height;
+  transition: 1s;
+  &.nav-open {
+    width: $nav-open-width;
+    // @apply pin-l pin-t z-10 justify-start;
+  }
   .nav-toggle {
     width: 60px;
     height: 52px;

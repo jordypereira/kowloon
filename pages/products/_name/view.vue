@@ -161,6 +161,9 @@ export default {
   mounted() {
     window.addEventListener('scroll', this.scrollListener)
   },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.scrollListener)
+  },
   computed: {
     category() {
       return this.$store.getters.getCategory(this.$route.params.name)
