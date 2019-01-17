@@ -45,6 +45,7 @@
               name="email"
               v-model="form.email"
             >
+            <span class="text-pink">{{ formErrors.email }}</span>
           </div>
           <div class="flex flex-col mb-8">
             <label for="message" class="mb-3 sub-title">Your message</label>
@@ -56,6 +57,7 @@
               placeholder="Write your message here."
               v-model="form.message"
             ></textarea>
+            <span class="text-pink">{{ formErrors.message }}</span>
           </div>
           <button class="btn btn-primary" aria-labelledby="Sends your message to us.">Send</button>
         </form>
@@ -85,14 +87,42 @@ export default {
       form: {
         email: '',
         message: '',
-      }
+      },
+      formErrors: {
+        email: '',
+        message: '',
+      },
     }
   },
   methods: {
+    validateEmail(email) {
+      const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(email).toLowerCase());
+    },
+    validateMessage(message) {
+      return message.length > 30
+    },
+    clearErrors() {
+      this.formErrors = {
+        email: '',
+        message: '',
+      }
+    },
     submitContactForm() {
       const axiosConfig = {
         header: { "Content-Type": "application/x-www-form-urlencoded" }
       };
+      // Validate
+      this.clearErrors()
+      if(!this.validateEmail(this.form.email)) {
+        this.formErrors.email = 'Please enter a correct e-mail address.'
+        return
+      }
+      if(!this.validateMessage(this.form.message)) {
+        this.formErrors.message = 'Please enter a longer message.'
+        return
+      }
+
       axios.post(
         "/",
         this.encode({
