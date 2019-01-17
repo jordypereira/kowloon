@@ -1,23 +1,7 @@
 <template>
   <div class="mb-10px">
-    <div class="flex mb-5">
-      <i class="icon icon-k mr-6px"></i>
-      <div class="flex -mx-1">
-        <Tag
-          v-for="tag in tags"
-          :key="tag.id"
-          :tagName="tag.name"
-          :tagColor="tag.color"
-          class="px-1"
-        />
-      </div>
-    </div>
-    <h1 class="title uppercase mt-5 mb-18px">Cooling mat</h1>
-    <p class="price mb-5 mt-18px">€ 15,49</p>
-
     <div class="mt-20px mb-14px sub-title">Colors</div>
     <ProductColors :colors="productColors" class="mt-5 mb-14px"/>
-
     <div class="mt-5 mb-11px sub-title">Description</div>
     <div
       class="mt-11px mb-26px"
@@ -31,17 +15,14 @@
 </template>
 
 <script>
-import Tag from '@/components/Tag'
 import ProductColors from '@/components/product/ProductColors'
 
 export default {
   name: 'ProductInfo',
   props: {
     productColors: Array,
-    tags: Array,
   },
   components: {
-    Tag,
     ProductColors,
   },
 };

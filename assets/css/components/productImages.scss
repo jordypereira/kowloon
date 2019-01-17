@@ -1,19 +1,31 @@
 $product-image-selected-width: 467px;
+$product-image-sm-selected-width: 282px;
+
+$product-image-sm-width: 90px;
+$product-image-sm-height: 55px;
 $product-image-width: 149.3px;
 $product-image-height: 89.4px;
 
 
 .product-image-selected {
-  min-width: $product-image-selected-width;
+  max-width: $product-image-sm-selected-width;
   height: auto;
   margin-bottom: 8.8px;
+  @screen sm {
+    max-width: $product-image-selected-width;
+  }
 }
+
 .product-image-deselected {
   @apply bg-white opacity-38 absolute pin-l pin-t w-full h-full;
 }
 
 .product-image {
-  width: $product-image-width;
-  height: $product-image-height;
-    transition: 0.5s ease;
+  max-width: $product-image-sm-width;
+  max-height: $product-image-sm-height;
+  transition: 0.5s ease;
+  @screen sm {
+    max-width: $product-image-width;
+    max-height: $product-image-height;
+  }
 }

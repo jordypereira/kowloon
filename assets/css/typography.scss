@@ -35,22 +35,34 @@ body {
 
 .text-newsletter {
   @apply font-section font-medium text-white leading-none;
-  font-size: 32px;
   letter-spacing: -0.8px;
+  font-size: 26px;
+  @screen sm {
+    font-size: 32px;
+  }
   @screen md {
     font-size: 40px;
   }
 }
 
 .sub-title {
-  @apply text-white text-xl leading-none;
+  @apply text-white text-base leading-none;
   line-height: 1.1;
   letter-spacing: -0.4px;
+  @screen sm {
+    @apply text-lg;
+  }
+  @screen md {
+    @apply text-xl;
+  }
 }
 
 .section-title {
-  @apply font-section font-medium text-white text-lg leading-none;
+  @apply font-section font-medium text-white text-base leading-none;
   letter-spacing: -0.4px;
+  @screen sm {
+    @apply text-lg;
+  }
   @screen md {
     @apply text-xl;
   }

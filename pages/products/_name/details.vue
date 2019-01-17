@@ -1,25 +1,61 @@
 <template>
-  <div class="container mx-auto text-white">
+  <div class="text-white">
     <header class="flex justify-center mt-13 mb-49px">
       <i class="icon icon-kowloon"></i>
     </header>
-    <main class="flex flex-col px-4 lg:px-0">
-      <div class="flex -mx-27px mb-10px">
-        <div class="pl-27px">
-          <ProductImage/>
+    <main class="container mx-auto flex flex-col px-4 lg:px-0">
+      <section class="flex flex-col md:flex-row -mx-27px mb-10px">
+        <!-- Flip These On Desktop -->
+        <div class="flex flex-col md:flex-row-reverse">
+          <!-- Product Image and Information -->
+          <!-- Product Info Title -->
+          <div class="px-27px">
+            <!-- Product Logo and Tags -->
+            <div class="flex mb-5">
+              <i class="icon icon-k mr-6px"></i>
+              <div class="flex -mx-1">
+                <Tag
+                  v-for="tag in productTags"
+                  :key="tag.id"
+                  :tagName="tag.name"
+                  :tagColor="tag.color"
+                  class="px-1"
+                />
+              </div>
+            </div>
+            <h1 class="title uppercase mt-5 mb-18px">Cooling mat</h1>
+            <p class="price mb-5 mt-18px">€ 15,49</p>
+            <!-- Product Info Description -->
+            <div class="hidden md:block">
+              <ProductInfo :productColors="productColors"/>
+            </div>
+          </div>
+          <!-- Product Images -->
+          <div class="pl-27px">
+            <ProductImage/>
+          </div>
         </div>
-        <div class="px-27px">
-          <ProductInfo :productColors="productColors" :tags="productTags"/>
+        <!-- Product Info Description -->
+        <div class="md:hidden mt-6">
+          <ProductInfo :productColors="productColors"/>
         </div>
-      </div>
+      </section>
+      <!-- Product Specifications  -->
       <ProductSpecifications :dimensions="dimensions" class="mt-19px mb-50px"/>
       <section class="mb-58px">
-        <h2 class="section-title uppercase mb-22px">Gerelateerde Producten</h2>
+        <h2 class="section-title uppercase mb-22px">Related Items.</h2>
         <RelatedProducts
           :category="this.$store.getters.getCategory(this.$route.params.name)"
           :url="`/products/${this.$store.getters.getCategory(this.$route.params.name).name}/details`"
           arrows
+          class="hidden md:block"
         />
+        <MiniSlider
+          class="mb-4 md:hidden"
+          :category="this.$store.getters.getCategory(this.$route.params.name)"
+          :url="`/products/${this.$store.getters.getCategory(this.$route.params.name).name}/details`"
+        />
+        <a href="#" class="section-link mt-4">View more</a>
       </section>
       <FaqComponent class="mb-17px"/>
       <NewsletterBanner class="mb-4"/>
@@ -34,6 +70,8 @@ import ProductSpecifications from '~/components/product/ProductSpecifications'
 import RelatedProducts from '~/components/product/RelatedProducts'
 import FaqComponent from '~/components/FaqComponent'
 import NewsletterBanner from '~/components/NewsletterBanner'
+import Tag from '@/components/Tag'
+import MiniSlider from '~/components/product/MiniSlider'
 
 export default {
   name: 'ProductDetails',
@@ -44,6 +82,8 @@ export default {
     RelatedProducts,
     FaqComponent,
     NewsletterBanner,
+    Tag,
+    MiniSlider,
   },
   data() {
     return {
