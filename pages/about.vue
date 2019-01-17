@@ -35,10 +35,16 @@
       <!-- Message form -->
       <section class="my-12 md:my-20">
         <h2 class="section-title uppercase mb-28px">Leave us a message</h2>
-        <form name="contact" method="POST" data-netlify="true">
+        <form name="contact" method="POST" data-netlify="true" @submit.prevent="submitContactForm">
           <div class="flex flex-col mb-8">
             <label for="email" class="mb-3 sub-title">E-mail</label>
-            <input type="text" class="input-text" placeholder="name@domain.com" name="email">
+            <input
+              type="text"
+              class="input-text"
+              placeholder="name@domain.com"
+              name="email"
+              v-model="form.email"
+            >
           </div>
           <div class="flex flex-col mb-8">
             <label for="message" class="mb-3 sub-title">Your message</label>
@@ -48,6 +54,7 @@
               rows="10"
               class="input-textarea"
               placeholder="Write your message here."
+              v-model="form.message"
             ></textarea>
           </div>
           <button class="btn btn-primary" aria-labelledby="Sends your message to us.">Send</button>
@@ -61,6 +68,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 import Tag from '@/components/Tag'
 import FaqComponent from '~/components/FaqComponent'
 
@@ -73,7 +82,33 @@ export default {
   data() {
     return {
       introText: '<p>Pet Concept, active since 1998, is developing, importing and exporting products for pets worldwide.</p><br><p>natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae sequi nesciunt.</p>',
+      form: {
+        email: '',
+        message: '',
+      }
     }
+  },
+  methods: {
+    submitContactForm() {
+      const axiosConfig = {
+        header: { "Content-Type": "application/x-www-form-urlencoded" }
+      };
+      axios.post(
+        "/",
+        this.encode({
+          "form-name": "contact",
+          ...this.form
+        }),
+        axiosConfig
+      );
+    },
+    encode (data) {
+      return Object.keys(data)
+        .map(
+          key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+        )
+        .join("&");
+    },
   },
 }
 </script>
