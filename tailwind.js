@@ -148,7 +148,7 @@ module.exports = {
     '15px': '15px',     // 15px
     'base': '1rem',     // 16px
     'lg': '1.125rem',   // 18px
-    '19px': '19px',   // 19px
+    '19px': '19px',     // 19px
     'xl': '1.25rem',    // 20px
     '2xl': '1.5rem',    // 24px
     '3xl': '1.875rem',  // 30px

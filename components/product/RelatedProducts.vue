@@ -7,7 +7,8 @@
           <Card
             :img="dogCoolingMat"
             imgAlt="Dog cooling mat"
-            :categoryColor="category.color"
+            :category="category"
+            :url="url"
             hoverFrame="details"
             sm
           />
@@ -30,6 +31,7 @@ export default {
   name: 'RelatedProducts',
   props: {
     category: Object,
+    url: String,
   },
   components: {
     Card,

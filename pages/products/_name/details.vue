@@ -16,6 +16,7 @@
       <RelatedProducts
         class="mb-58px"
         :category="this.$store.getters.getCategory(this.$route.params.name)"
+        :url="`/products/${this.$store.getters.getCategory(this.$route.params.name).name}/details`"
       />
       <FaqComponent class="mb-17px"/>
       <NewsletterBanner class="mb-4"/>
@@ -32,6 +33,7 @@ import FaqComponent from '~/components/FaqComponent'
 import NewsletterBanner from '~/components/NewsletterBanner'
 
 export default {
+  name: 'ProductDetails',
   components: {
     ProductInfo,
     ProductImage,

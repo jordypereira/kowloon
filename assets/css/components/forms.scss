@@ -32,6 +32,21 @@ $input-checkbox-width: 19px;
     &:checked {
       @apply bg-black;
     }
+    &.checked-pink:checked {
+      @apply bg-pink;
+    }
+    &.checked-indigo:checked {
+      @apply bg-indigo;
+    }
+    &.checked-yellow:checked {
+      @apply bg-yellow;
+    }
+    &.checked-green:checked {
+      @apply bg-green;
+    }
+    &.checked-blue-light:checked {
+      @apply bg-blue-light;
+    }
   }
 }
 

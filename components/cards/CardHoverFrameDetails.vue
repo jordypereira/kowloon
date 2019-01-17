@@ -7,7 +7,9 @@
       <div class="mx-auto">
         <img src="~assets/images/products/detail-frame.png" alt="Detail Frame">
       </div>
-      <p class="text-xl">View details</p>
+      <p class="text-xl">
+        <slot></slot>
+      </p>
     </div>
   </div>
 </template>

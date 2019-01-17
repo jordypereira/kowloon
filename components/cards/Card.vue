@@ -9,23 +9,34 @@
       'card-md-stacked': (md && stacked) 
     }"
     >
+      <!-- Image Area -->
       <div class="relative hover:cursor-pointer">
-        <img :src="img" :alt="imgAlt" class="w-full">
-        <!-- Absolute placed buttons appear here -->
-        <slot/>
-        <hoverDetailsFrame v-if="hoverFrame === 'details'" :color="categoryColor"/>
+        <nuxt-link :to="url" class="text-white no-underline">
+          <img :src="img" :alt="imgAlt" class="w-full">
+          <!-- Absolute placed buttons appear here -->
+          <slot/>
+          <hoverDetailsFrame
+            v-if="hoverFrame"
+            :color="category.color"
+          >{{ hoverFrame === 'details' ? 'View details' : hoverFrame}}</hoverDetailsFrame>
+        </nuxt-link>
       </div>
 
+      <!-- Info Area -->
+      <!-- md shows a name and price -->
       <div v-if="md && name" class="flex justify-between text-base mx-10px">
         <p class="font-bold">{{ name }}</p>
         <p>€ {{ price }}</p>
       </div>
+      <!-- lg shows name, desc, price and a button -->
       <div v-if="lg && name" class="ml-10px">
         <p class="price mb-2 mt-2">{{ name }}</p>
         <p class="pr-5">{{ description }}</p>
         <div class="flex justify-between items-center mt-4">
           <p class="text-base">€ {{ price }}</p>
-          <button class="btn btn-sm" :class="`bg-${categoryColor}`">Want to know more?</button>
+          <nuxt-link :to="url" class="text-white no-underline">
+            <button class="btn btn-sm" :class="`bg-${category.color}`">Want to know more?</button>
+          </nuxt-link>
         </div>
       </div>
     </div>
@@ -46,9 +57,10 @@ export default {
       imgAlt: String,
       name: String,
       price: String,
-      categoryColor: String,
+      category: Object,
       hoverFrame: String,
       description: String,
+      url: String,
       sm: {
         type: Boolean,
         default: false,

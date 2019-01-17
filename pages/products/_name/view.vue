@@ -20,10 +20,8 @@
       </div>
 
       <!-- Filter -->
-      <section class="mb-10px pb-5 border-solid border-grey-650">
-        <h1
-          class="title uppercase mb-5"
-        >{{ this.$store.getters.getCategory(this.$route.params.name).shortName }} Articles</h1>
+      <section class="mb-10px pb-5 border-b-2 border-solid border-grey-650">
+        <h1 class="title uppercase mb-5">{{ category.shortName }} Articles</h1>
         <div class="flex hover:cursor-pointer" @click="toggleFilter = !toggleFilter">
           <div class="text-15px mr-10px">Filter</div>
           <div
@@ -33,7 +31,7 @@
         </div>
         <div class="ml-16" v-if="toggleFilter">
           <!-- Collection Checkbox -->
-          <p>By collection</p>
+          <span class="sub-title">By collection</span>
           <div class="flex flex-wrap mt-3 mb-26px">
             <div v-for="collection in collections" :key="collection.id" class="mr-5 flex">
               <input
@@ -41,13 +39,14 @@
                 :name="collection.name"
                 :v-model="collection.checked"
                 class="input input-checkbox mr-10px"
+                :class="`checked-${category.color}`"
               >
               <label :for="collection.name">{{ collection.name }}</label>
             </div>
           </div>
 
           <!-- Price Slider -->
-          <p>Price range</p>
+          <span class="sub-title">Price range</span>
           <div class="flex mt-3">
             <input type="text" v-model="minPrice" class="input-text">
             <span class="px-5 self-center">-</span>
@@ -59,10 +58,7 @@
       <!-- Articles -->
       <section v-if="hotItems" class="mt-16 flex justify-between">
         <div class="w-1/2">
-          <HotProducts
-            :items="hotItems"
-            :category="this.$store.getters.getCategory(this.$route.params.name)"
-          />
+          <HotProducts :items="hotItems" :category="category"/>
         </div>
         <div class="w-1/2 pl-6px">
           <Card
@@ -71,7 +67,8 @@
             :description="highlightedProduct.description"
             :price="highlightedProduct.price"
             imgAlt="Dog cooling mat"
-            :categoryColor="this.$store.getters.getCategory(this.$route.params.name).color"
+            :url="`/products/${category.name}/details`"
+            :category="category"
             hoverFrame="details"
             lg
           >
@@ -136,5 +133,10 @@ export default {
       maxPrice: 499,
     }
   },
+  computed: {
+    category() {
+      return this.$store.getters.getCategory(this.$route.params.name)
+    }
+  }
 }
 </script>

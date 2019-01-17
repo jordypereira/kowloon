@@ -1,24 +1,27 @@
 <template>
   <div class="flex flex-wrap -mx-3px">
     <div v-for="item in getAmountOfItems(itemsToShow)" :key="item.id" class="px-3px mb-5">
-      <nuxt-link
-        :to="`/products/${categoryName(category)}/details`"
-        class="text-white no-underline"
+      <Card
+        v-bind="item"
+        :category="category"
+        :url="`/products/${category.name}/details`"
+        class="hot-product"
+        hoverFrame="details"
+        md
       >
-        <Card
-          v-bind="item"
-          :categoryColor="category ? category.color : 'pink'"
-          class="hot-product"
-          hoverFrame="details"
-          md
-        >
-          <ProductColors class="absolute pin-t pin-l m-10px" :colors="item.colors"/>
-        </Card>
-      </nuxt-link>
+        <ProductColors class="absolute pin-t pin-l m-10px" :colors="item.colors"/>
+      </Card>
     </div>
 
     <div v-if="(items.length > itemsToShow + 1)" class="px-3px mb-5">
-      <Card v-bind="getRestOfItems(itemsToShow)[0]" md stacked>
+      <Card
+        v-bind="getRestOfItems(itemsToShow)[0]"
+        :url="`/products/${category.name}/details`"
+        :category="category"
+        hoverFrame="View more"
+        md
+        stacked
+      >
         <div
           class="absolute pin-t pin-l m-10px btn-rounded bg-white text-grey-900 font-bold"
         >{{ items.length - itemsToShow }}</div>
@@ -35,7 +38,15 @@ export default {
   name: 'HotProducts',
   props: {
       items: Array,
-      category: Object,
+      category: {
+        type: Object,
+        default: function () {
+          return {
+            name: 'dog',
+            color: 'pink'
+          }
+        }
+      },
   },
   components: {
       Card,
@@ -56,13 +67,6 @@ export default {
     getRestOfItems(amount) {
       return this.items.filter(item => item.id === amount+1)
     },
-    categoryName(category) {
-      if(category) {
-        return category.name
-      } else {
-        return 'dog'
-      }
-    }
   },
 }
 </script>
