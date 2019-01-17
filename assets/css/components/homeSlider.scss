@@ -9,5 +9,11 @@ $home-bullet-border-color: rgba(149, 149, 149, 0.4);
 }
 
 .swiper-container {
-  max-width: calc(100vw - 60px);
+  @screen md {
+    max-width: calc(100vw - 60px);
+  }
+}
+
+.home-swiper-wrapper {
+  min-height: 175px;
 }

@@ -1,10 +1,10 @@
 <template>
   <div v-swiper:mySwiper="swiperOption" class="max-h-480px">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide" v-for="item in images" :key="item.id">
-        <img :src="item.url" alt="Slider Image of a dog" class="w-full">
+    <div class="home-swiper-wrapper swiper-wrapper">
+      <div class="swiper-slide mr-0 md:mr-auto" v-for="item in images" :key="item.id">
+        <img :src="item.url" alt="Slider Image of a dog" class="img-cover">
 
-        <div class="swiper-pagination w-full pin-b mb-22px" slot="pagination"></div>
+        <div class="hidden md:block swiper-pagination w-full pin-b mb-22px" slot="pagination"></div>
       </div>
     </div>
   </div>
