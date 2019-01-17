@@ -29,12 +29,16 @@
           </div>
           <!-- Icon Contact -->
           <hr class="divider" :class="[!navToggle ? 'hidden md:block' : 'block']">
-          <div class="items-center" :class="[!navToggle ? 'hidden md:flex' : 'flex']">
+          <nuxt-link
+            to="/about"
+            class="items-center no-underline"
+            :class="[!navToggle ? 'hidden md:flex' : 'flex']"
+          >
             <div class="w-60px flex justify-center">
-              <nuxt-link to="/about" class="icon icon-mail"></nuxt-link>
+              <i class="icon icon-mail"></i>
             </div>
             <span v-if="navToggle" class="text-nav text-grey-400">Contact</span>
-          </div>
+          </nuxt-link>
           <hr class="divider" :class="[!navToggle ? 'hidden md:block' : 'block']">
           <!-- Icons Categories -->
           <div
