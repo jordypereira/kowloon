@@ -4,7 +4,8 @@ export default [
   {
     id: 1,
     name: 'Cooling mat',
-    price: '15,49',
+    price: '13,49',
+    dateAdded: '2019-01-16T10:20:30Z',
     img: dogCoolingMat,
     imgAlt: 'Dog Cooling Mat',
     colors: [
@@ -16,7 +17,8 @@ export default [
   {
     id: 2,
     name: 'Cooling mat',
-    price: '15,49',
+    price: '11,49',
+    dateAdded: '2019-01-16T10:20:30Z',
     img: dogCoolingMat,
     imgAlt: 'Dog Cooling Mat',
     colors: [
@@ -28,7 +30,8 @@ export default [
   {
     id: 3,
     name: 'Cooling mat',
-    price: '15,49',
+    price: '9,49',
+    dateAdded: '2019-01-19T10:20:30Z',
     img: dogCoolingMat,
     imgAlt: 'Dog Cooling Mat',
     colors: [
@@ -40,7 +43,8 @@ export default [
   {
     id: 4,
     name: 'Cooling mat',
-    price: '15,49',
+    price: '15,22',
+    dateAdded: '2019-01-13T10:20:30Z',
     img: dogCoolingMat,
     imgAlt: 'Dog Cooling Mat',
     colors: [
@@ -52,7 +56,8 @@ export default [
   {
     id: 5,
     name: 'Cooling mat',
-    price: '15,49',
+    price: '6,49',
+    dateAdded: '2019-01-16T10:20:30Z',
     img: dogCoolingMat,
     imgAlt: 'Dog Cooling Mat',
     colors: [
@@ -65,6 +70,7 @@ export default [
     id: 6,
     name: 'Cooling mat',
     price: '15,49',
+    dateAdded: '2019-01-12T10:20:30Z',
     img: dogCoolingMat,
     imgAlt: 'Dog Cooling Mat',
     colors: [
@@ -77,6 +83,7 @@ export default [
     id: 7,
     name: 'Cooling mat',
     price: '15,49',
+    dateAdded: '2019-01-16T10:20:30Z',
     img: dogCoolingMat,
     imgAlt: 'Dog Cooling Mat',
     colors: [
@@ -89,6 +96,7 @@ export default [
     id: 8,
     name: 'Cooling mat',
     price: '15,49',
+    dateAdded: '2019-01-16T10:20:30Z',
     img: dogCoolingMat,
     imgAlt: 'Dog Cooling Mat',
     colors: [
@@ -101,6 +109,7 @@ export default [
     id: 9,
     name: 'Cooling mat',
     price: '15,49',
+    dateAdded: '2019-01-16T10:20:30Z',
     img: dogCoolingMat,
     imgAlt: 'Dog Cooling Mat',
     colors: [
@@ -113,6 +122,7 @@ export default [
     id: 10,
     name: 'Cooling mat',
     price: '15,49',
+    dateAdded: '2019-01-16T10:20:30Z',
     img: dogCoolingMat,
     imgAlt: 'Dog Cooling Mat',
     colors: [
@@ -125,6 +135,7 @@ export default [
     id: 11,
     name: 'Cooling mat',
     price: '15,49',
+    dateAdded: '2019-01-16T10:20:30Z',
     img: dogCoolingMat,
     imgAlt: 'Dog Cooling Mat',
     colors: [
@@ -137,6 +148,7 @@ export default [
     id: 12,
     name: 'Cooling mat',
     price: '15,49',
+    dateAdded: '2019-01-16T10:20:30Z',
     img: dogCoolingMat,
     imgAlt: 'Dog Cooling Mat',
     colors: [
@@ -149,6 +161,7 @@ export default [
     id: 13,
     name: 'Cooling mat',
     price: '15,49',
+    dateAdded: '2019-01-14T10:20:30Z',
     img: dogCoolingMat,
     imgAlt: 'Dog Cooling Mat',
     colors: [
@@ -161,6 +174,7 @@ export default [
     id: 14,
     name: 'Cooling mat',
     price: '15,49',
+    dateAdded: '2019-01-16T10:20:30Z',
     img: dogCoolingMat,
     imgAlt: 'Dog Cooling Mat',
     colors: [

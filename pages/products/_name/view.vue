@@ -19,21 +19,23 @@
         </div>
       </div>
 
+      <!-- Title -->
+      <h1 class="title uppercase mb-5">{{ category.shortName }} Articles</h1>
       <!-- Filter -->
       <section class="mb-10px pb-5 border-b-2 border-solid border-grey-650">
-        <h1 class="title uppercase mb-5">{{ category.shortName }} Articles</h1>
-        <div class="flex hover:cursor-pointer" @click="toggleFilter = !toggleFilter">
-          <div class="text-15px mr-10px">Filter</div>
+        <!-- Filter toggle -->
+        <div class="flex hover:cursor-pointer mb-12 sm:mb-4" @click="toggleFilter = !toggleFilter">
+          <div class="text-15px mr-10px">Advanced filter</div>
           <div
             :class="[ (toggleFilter) ? 'dropdown-triangle-bot' : 'dropdown-triangle-right']"
             class="self-center dropdown-triangle dropdown-small dropdown-grey-300"
           ></div>
         </div>
-        <div class="ml-16" v-if="toggleFilter">
+        <div class="md:ml-16" v-if="toggleFilter">
           <!-- Collection Checkbox -->
           <span class="sub-title">By collection</span>
           <div class="flex flex-wrap mt-3 mb-26px">
-            <div v-for="collection in collections" :key="collection.id" class="mr-5 flex">
+            <div v-for="collection in collections" :key="collection.id" class="mb-5 mr-5 flex">
               <input
                 type="checkbox"
                 :name="collection.name"
@@ -49,20 +51,36 @@
           <!-- Price Slider -->
           <span class="sub-title">Price range</span>
           <div class="flex mt-3">
-            <input type="text" v-model="minPrice" class="input-text">
+            <div class="relative">
+              <span class="input-price-tag">€</span>
+              <input type="text" v-model="minPrice" class="input-text text-center">
+            </div>
             <span class="px-5 self-center">-</span>
-            <input type="text" v-model="maxPrice" class="input-text">
+            <div class="relative">
+              <span class="input-price-tag">€</span>
+              <input type="text" v-model="maxPrice" class="input-text text-center">
+            </div>
           </div>
         </div>
       </section>
 
+      <!-- Sort -->
+      <div class="flex justify-between mt-10px mb-5">
+        <select v-model="sort" class="form-select">
+          <option value="priceLow">Price: low to high</option>
+          <option value="priceHigh">Price: high to low</option>
+          <option value="latest">Latest</option>
+          <option value="oldest">Oldest</option>
+        </select>
+      </div>
       <!-- Articles -->
-      <section v-if="hotItems" class="mt-16 flex justify-between">
+      <section v-if="hotItems && !mobile" class="hidden lg:flex mt-16 justify-between">
         <div class="w-1/2">
           <HotProducts
             :items="$store.getters.getAmountOfItems(dogArticles, itemsToShow === 0 ? dogArticles.length : 4)"
             :category="category"
             :itemsToShow="3"
+            class="justify-center"
           />
         </div>
         <!-- Highlighted Article -->
@@ -88,9 +106,10 @@
 
       <!-- Extra cards loaded  -->
       <HotProducts
-        :items="$store.getters.getAmountOfItems(dogArticles, dogArticles.length - 3)"
+        :items="sortedArticles"
         :category="category"
         :itemsToShow="itemsToShow"
+        class="justify-center"
       />
 
       <!-- Load more placeholder -->
@@ -154,13 +173,25 @@ export default {
         price: '15,49',
       },
       toggleFilter: true,
-      minPrice: 8,
-      maxPrice: 499,
+      minPrice: '8,00',
+      maxPrice: '499,00',
       itemsToShow: 0,
+      articles: [],
+      sort: 'priceLow',
+      mobile: true,
     }
   },
   mounted() {
     window.addEventListener('scroll', this.scrollListener)
+    if (window.innerWidth > 576) {
+      this.mobile = true
+    }
+    this.itemsToShow = this.mobile ? 4 : 0
+    if (this.mobile) {
+      this.articles = this.$store.getters.getAmountOfItems(this.dogArticles, this.dogArticles.length - 3)
+    } else {
+      this.articles = this.dogArticles
+    }
   },
   beforeDestroy() {
     window.removeEventListener('scroll', this.scrollListener)
@@ -171,7 +202,40 @@ export default {
     },
     enableSroll() {
       return this.dogArticles.length - 3 > this.itemsToShow
-    }
+    },
+    sortedArticles() {
+      const minPrice = parseFloat(this.minPrice) > 0 ? parseFloat(this.minPrice) : 0;
+      const maxPrice = parseFloat(this.maxPrice) > 0 ? parseFloat(this.maxPrice) : 499;
+
+      const articles = this.articles.filter(article => {
+        return (parseFloat(article.price) > minPrice && parseFloat(article.price) < maxPrice)
+      })
+
+      switch (this.sort) {
+          case 'priceLow':
+            return articles.sort((a, b) => {
+                return parseFloat(a.price) - parseFloat(b.price);
+              })
+          case 'priceHigh':
+            return articles.sort((a, b) => {
+                return parseFloat(b.price) - parseFloat(a.price);
+              })
+          case 'latest':
+            return articles.sort((a, b) => {
+                const aDate = new Date(a.dateAdded)
+                const bDate = new Date(b.dateAdded)
+                return bDate.getTime() - aDate.getTime();
+              })
+          case 'oldest':
+            return articles.sort((a, b) => {
+                const aDate = new Date(a.dateAdded)
+                const bDate = new Date(b.dateAdded)
+                return aDate.getTime() - bDate.getTime();
+              })
+          default: 
+            return articles
+        }
+    },
   },
   methods: {
     scrollListener(){
