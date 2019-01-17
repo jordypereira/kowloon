@@ -41,8 +41,8 @@ $input-checkbox-width: 19px;
     &.checked-yellow:checked {
       @apply bg-yellow;
     }
-    &.checked-green:checked {
-      @apply bg-green;
+    &.checked-green-light:checked {
+      @apply bg-green-light;
     }
     &.checked-blue-light:checked {
       @apply bg-blue-light;

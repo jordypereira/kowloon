@@ -37,6 +37,7 @@
               <input
                 type="checkbox"
                 :name="collection.name"
+                :id="collection.name"
                 :v-model="collection.checked"
                 class="input input-checkbox mr-10px"
                 :class="`checked-${category.color}`"
