@@ -61,12 +61,18 @@ $input-checkbox-width: 19px;
 
 .form {
   &-select {
-    appearance: none;
     padding: 9px 20px;
+    width: 175px;
     @apply bg-grey-650 text-grey-200;
-    option {
-      appearance: none;
-      @apply bg-white text-grey-900;
+    &:hover {
+      @apply cursor-pointer;
+    }
+  }
+  &-option{
+    padding: 9px 20px;
+    @apply bg-white text-grey-900;
+    &:hover {
+      @apply cursor-pointer;
     }
   }
 }

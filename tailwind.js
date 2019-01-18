@@ -46,6 +46,7 @@ let colors = {
   'grey-300': '#9a9a9a',
   'grey-200': '#cecece',
   'grey-100': '#cfcfcf',
+  'grey-75': '#e9e9e9',
   'grey-50': '#f6f6f6',
   'white': '#ffffff',
 

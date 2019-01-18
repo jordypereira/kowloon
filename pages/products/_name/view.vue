@@ -66,12 +66,7 @@
 
       <!-- Sort -->
       <div class="flex justify-between mt-10px mb-5">
-        <select v-model="sort" class="form-select">
-          <option value="priceLow">Price: low to high</option>
-          <option value="priceHigh">Price: high to low</option>
-          <option value="latest">Latest</option>
-          <option value="oldest">Oldest</option>
-        </select>
+        <SelectBox :options="sortOptions" v-model="sort" placeholder="Sort by relevance"/>
       </div>
       <!-- Articles -->
       <section v-if="hotItems && !mobile" class="hidden lg:flex mt-16 justify-between">
@@ -131,6 +126,7 @@ import Tag from '@/components/Tag'
 import HotProducts from '@/components/product/HotProducts'
 import Card from '@/components/cards/Card'
 import ProductColors from '@/components/product/ProductColors'
+import SelectBox from '@/components/SelectBox'
 
 import dogCoolingMat from '@/assets/images/products/dog_cooling_mat--thumbnail.png'
 import dogCoolingMatLarge from '@/assets/images/products/dog_cooling_mat.jpg'
@@ -148,6 +144,7 @@ export default {
     HotProducts,
     Card,
     ProductColors,
+    SelectBox,
   },
   data() {
     return {
@@ -177,7 +174,29 @@ export default {
       maxPrice: '499,00',
       itemsToShow: 0,
       articles: [],
-      sort: 'priceLow',
+      sort: {},
+      sortOptions: [
+        {
+          id: 1,
+          name: 'Price: low to high',
+          value: 'priceLow',
+        },
+        {
+          id: 2,
+          name: 'Price: high to low',
+          value: 'priceHigh',
+        },
+        {
+          id: 3,
+          name: 'Latest',
+          value: 'latest',
+        },
+        {
+          id: 4,
+          name: 'Oldest',
+          value: 'oldest',
+        },
+      ],
       mobile: true,
     }
   },
@@ -211,7 +230,7 @@ export default {
         return (parseFloat(article.price) > minPrice && parseFloat(article.price) < maxPrice)
       })
 
-      switch (this.sort) {
+      switch (this.sort.value) {
           case 'priceLow':
             return articles.sort((a, b) => {
                 return parseFloat(a.price) - parseFloat(b.price);
