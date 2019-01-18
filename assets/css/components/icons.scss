@@ -77,6 +77,7 @@
   &-arrow {
     width: 14px;
     height: 25px;
+    @apply bg-grey-900;
     &-prev {
       mask-image: url(~assets/images/symbols/prev.png);
     }
