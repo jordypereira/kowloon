@@ -70,7 +70,7 @@
       </div>
 
       <!-- Articles -->
-      <section v-if="hotItems && !mobile" class="hidden lg:flex mt-16 justify-between">
+      <section v-if="hotItems && viewport === 'lg'" class="hidden lg:flex mt-16 justify-between">
         <div class="w-1/2">
           <HotProducts
             :items="$store.getters.getAmountOfItems(dogArticles, itemsToShow === 0 ? dogArticles.length : 4)"
@@ -114,7 +114,7 @@
         class="flex -mx-3px relative justify-center"
         ref="placeholder"
       >
-        <Card md class="px-3px" v-for="i in 4" :key="i"></Card>
+        <Card md class="px-3px" v-for="i in placeholderItems" :key="i"></Card>
         <i class="icon icon-loader absolute self-center"></i>
       </section>
     </main>
@@ -173,7 +173,7 @@ export default {
       toggleFilter: true,
       minPrice: '8,00',
       maxPrice: '499,00',
-      itemsToShow: 0,
+      itemsToShow: 3,
       articles: [],
       sort: {},
       sortOptions: [
@@ -198,7 +198,8 @@ export default {
           value: 'oldest',
         },
       ],
-      mobile: true,
+      viewport: 'sm',
+      placeholderItems: 1,
     }
   },
   mounted() {
@@ -207,14 +208,20 @@ export default {
 
     // Detects if its not a mobile screen
     if (window.innerWidth > 576) {
-      this.mobile = false
+      this.viewport = 'md'
+      this.placeholderItems = 2
+      if (window.innerWidth > 768) {
+        this.viewport = 'md'
+        this.placeholderItems = 3
+        if (window.innerWidth > 960) {
+          this.viewport = 'lg'
+          this.placeholderItems = 4
+          this.itemsToShow = 0
+        }
+      }
     }
-
-    // Load items on mobile
-    this.itemsToShow = this.mobile ? 3 : 0
-
     // Load 3 items in Highlight if Desktop
-    if (this.mobile) {
+    if (this.viewport === 'lg') {
       this.articles = this.$store.getters.getAmountOfItems(this.dogArticles, this.dogArticles.length - 3)
     } else {
       this.articles = this.dogArticles
