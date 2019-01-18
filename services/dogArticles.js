@@ -1,4 +1,6 @@
 import dogCoolingMat from '@/assets/images/products/dog_cooling_mat--thumbnail.png'
+import dogCoolingMatLarge from '@/assets/images/products/dog_cooling_mat.jpg'
+
 
 export default [
   {
@@ -7,6 +9,8 @@ export default [
     price: '13,49',
     dateAdded: '2019-01-16T10:20:30Z',
     img: dogCoolingMat,
+    imgFull: dogCoolingMatLarge,
+    description: 'Hier komt een deel van de beschrijvende tekst die bij elk product hoort. Ook terug te vinden in het product detail.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius..',
     imgAlt: 'Dog Cooling Mat',
     colors: [
       'white',
@@ -20,6 +24,8 @@ export default [
     price: '11,49',
     dateAdded: '2019-01-16T10:20:30Z',
     img: dogCoolingMat,
+    imgFull: dogCoolingMatLarge,
+    description: 'Hier komt een deel van de beschrijvende tekst die bij elk product hoort. Ook terug te vinden in het product detail.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius..',
     imgAlt: 'Dog Cooling Mat',
     colors: [
       'white',
@@ -33,6 +39,8 @@ export default [
     price: '9,49',
     dateAdded: '2019-01-19T10:20:30Z',
     img: dogCoolingMat,
+    imgFull: dogCoolingMatLarge,
+    description: 'Hier komt een deel van de beschrijvende tekst die bij elk product hoort. Ook terug te vinden in het product detail.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius..',
     imgAlt: 'Dog Cooling Mat',
     colors: [
       'white',
@@ -46,6 +54,8 @@ export default [
     price: '15,22',
     dateAdded: '2019-01-13T10:20:30Z',
     img: dogCoolingMat,
+    imgFull: dogCoolingMatLarge,
+    description: 'Hier komt een deel van de beschrijvende tekst die bij elk product hoort. Ook terug te vinden in het product detail.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius..',
     imgAlt: 'Dog Cooling Mat',
     colors: [
       'white',
@@ -56,9 +66,11 @@ export default [
   {
     id: 5,
     name: 'Cooling mat',
-    price: '6,49',
+    price: '16,49',
     dateAdded: '2019-01-16T10:20:30Z',
     img: dogCoolingMat,
+    imgFull: dogCoolingMatLarge,
+    description: 'Hier komt een deel van de beschrijvende tekst die bij elk product hoort. Ook terug te vinden in het product detail.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius..',
     imgAlt: 'Dog Cooling Mat',
     colors: [
       'white',
@@ -72,6 +84,8 @@ export default [
     price: '15,49',
     dateAdded: '2019-01-12T10:20:30Z',
     img: dogCoolingMat,
+    imgFull: dogCoolingMatLarge,
+    description: 'Hier komt een deel van de beschrijvende tekst die bij elk product hoort. Ook terug te vinden in het product detail.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius..',
     imgAlt: 'Dog Cooling Mat',
     colors: [
       'white',
@@ -85,6 +99,8 @@ export default [
     price: '15,49',
     dateAdded: '2019-01-16T10:20:30Z',
     img: dogCoolingMat,
+    imgFull: dogCoolingMatLarge,
+    description: 'Hier komt een deel van de beschrijvende tekst die bij elk product hoort. Ook terug te vinden in het product detail.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius..',
     imgAlt: 'Dog Cooling Mat',
     colors: [
       'white',
@@ -98,6 +114,8 @@ export default [
     price: '15,49',
     dateAdded: '2019-01-16T10:20:30Z',
     img: dogCoolingMat,
+    imgFull: dogCoolingMatLarge,
+    description: 'Hier komt een deel van de beschrijvende tekst die bij elk product hoort. Ook terug te vinden in het product detail.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius..',
     imgAlt: 'Dog Cooling Mat',
     colors: [
       'white',
@@ -111,6 +129,8 @@ export default [
     price: '15,49',
     dateAdded: '2019-01-16T10:20:30Z',
     img: dogCoolingMat,
+    imgFull: dogCoolingMatLarge,
+    description: 'Hier komt een deel van de beschrijvende tekst die bij elk product hoort. Ook terug te vinden in het product detail.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius..',
     imgAlt: 'Dog Cooling Mat',
     colors: [
       'white',
@@ -124,6 +144,8 @@ export default [
     price: '15,49',
     dateAdded: '2019-01-16T10:20:30Z',
     img: dogCoolingMat,
+    imgFull: dogCoolingMatLarge,
+    description: 'Hier komt een deel van de beschrijvende tekst die bij elk product hoort. Ook terug te vinden in het product detail.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius..',
     imgAlt: 'Dog Cooling Mat',
     colors: [
       'white',
@@ -137,6 +159,8 @@ export default [
     price: '15,49',
     dateAdded: '2019-01-16T10:20:30Z',
     img: dogCoolingMat,
+    imgFull: dogCoolingMatLarge,
+    description: 'Hier komt een deel van de beschrijvende tekst die bij elk product hoort. Ook terug te vinden in het product detail.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius..',
     imgAlt: 'Dog Cooling Mat',
     colors: [
       'white',
@@ -150,6 +174,8 @@ export default [
     price: '15,49',
     dateAdded: '2019-01-16T10:20:30Z',
     img: dogCoolingMat,
+    imgFull: dogCoolingMatLarge,
+    description: 'Hier komt een deel van de beschrijvende tekst die bij elk product hoort. Ook terug te vinden in het product detail.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius..',
     imgAlt: 'Dog Cooling Mat',
     colors: [
       'white',
@@ -163,6 +189,8 @@ export default [
     price: '15,49',
     dateAdded: '2019-01-14T10:20:30Z',
     img: dogCoolingMat,
+    imgFull: dogCoolingMatLarge,
+    description: 'Hier komt een deel van de beschrijvende tekst die bij elk product hoort. Ook terug te vinden in het product detail.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius..',
     imgAlt: 'Dog Cooling Mat',
     colors: [
       'white',
@@ -176,6 +204,38 @@ export default [
     price: '15,49',
     dateAdded: '2019-01-16T10:20:30Z',
     img: dogCoolingMat,
+    imgFull: dogCoolingMatLarge,
+    description: 'Hier komt een deel van de beschrijvende tekst die bij elk product hoort. Ook terug te vinden in het product detail.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius..',
+    imgAlt: 'Dog Cooling Mat',
+    colors: [
+      'white',
+      'black',
+      'blue',
+    ]
+  },
+  {
+    id: 15,
+    name: 'Cooling mat',
+    price: '22,49',
+    dateAdded: '2019-01-16T10:20:30Z',
+    img: dogCoolingMat,
+    imgFull: dogCoolingMatLarge,
+    description: 'Hier komt een deel van de beschrijvende tekst die bij elk product hoort. Ook terug te vinden in het product detail.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius..',
+    imgAlt: 'Dog Cooling Mat',
+    colors: [
+      'white',
+      'black',
+      'blue',
+    ]
+  },
+  {
+    id: 16,
+    name: 'Cooling mat',
+    price: '12,49',
+    dateAdded: '2019-01-16T10:20:30Z',
+    img: dogCoolingMat,
+    imgFull: dogCoolingMatLarge,
+    description: 'Hier komt een deel van de beschrijvende tekst die bij elk product hoort. Ook terug te vinden in het product detail.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius..',
     imgAlt: 'Dog Cooling Mat',
     colors: [
       'white',

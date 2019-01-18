@@ -75,13 +75,13 @@ export const getters = {
       return state.categories.other
     }
   },
-  getAmountOfItems: () => (items, amount) => {
+  getAmountOfItems: () => (items, amount, start = 0) => {
     if (items.length === amount + 1) {
-      return items.slice(0, amount + 1)
+      return items.slice(start, amount + 1)
     }
-    return items.slice(0, amount)
+    return items.slice(start, amount)
   },
   getRestOfItems: () => (items, amount) => {
-    return items.filter(item => item.id === amount + 1)
+    return items.filter((item, i) => i === amount)
   },
 }

@@ -73,32 +73,32 @@
       <!-- Sort -->
       <div class="flex justify-between mt-10px mb-5">
         <SelectBox :options="sortOptions" v-model="sort" placeholder="Sort by relevance"/>
+        <!-- Shown Items Counter -->
         <div v-if="viewport === 'md' || viewport === 'lg'" class="whitespace-no-wrap">
           <span class="text-grey-200">{{ category.shortName }} items:</span>
-          <span
-            class="font-bold"
-          >{{ itemsToShow + (viewport === 'lg' ? 5 : 0) }} of {{ dogArticles.length + (viewport === 'lg' ? 5 : 0) }}</span>
+          <span class="font-bold">{{ itemsToShow }} of {{ dogArticles.length }}</span>
         </div>
       </div>
 
       <!-- Articles -->
-      <section v-if="hotItems && viewport === 'lg'" class="hidden lg:flex mt-16 justify-between">
+      <section v-if="viewport === 'lg'" class="hidden lg:flex mt-16 justify-between">
+        <!-- The 4 Articles after the first  -->
         <div class="w-1/2">
           <HotProducts
-            :items="$store.getters.getAmountOfItems(dogArticles, itemsToShow === 0 ? dogArticles.length : 4)"
+            :items="$store.getters.getAmountOfItems(sortedArticles, itemsToShow === 5 ? sortedArticles.length : 5, 1)"
             :category="category"
             :itemsToShow="3"
             class="justify-center"
           />
         </div>
-        <!-- Highlighted Article -->
+        <!-- Highlight the first Article -->
         <div class="w-1/2 pl-6px">
           <Card
-            :img="dogCoolingMatLarge"
-            :name="highlightedProduct.name"
-            :description="highlightedProduct.description"
-            :price="highlightedProduct.price"
-            imgAlt="Dog cooling mat"
+            :img="sortedArticles[0].imgFull"
+            :name="sortedArticles[0].name"
+            :description="sortedArticles[0].description"
+            :price="sortedArticles[0].price"
+            :imgAlt="sortedArticles[0].imgAlt"
             :url="`/products/${category.name}/details`"
             :category="category"
             hoverFrame="details"
@@ -114,9 +114,9 @@
 
       <!-- Extra cards loaded  -->
       <HotProducts
-        :items="sortedArticles"
+        :items="extraCards"
         :category="category"
-        :itemsToShow="itemsToShow"
+        :itemsToShow="extraCardsToShow"
         class="justify-center"
       />
 
@@ -146,7 +146,6 @@ import dogCoolingMatLarge from '@/assets/images/products/dog_cooling_mat.jpg'
 
 import homeSliderImages from '@/services/homeSliderImages'
 import collections from '@/services/productOptions'
-import hotItems from '@/services/hotItems'
 import dogArticles from '@/services/dogArticles'
 
 export default {
@@ -165,7 +164,6 @@ export default {
       collections,
       dogCoolingMat,
       dogCoolingMatLarge,
-      hotItems,
       dogArticles,
       tags: [
         {
@@ -177,15 +175,10 @@ export default {
           name: 'Splash \'n Fun',
         },
       ],
-      highlightedProduct: {
-        name: 'Cooling mat',
-        description: 'Hier komt een deel van de beschrijvende tekst die bij elk product hoort. Ook terug te vinden in het product detail.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius..',
-        price: '15,49',
-      },
       toggleFilter: true,
       price: [8, 499],
       itemsToShow: 3,
-      articles: [],
+      itemsToAddPerScroll: 3,
       sort: {},
       sortOptions: [
         {
@@ -230,47 +223,18 @@ export default {
       },
     }
   },
-  mounted() {
-    // Detects if user scrolled to the bottom
-    window.addEventListener('scroll', this.scrollListener)
-
-    // Detects if its not a mobile screen
-    if (window.innerWidth > 576) {
-      this.viewport = 'md'
-      this.placeholderItems = 2
-      this.rangeSliderOptions.width = 389
-      if (window.innerWidth > 768) {
-        this.viewport = 'md'
-        this.placeholderItems = 3
-        if (window.innerWidth > 960) {
-          this.viewport = 'lg'
-          this.placeholderItems = 4
-          this.itemsToShow = 0
-        }
-      }
-    }
-    // Load 3 items in Highlight if Desktop
-    if (this.viewport === 'lg') {
-      this.articles = this.$store.getters.getAmountOfItems(this.dogArticles, this.dogArticles.length - 3)
-    } else {
-      this.articles = this.dogArticles
-    }
-  },
-  beforeDestroy() {
-    window.removeEventListener('scroll', this.scrollListener)
-  },
   computed: {
     category() {
       return this.$store.getters.getCategory(this.$route.params.name)
     },
     enableSroll() {
-      return this.dogArticles.length - 3 > this.itemsToShow
+      return (this.dogArticles.length - this.itemsToAddPerScroll) > this.itemsToShow
     },
     sortedArticles() {
       const minPrice = parseFloat(this.price[0]) > 0 ? parseFloat(this.price[0]) : 0;
       const maxPrice = parseFloat(this.price[1]) > 0 ? parseFloat(this.price[1]) : 499;
 
-      const articles = this.articles.filter(article => {
+      const articles = this.dogArticles.filter(article => {
         return (parseFloat(article.price) > minPrice && parseFloat(article.price) < maxPrice)
       })
 
@@ -299,12 +263,55 @@ export default {
             return articles
         }
     },
+    extraCards() {
+      if (this.viewport === 'lg' && this.dogArticles) {
+        return this.$store.getters.getAmountOfItems(this.sortedArticles, this.dogArticles.length, 4)
+      } else {
+        return this.sortedArticles
+      }
+    },
+    extraCardsToShow() {
+      if (this.viewport === 'lg') {
+        return this.itemsToShow - 5
+      } else {
+        return this.itemsToShow
+      }
+    }
+  },
+  mounted() {
+    // Detects if user scrolled to the bottom
+    window.addEventListener('scroll', this.scrollListener)
+
+    // Detects if its not a mobile screen
+    if (window.innerWidth > 576) {
+      this.viewport = 'md'
+      this.placeholderItems = 2
+      this.rangeSliderOptions.width = 389
+      if (window.innerWidth > 768) {
+        this.viewport = 'md'
+        this.placeholderItems = 3
+        if (window.innerWidth > 960) {
+          this.viewport = 'lg'
+          this.placeholderItems = 4
+          this.itemsToShow = 5
+        }
+      }
+    }
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.scrollListener)
   },
   methods: {
     scrollListener(){
+      // if the amount of items left is less than the amount that gets added, show all of the items
       if(this.enableSroll) {
+        // If the bottom of the placeholder is less than the total window height, add more items to show
         if (this.$refs.placeholder.getBoundingClientRect().bottom < window.innerHeight + 1) {
-          this.itemsToShow === 0 ? this.itemsToShow += 3 : this.itemsToShow += 4
+          if (this.itemsToShow === 5) {
+            this.itemsToShow += this.itemsToAddPerScroll
+          } else {
+            this.itemsToShow += (this.itemsToAddPerScroll + 1)
+          }
         }
       } else {
         this.itemsToShow = this.dogArticles.length

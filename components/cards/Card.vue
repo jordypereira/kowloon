@@ -17,7 +17,7 @@
           <!-- Absolute placed buttons appear here -->
           <slot/>
           <hoverDetailsFrame
-            v-if="hoverFrame && category"
+            v-if="img && hoverFrame && category"
             :color="category.color"
           >{{ hoverFrame === 'details' ? 'View details' : hoverFrame}}</hoverDetailsFrame>
         </nuxt-link>

@@ -47,6 +47,9 @@ export default {
       this.mySwiper.on('autoplayStop', () => {
         this.progressBar = false
       })
-    }
+      this.mySwiper.on('autoplayStart', () => {
+        this.progressBar = true
+      })
+    },
 }
 </script>

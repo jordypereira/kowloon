@@ -21,7 +21,7 @@
     <!-- Rest of the cards stacked  -->
     <div v-if="(items.length > itemsToShow + 1 && itemsToShow !== 0)" class="px-3px mb-5">
       <Card
-        v-bind="$store.getters.getRestOfItems(items, itemsToShow)[0]"
+        v-bind="items[itemsToShow]"
         :url="`/products/${category.name}/details`"
         :category="category"
         hoverFrame="View more"
