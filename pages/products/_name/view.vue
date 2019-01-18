@@ -25,7 +25,7 @@
       <section class="mb-10px pb-5 border-b-2 border-solid border-grey-650">
         <!-- Filter toggle -->
         <div class="flex hover:cursor-pointer mb-12 sm:mb-4" @click="toggleFilter = !toggleFilter">
-          <div class="text-15px mr-10px">Advanced filter</div>
+          <div class="text-15px mr-10px select-none">Advanced filter</div>
           <div
             :class="[ (toggleFilter) ? 'dropdown-triangle-bot' : 'dropdown-triangle-right']"
             class="self-center dropdown-triangle dropdown-small dropdown-grey-300"
@@ -41,10 +41,10 @@
                 :name="collection.name"
                 :id="collection.name"
                 :v-model="collection.checked"
-                class="input input-checkbox mr-10px"
+                class="input input-checkbox mr-10px hover:cursor-pointer"
                 :class="`checked-${category.color}`"
               >
-              <label :for="collection.name">{{ collection.name }}</label>
+              <label :for="collection.name" class="hover:cursor-pointer">{{ collection.name }}</label>
             </div>
           </div>
 

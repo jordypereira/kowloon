@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ul class="list-reset">
+    <ul class="list-reset select-none">
       <li @click="toggleMenu()" class="form-select relative mb-px">
         {{ value.name !== undefined ? value.name : placeholder }}
         <span
