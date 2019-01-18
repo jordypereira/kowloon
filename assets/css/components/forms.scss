@@ -6,6 +6,7 @@ $input-sm-width: 150px;
 $input-checkbox-height: 19px;
 $input-checkbox-width: 19px;
 
+$input-select-xs-width: 290px;
 $input-select-width: 175px;
 $input-select-padding-y: 9px;
 $input-select-padding-x: 20px;
@@ -65,23 +66,25 @@ $input-select-padding-x: 20px;
     }
   }
 }
-
+@mixin form-select-option {
+  padding: $input-select-padding-y $input-select-padding-x;
+  max-width: $input-select-xs-width;
+  max-width: calc(100vw - 32px);
+  @screen sm {
+    width: $input-select-width;
+  }
+  &:hover {
+    @apply cursor-pointer;
+  }
+}
 .form {
   &-select {
-    padding: $input-select-padding-y $input-select-padding-x;
-    width: $input-select-width;
+    @include form-select-option;
     @apply bg-grey-650 text-grey-200;
-    &:hover {
-      @apply cursor-pointer;
-    }
   }
   &-option{
-    padding: $input-select-padding-y $input-select-padding-x;
-    width: $input-select-width;
+    @include form-select-option;
     @apply bg-white text-grey-900;
-    &:hover {
-      @apply cursor-pointer;
-    }
   }
 }
 

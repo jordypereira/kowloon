@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="w-full">
     <ul class="list-reset select-none">
       <li @click="toggleMenu()" class="form-select relative mb-px">
         {{ value.name !== undefined ? value.name : placeholder }}
@@ -10,7 +10,11 @@
         </span>
       </li>
 
-      <div v-if="showMenu" class="absolute z-10">
+      <div
+        v-if="showMenu"
+        class="absolute z-10 w-full"
+        style="max-width: calc(100vw - 32px - 17px);"
+      >
         <li
           v-for="option in options"
           :key="option.id"
