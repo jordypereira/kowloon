@@ -72,6 +72,12 @@
       background-image: url(~assets/images/symbols/next.png);
     }
   }
+
+  &-sort {
+    width: 8px;
+    height: 15px;
+    background-image: url(~assets/images/symbols/sort-icon.svg);
+  }
   
   &-dog {
     background-image: url(~assets/images/symbols/dog.svg);

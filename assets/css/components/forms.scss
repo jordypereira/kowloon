@@ -1,5 +1,5 @@
 $input-height: 45px;
-$input-xs-width:150px;
+$input-xs-width: 120px;
 $input-width: 234px;
 $input-width-small: 150px;
 
@@ -16,12 +16,17 @@ $input-checkbox-width: 19px;
     @extend .input;
     height: $input-height;
     width: $input-xs-width;
-    @screen xs {
+    @apply text-black-dark2;
+    @screen sm {
       width: $input-width;
     }
     &.input-small {
       width: $input-width-small;
     }
+  }
+
+  &-price-tag {
+    @apply text-base absolute text-black-dark2 pin-b ml-3 h-full flex items-center;
   }
 
   &-textarea {
@@ -50,6 +55,18 @@ $input-checkbox-width: 19px;
     }
     &.checked-blue-light:checked {
       @apply bg-blue-light;
+    }
+  }
+}
+
+.form {
+  &-select {
+    appearance: none;
+    padding: 9px 20px;
+    @apply bg-grey-650 text-grey-200;
+    option {
+      appearance: none;
+      @apply bg-white text-grey-900;
     }
   }
 }
