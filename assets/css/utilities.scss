@@ -1,3 +1,9 @@
 .mt-faq {
   margin-top: 231px;
 }
+
+@responsive {
+  .pin-l-60px {
+    left: 60px;
+  }
+}

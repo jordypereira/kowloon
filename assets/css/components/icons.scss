@@ -111,6 +111,13 @@
     @apply bg-black;
     mask-image: url(~assets/images/symbols/break.svg);
   }
+
+  &-clear {
+    width: 15px;
+    height: 15px;
+    @apply bg-grey-800;
+    mask-image: url(~assets/images/symbols/clear_icon.png);
+  }
   
   // Categories
   &-dog {

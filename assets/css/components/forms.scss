@@ -33,6 +33,13 @@ $input-select-padding-x: 20px;
     }
   }
 
+  &-text-faq {
+    @apply pb-3 px-5 text-3xl;
+    &::placeholder {
+      @apply opacity-100 text-grey-750;
+    }
+  }
+
   &-price-tag {
     @apply text-base absolute text-black-dark2 pin-b ml-3 h-full flex items-center;
   }
@@ -66,6 +73,8 @@ $input-select-padding-x: 20px;
     }
   }
 }
+
+// Select button
 @mixin form-select-option {
   padding: $input-select-padding-y $input-select-padding-x;
   max-width: $input-select-xs-width;

@@ -23,7 +23,7 @@
           <!-- Icon FAQ -->
           <div
             class="items-center nav-faq hover:cursor-pointer"
-            :class="[!navToggle ? 'hidden md:flex' : 'flex', $store.state.faqToggle ? 'bg-grey-75 z-40' : '']"
+            :class="[!navToggle ? 'hidden md:flex' : 'flex', $store.state.faqToggle ? 'bg-grey-75' : '']"
             @click="$store.commit('toggleFaq')"
           >
             <div class="w-60px flex justify-center">
