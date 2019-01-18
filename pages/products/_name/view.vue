@@ -278,7 +278,8 @@ export default {
           this.itemsToShow === 0 ? this.itemsToShow += 3 : this.itemsToShow += 4
         }
       } else {
-         window.removeEventListener('scroll', this.scrollListener)
+        this.itemsToShow = this.dogArticles.length
+        window.removeEventListener('scroll', this.scrollListener)
       }
     }
   },
