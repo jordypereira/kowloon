@@ -1,7 +1,7 @@
 $input-height: 45px;
-$input-xs-width: 120px;
 $input-width: 234px;
-$input-width-small: 150px;
+$input-xs-width: 120px;
+$input-sm-width: 150px;
 
 $input-checkbox-height: 19px;
 $input-checkbox-width: 19px;
@@ -15,13 +15,16 @@ $input-checkbox-width: 19px;
   &-text {
     @extend .input;
     height: $input-height;
-    width: $input-xs-width;
+    width: $input-sm-width;
     @apply text-black-dark2;
     @screen sm {
       width: $input-width;
     }
+    &.input-xs {
+      width: $input-xs-width;
+    }
     &.input-small {
-      width: $input-width-small;
+      width: $input-sm-width;
     }
   }
 

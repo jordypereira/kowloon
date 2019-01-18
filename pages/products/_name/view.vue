@@ -53,12 +53,12 @@
           <div class="flex mt-3">
             <div class="relative">
               <span class="input-price-tag">€</span>
-              <input type="text" v-model="minPrice" class="input-text text-center">
+              <input type="text" v-model="minPrice" class="input-text input-xs text-center">
             </div>
             <span class="px-5 self-center">-</span>
             <div class="relative">
               <span class="input-price-tag">€</span>
-              <input type="text" v-model="maxPrice" class="input-text text-center">
+              <input type="text" v-model="maxPrice" class="input-text input-xs text-center">
             </div>
           </div>
         </div>
