@@ -5,6 +5,10 @@ $swiper-button-size: 35px;
 $swiper-button-distance: 15px;
 $swiper-button-background-size: 5px;
 
+// Swiper Loader
+$swiper-loader-height: 3px;
+$swiper-loader-color:  rgba(27, 27, 27, 0.32);
+
 .home-bullet {
   @apply bg-white opacity-100 mr-15px border-none rounded-full w-2 h-2 inline-block;
   box-shadow: 0 0 0 3px $home-bullet-border-color;
@@ -46,4 +50,25 @@ $swiper-button-background-size: 5px;
 }
 .swiper-button-next {
   right: $swiper-button-distance;
+}
+
+.swiper-loader {
+  @apply absolute pin-b w-full;
+  height: $swiper-loader-height;
+  background-color: rgba(255, 255, 255, 0.32);
+
+  .swiper-loader-1 {
+    @apply absolute pin-l;
+    background-color: $swiper-loader-color;
+    height: $swiper-loader-height;
+    animation-name: loader;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+}
+
+@keyframes loader {
+  0%   { width: 0; }
+  100% { width: 100%;}
 }

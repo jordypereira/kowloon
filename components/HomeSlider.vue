@@ -5,12 +5,16 @@
         <img :src="item.url" alt="Slider Image of a dog" class="img-cover">
 
         <div class="hidden md:block swiper-pagination w-full pin-b mb-22px" slot="pagination"></div>
+        <div :class="{'swiper-loader': progressBar}">
+          <div :class="{'swiper-loader-1': progressBar}"></div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+
 export default {
   name: 'HomeSlider',
   props: {
@@ -23,8 +27,9 @@ export default {
           centeredSlides: true,
           autoplay: {
             delay: 2500,
-            disableOnInteraction: false
+            disableOnInteraction: true
           },
+          speed: 0,
           roundLengths: true,
           pagination: {
             el: '.swiper-pagination',
@@ -35,7 +40,13 @@ export default {
           watchSlidesProgress: true,
           watchSlidesVisibility: true,
         },
+        progressBar: true,
       }
     },
+    mounted() {
+      this.mySwiper.on('autoplayStop', () => {
+        this.progressBar = false
+      })
+    }
 }
 </script>
