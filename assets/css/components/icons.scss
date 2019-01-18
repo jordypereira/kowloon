@@ -1,25 +1,37 @@
 .icon {
   background-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  @apply bg-white;
+
+  // Colors
+  &.icon-orange {
+    @apply bg-orange;
+  }
+
+  &.icon-white {
+    @apply bg-white;
+  }
+
   &-k {
     width: 24px;
     height: 22px;
-    background-image: url(~assets/images/symbols/k_logo.svg);
+    mask-image: url(~assets/images/symbols/k_logo.svg);
     &.icon-small {
       width: 24px;
       height: 22px;
-      background-image: url(~assets/images/symbols/k_logo.svg);
+      mask-image: url(~assets/images/symbols/k_logo.svg);
     }
     &-full {
       width: 180px;
       height: 22px;
-      background-image: url(~assets/images/symbols/k_logo--full.svg);
+      mask-image: url(~assets/images/symbols/k_logo--full.svg);
     }
   }
 
   &-kowloon {
     width: 208px;
     height: 64px;
-    background-image: url(~assets/images/Kowloon_logo.svg);
+    mask-image: url(~assets/images/Kowloon_logo.svg);
     @screen md {
       width: 288px;
       height: 89px;
@@ -29,60 +41,75 @@
   &-hamburger {
     width: 28px;
     height: 22px;
-    background-image: url(~assets/images/hamburger_icon.svg);
+    mask-image: url(~assets/images/hamburger_icon.svg);
   }
 
   &-x-close {
     width: 24px;
     height: 23px;
-    background-image: url(~assets/images/symbols/x_close.svg);
+    mask-image: url(~assets/images/symbols/x_close.svg);
   }
   
   &-search {
     width: 29px;
     height: 29px;
-    background-image: url(~assets/images/Search_icon.svg);
+    mask-image: url(~assets/images/Search_icon.svg);
   }
   
   &-faq {
     width: 20px;
     height: 33px;
-    background-image: url(~assets/images/FAQ_icon.svg);
+    mask-image: url(~assets/images/FAQ_icon.svg);
   }
 
   &-mail {
     width: 31px;
     height: 21px;
-    background-image: url(~assets/images/symbols/mail.svg);
+    mask-image: url(~assets/images/symbols/mail.svg);
   }
 
   &-loader {
     width: 48px;
     height: 48px;
-    background-image: url(~assets/images/symbols/loader.svg);
+    mask-image: url(~assets/images/symbols/loader.svg);
   }
 
   &-arrow {
     width: 14px;
     height: 25px;
     &-prev {
-      background-image: url(~assets/images/symbols/prev.png);
+      mask-image: url(~assets/images/symbols/prev.png);
     }
     &-next {
-      background-image: url(~assets/images/symbols/next.png);
+      mask-image: url(~assets/images/symbols/next.png);
     }
   }
 
   &-sort {
     width: 8px;
     height: 15px;
-    background-image: url(~assets/images/symbols/sort-icon.svg);
+    mask-image: url(~assets/images/symbols/sort-icon.svg);
+  }
+
+  &-cookie {
+    width: 186px;
+    height: 123px;
+    @apply bg-beige-dark;
+    mask-image: url(~assets/images/symbols/cookie.svg);
+  }
+
+  &-crumble {
+    width: 37px;
+    height: 25px;
+    @apply bg-beige-dark;
+    mask-image: url(~assets/images/symbols/crumble.svg);
   }
   
   &-dog {
-    background-image: url(~assets/images/symbols/dog.svg);
     width: 27px;
     height: 29px;
+    @apply bg-pink;
+    mask-image: url(~assets/images/symbols/dog.svg);
     &.icon-small {
       width: 27px;
       height: 29px;
@@ -98,9 +125,10 @@
   }
 
   &-cat {
-    background-image: url(~assets/images/symbols/cat.svg);
     width: 27px;
     height: 31px;
+    @apply bg-indigo;
+    mask-image: url(~assets/images/symbols/cat.svg);
     &.icon-small {
       width: 27px;
       height: 31px;
@@ -116,9 +144,10 @@
   }
 
   &-fish {
-    background-image: url(~assets/images/symbols/fish.svg);
     width: 28px;
     height: 28px;
+    @apply bg-yellow;
+    mask-image: url(~assets/images/symbols/fish.svg);
     &.icon-small {
       width: 28px;
       height: 28px;
@@ -134,9 +163,10 @@
   }
 
   &-bird {
-    background-image: url(~assets/images/symbols/bird.svg);
     width: 24px;
     height: 38px;
+    @apply bg-green-light;
+    mask-image: url(~assets/images/symbols/bird.svg);
     &.icon-small {
       width: 24px;
       height: 38px;
@@ -152,9 +182,10 @@
   }
 
   &-small-animal {
-    background-image: url(~assets/images/symbols/hamster.svg);
     width: 27px;
     height: 30px;
+    @apply bg-blue-light;
+    mask-image: url(~assets/images/symbols/hamster.svg);
     &.icon-small {
       width: 27px;
       height: 30px;
@@ -170,7 +201,7 @@
   }
 
   &-other {
-    background-image: url(~assets/images/symbols/other.svg);
+    mask-image: url(~assets/images/symbols/other.svg);
     width: 32px;
     height: 32px;
     &.icon-large {

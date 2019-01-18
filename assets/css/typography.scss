@@ -25,7 +25,7 @@ body {
 }
 
 .title {
-  @apply font-section font-medium text-white leading-none;
+  @apply font-section font-medium leading-none;
   font-size: 25px;
   letter-spacing: -0.8px;
   @screen md {
@@ -58,7 +58,7 @@ body {
 }
 
 .section-title {
-  @apply font-section font-medium text-white text-base leading-none;
+  @apply font-section font-medium text-base leading-none;
   letter-spacing: -0.4px;
   @screen sm {
     @apply text-lg;
@@ -98,4 +98,11 @@ body {
 
 .text-nav {
   font-size: 22px;
+}
+
+.text-cookie {
+  &-title {
+    @extend .title;
+    font-size: 40px;
+  }
 }
