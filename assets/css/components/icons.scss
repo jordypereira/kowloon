@@ -104,7 +104,15 @@
     @apply bg-beige-dark;
     mask-image: url(~assets/images/symbols/crumble.svg);
   }
+
+  &-break {
+    width: 37px;
+    height: 25px;
+    @apply bg-black;
+    mask-image: url(~assets/images/symbols/break.svg);
+  }
   
+  // Categories
   &-dog {
     width: 27px;
     height: 29px;
