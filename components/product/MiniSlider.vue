@@ -4,7 +4,7 @@
       <div class="swiper-wrapper">
         <div class="swiper-slide card-xs border border-grey m-7px mr-0" v-for="i in 10" :key="i">
           <nuxt-link :to="url" class="text-white no-underline">
-            <img :src="dogCoolingMat" imgAlt="Dog cooling mat" class="img-cover">
+            <img :src="dogCoolingMat" alt="Dog cooling mat" class="img-cover">
           </nuxt-link>
         </div>
       </div>
