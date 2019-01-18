@@ -50,15 +50,21 @@
 
           <!-- Price Slider -->
           <span class="sub-title">Price range</span>
-          <div class="flex mt-3">
-            <div class="relative">
-              <span class="input-price-tag">€</span>
-              <input type="text" v-model="minPrice" class="input-text input-xs text-center">
+
+          <div class="flex flex-col md:flex-row items-center mt-3">
+            <div class="md:mr-10 w-full">
+              <vue-slider ref="slider" v-bind="rangeSliderOptions" v-model="price"></vue-slider>
             </div>
-            <span class="px-5 self-center">-</span>
-            <div class="relative">
-              <span class="input-price-tag">€</span>
-              <input type="text" v-model="maxPrice" class="input-text input-xs text-center">
+            <div class="flex justify-between md:justify-start w-full mt-4 md:mt-0">
+              <div class="relative">
+                <span class="input-price-tag">€</span>
+                <input type="text" v-model="price[0]" class="input-text input-xs text-center">
+              </div>
+              <span class="px-5 self-center">-</span>
+              <div class="relative">
+                <span class="input-price-tag">€</span>
+                <input type="text" v-model="price[1]" class="input-text input-xs text-center">
+              </div>
             </div>
           </div>
         </div>
@@ -173,6 +179,7 @@ export default {
       toggleFilter: true,
       minPrice: '8,00',
       maxPrice: '499,00',
+      price: [8, 499],
       itemsToShow: 3,
       articles: [],
       sort: {},
@@ -200,6 +207,23 @@ export default {
       ],
       viewport: 'sm',
       placeholderItems: 1,
+      rangeSliderOptions: {
+        width: '100%',
+        height: 4,
+        dotSize: 18,
+        min: 8.00,
+        max: 499.00,
+        interval: 0.01,
+        useKeyboard: true,
+        tooltip: 'false',
+        enableCross: false,
+        bgStyle: {
+          backgroundColor: '#fff',
+        },
+        processStyle: {
+          backgroundColor: '#9a9a9a'
+        }
+      },
     }
   },
   mounted() {
@@ -210,6 +234,7 @@ export default {
     if (window.innerWidth > 576) {
       this.viewport = 'md'
       this.placeholderItems = 2
+      this.rangeSliderOptions.width = 389
       if (window.innerWidth > 768) {
         this.viewport = 'md'
         this.placeholderItems = 3
