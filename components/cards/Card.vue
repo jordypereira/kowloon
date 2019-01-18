@@ -55,7 +55,10 @@ export default {
   name: 'Card',
   props: {
       img: String,
-      imgAlt: String,
+      imgAlt: {
+        type: String,
+        default: 'Image of a product.'
+      },
       name: String,
       price: String,
       category: Object,
