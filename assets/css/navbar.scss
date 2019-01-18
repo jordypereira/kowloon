@@ -23,7 +23,7 @@ $nav-faq-padding-l: 0;
 
 nav {
   width: $nav-width;
-  height: $nav-height;
+  // height: $nav-height;
   transition: 1s;
   &.nav-open {
     width: $nav-mobile-open-width;

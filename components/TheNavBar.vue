@@ -1,7 +1,7 @@
 <template>
   <div class="relative">
-    <nav class="absolute md:static md:bg-black h-full" :class="{'nav-open': navToggle}">
-      <div class="h-screen flex flex-col justify-between">
+    <nav class="absolute md:static md:bg-black md:h-full" :class="{'nav-open h-full': navToggle}">
+      <div class="md:h-screen flex flex-col justify-between" :class="{'h-screen': navToggle}">
         <div class="flex flex-col">
           <!-- Nav Toggler -->
           <div class="relative z-10" @click="toggleNav()">
