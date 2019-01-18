@@ -6,7 +6,7 @@
       <HomeSlider :images="homeSliderImages"/>
     </header>
 
-    <main class="container px-4 lg:px-0 mx-auto text-white">
+    <main class="container lg:px-0 text-white">
       <!-- Description -->
       <p class="hidden md:block text-center w-3/4 mx-auto mt-51px">{{ introText.web }}</p>
       <p class="md:hidden mx-auto mt-28px">{{ introText.mobile }}</p>

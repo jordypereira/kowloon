@@ -21,9 +21,13 @@
             <span v-if="navToggle" class="text-nav text-grey-400">Search</span>
           </div>
           <!-- Icon FAQ -->
-          <div class="items-center nav-faq" :class="[!navToggle ? 'hidden md:flex' : 'flex']">
+          <div
+            class="items-center nav-faq hover:cursor-pointer"
+            :class="[!navToggle ? 'hidden md:flex' : 'flex', $store.state.faqToggle ? 'bg-grey-75 z-40' : '']"
+            @click="$store.commit('toggleFaq')"
+          >
             <div class="w-60px flex justify-center">
-              <i class="icon icon-faq"></i>
+              <i class="icon icon-faq" :class="[$store.state.faqToggle ? 'bg-black' : '']"></i>
             </div>
             <span v-if="navToggle" class="text-nav text-grey-400">FAQ</span>
           </div>

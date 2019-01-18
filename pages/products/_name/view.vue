@@ -4,7 +4,7 @@
       <i class="mt-13 absolute z-10 icon-k-large"/>
       <HomeSlider :images="homeSliderImages"/>
     </header>
-    <main class="container px-4 lg:px-0 mx-auto text-white">
+    <main class="container lg:px-0 text-white">
       <!-- Tags -->
       <div class="flex mt-8 mb-5">
         <i class="mr-6px icon icon-k"/>

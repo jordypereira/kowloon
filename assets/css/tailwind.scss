@@ -9,7 +9,7 @@
  *
  * @import "tailwindcss/preflight";
  */
- @tailwind preflight;
+@tailwind preflight;
 
  
  /**
@@ -19,23 +19,7 @@
   *
   * @import "tailwindcss/components";
   */
- @tailwind components;
-
- @import 'components/tags';
- @import 'components/icons';
- @import 'components/cards';
- @import 'components/links';
- @import 'components/dividers';
- @import 'components/dropdowns';
- @import 'components/buttons';
- @import 'components/forms';
- @import 'components/images';
- @import 'components/container';
- 
- @import 'components/homeSlider';
- @import 'components/productColors';
- @import 'components/productShapes';
- @import 'components/productImages';
+@tailwind components;
 
  /**
   * Here you would add any of your custom component classes; stuff that you'd
@@ -52,6 +36,22 @@
   * @import "components/buttons";
   * @import "components/forms";
   */
+
+@import 'components/tags';
+@import 'components/icons';
+@import 'components/cards';
+@import 'components/links';
+@import 'components/dividers';
+@import 'components/dropdowns';
+@import 'components/buttons';
+@import 'components/forms';
+@import 'components/images';
+@import 'components/container';
+
+@import 'components/homeSlider';
+@import 'components/productColors';
+@import 'components/productShapes';
+@import 'components/productImages';
  
  /**
   * This injects all of Tailwind's utility classes, generated based on your
@@ -61,7 +61,7 @@
   *
   * @import "tailwindcss/utilities";
   */
- @tailwind utilities;
+@tailwind utilities;
  
  /**
   * Here you would add any custom utilities you need that don't come out of the
@@ -77,3 +77,4 @@
   * @import "utilities/background-patterns";
   * @import "utilities/skew-transforms";
   */
+@import 'utilities';

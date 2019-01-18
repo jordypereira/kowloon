@@ -8,7 +8,8 @@
         "tailwind",
         "mixin",
         "include",
-        "screen"
+        "screen",
+        "responsive"
       ]
     }],
     "block-no-empty": null,

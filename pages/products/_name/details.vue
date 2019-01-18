@@ -3,7 +3,7 @@
     <header class="flex justify-center mt-13 mb-49px">
       <i class="icon icon-kowloon"></i>
     </header>
-    <main class="container mx-auto flex flex-col px-4 lg:px-0">
+    <main class="container flex flex-col lg:px-0">
       <section class="flex flex-col md:flex-row -mx-27px mb-10px">
         <!-- Flip These On Desktop -->
         <div class="flex flex-col md:flex-row-reverse">

@@ -743,6 +743,7 @@ module.exports = {
     '50': '.5',
     '75': '.75',
     '86': '.86',
+    '95': '.95',
     '100': '1',
   },
 
@@ -871,8 +872,8 @@ module.exports = {
 
   plugins: [
     require('tailwindcss/plugins/container')({
-      // center: true,
-      // padding: '1rem',
+      center: true,
+      padding: '1rem',
     }),
   ],
 
