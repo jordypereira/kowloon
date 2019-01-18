@@ -44,6 +44,9 @@ export const mutations = {
   toggleFaq (state) {
     state.faqToggle = !state.faqToggle
   },
+  closeFaq (state) {
+    state.faqToggle = false
+  },
 }
 
 export const getters = {
