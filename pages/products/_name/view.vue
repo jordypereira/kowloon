@@ -73,6 +73,12 @@
       <!-- Sort -->
       <div class="flex justify-between mt-10px mb-5">
         <SelectBox :options="sortOptions" v-model="sort" placeholder="Sort by relevance"/>
+        <div v-if="viewport === 'md' || viewport === 'lg'" class="whitespace-no-wrap">
+          <span class="text-grey-200">{{ category.shortName }} items:</span>
+          <span
+            class="font-bold"
+          >{{ itemsToShow + (viewport === 'lg' ? 5 : 0) }} of {{ dogArticles.length + (viewport === 'lg' ? 5 : 0) }}</span>
+        </div>
       </div>
 
       <!-- Articles -->
@@ -177,8 +183,6 @@ export default {
         price: '15,49',
       },
       toggleFilter: true,
-      minPrice: '8,00',
-      maxPrice: '499,00',
       price: [8, 499],
       itemsToShow: 3,
       articles: [],
@@ -263,8 +267,8 @@ export default {
       return this.dogArticles.length - 3 > this.itemsToShow
     },
     sortedArticles() {
-      const minPrice = parseFloat(this.minPrice) > 0 ? parseFloat(this.minPrice) : 0;
-      const maxPrice = parseFloat(this.maxPrice) > 0 ? parseFloat(this.maxPrice) : 499;
+      const minPrice = parseFloat(this.price[0]) > 0 ? parseFloat(this.price[0]) : 0;
+      const maxPrice = parseFloat(this.price[1]) > 0 ? parseFloat(this.price[1]) : 499;
 
       const articles = this.articles.filter(article => {
         return (parseFloat(article.price) > minPrice && parseFloat(article.price) < maxPrice)
