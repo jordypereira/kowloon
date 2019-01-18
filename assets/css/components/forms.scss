@@ -6,6 +6,10 @@ $input-sm-width: 150px;
 $input-checkbox-height: 19px;
 $input-checkbox-width: 19px;
 
+$input-select-width: 175px;
+$input-select-padding-y: 9px;
+$input-select-padding-x: 20px;
+
 .input {
   @apply border-2 border-grey-300 p-4;
   &::placeholder {
@@ -64,15 +68,16 @@ $input-checkbox-width: 19px;
 
 .form {
   &-select {
-    padding: 9px 20px;
-    width: 175px;
+    padding: $input-select-padding-y $input-select-padding-x;
+    width: $input-select-width;
     @apply bg-grey-650 text-grey-200;
     &:hover {
       @apply cursor-pointer;
     }
   }
   &-option{
-    padding: 9px 20px;
+    padding: $input-select-padding-y $input-select-padding-x;
+    width: $input-select-width;
     @apply bg-white text-grey-900;
     &:hover {
       @apply cursor-pointer;

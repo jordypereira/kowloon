@@ -10,7 +10,7 @@
         </span>
       </li>
 
-      <template v-if="showMenu">
+      <div v-if="showMenu" class="absolute z-10">
         <li
           v-for="option in options"
           :key="option.id"
@@ -18,7 +18,7 @@
           class="form-option"
           :class="{'bg-grey-75': option.id === value.id}"
         >{{ option.name }}</li>
-      </template>
+      </div>
     </ul>
   </div>
 </template>
