@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="relative">
     <TheCookiesBar v-if="!acceptedCookies" @acceptedCookies="acceptedCookies = true"/>
     <TheFaqPage v-if="$store.state.faqToggle"/>
     <div class="flex bg-black">

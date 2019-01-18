@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed z-30 bg-white h-screen opacity-95 pin-t pin-r pin-l md:pin-l-60px">
+  <div class="absolute z-30 bg-white h-full opacity-95 pin-t pin-r pin-l md:pin-l-60px">
     <div
       class="absolute flex flex-col pin-r pin-t m-4 md:m-5 hover:cursor-pointer"
       @click="$store.commit('toggleFaq')"
@@ -34,23 +34,47 @@
         <br>You can always contact our customer service. We’re happy to help you!
       </p>
       <!-- FAQ ANSWERS -->
-      <div class="mt-8 md:mt-42px">Q</div>
+      <div class="mt-8 md:mt-42px">
+        <FaqComponentItem
+          v-for="item in queriedItems.slice(0, itemsToShow)"
+          :key="item.id"
+          v-bind="item"
+          :dropdownTriangle="false"
+          :clickable="false"
+          toggled
+          inverse
+          shadow
+        />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import SearchIcon from '@/components/symbols/search'
+import FaqComponentItem from '@/components/faq/FaqComponentItem'
+
+import faqItems from '@/services/faqItems'
 
 export default {
   name: 'FAQ',
   components: {
       SearchIcon,
+      FaqComponentItem,
   },
   data() {
     return {
       searchQuery: '',
+      faqItems,
+      itemsToShow: 6,
     }
   },
+  computed: {
+    queriedItems() {
+      return this.faqItems.filter(item => {
+        return item.description.toLowerCase().includes(this.searchQuery.toLowerCase()) || item.title.toLowerCase().includes(this.searchQuery.toLowerCase())
+      })
+    }
+  }
 }
 </script>
