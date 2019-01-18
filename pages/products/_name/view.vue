@@ -68,6 +68,7 @@
       <div class="flex justify-between mt-10px mb-5">
         <SelectBox :options="sortOptions" v-model="sort" placeholder="Sort by relevance"/>
       </div>
+
       <!-- Articles -->
       <section v-if="hotItems && !mobile" class="hidden lg:flex mt-16 justify-between">
         <div class="w-1/2">
@@ -201,11 +202,18 @@ export default {
     }
   },
   mounted() {
+    // Detects if user scrolled to the bottom
     window.addEventListener('scroll', this.scrollListener)
+
+    // Detects if its not a mobile screen
     if (window.innerWidth > 576) {
-      this.mobile = true
+      this.mobile = false
     }
-    this.itemsToShow = this.mobile ? 4 : 0
+
+    // Load items on mobile
+    this.itemsToShow = this.mobile ? 3 : 0
+
+    // Load 3 items in Highlight if Desktop
     if (this.mobile) {
       this.articles = this.$store.getters.getAmountOfItems(this.dogArticles, this.dogArticles.length - 3)
     } else {

@@ -7,7 +7,7 @@
       'card-md': md, 
       'card-sm': sm, 
       'card-lg': lg, 
-      'card-md-stacked': (md && stacked) 
+      'card-md-stacked mr-4': (md && stacked) 
     }"
     >
       <!-- Image Area -->
