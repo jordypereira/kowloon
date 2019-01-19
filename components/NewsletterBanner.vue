@@ -23,6 +23,7 @@
               type="text"
               placeholder="Domain @ name.com"
               class="input-text"
+              name="email"
               v-model="form.email"
             >
             <span :class="errorClass">{{ formErrors.email }}</span>
