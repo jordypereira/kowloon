@@ -1,9 +1,11 @@
 <template>
   <div>
-    <header class="relative flex justify-center w-full">
-      <i class="mt-13 absolute z-10 icon-k-large"/>
+    <!-- Slider -->
+    <header class="relative flex justify-center max-w-full">
+      <i class="mt-13 absolute z-10 icon icon-kowloon"></i>
       <HomeSlider :images="homeSliderImages"/>
     </header>
+
     <main class="container lg:px-0 text-white">
       <!-- Tags -->
       <div class="flex mt-8 mb-5">
