@@ -33,7 +33,7 @@
       </section>
 
       <!-- Message form -->
-      <section class="my-12 md:my-20">
+      <section id="contact" class="my-12 md:my-20">
         <h2 class="section-title uppercase mb-28px">Leave us a message</h2>
         <form name="contact" method="POST" data-netlify="true" @submit.prevent="submitContactForm">
           <div class="flex flex-col mb-8">

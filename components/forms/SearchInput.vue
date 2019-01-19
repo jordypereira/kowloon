@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="flex border-b border-grey-750 mt-6 md:mt-12">
+      <slot name="input"/>
       <label for="searchQuery">
         <SearchIcon :strokeWidth="2"/>
       </label>

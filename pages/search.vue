@@ -7,15 +7,25 @@
         :placeholder="searchPlaceholder"
         inputFieldClasses="input-text-search text-orange"
         aria-label="Search all the products."
-        class="mt-search"
+        class="mt-search relative"
       >
+        <!-- Enter button -->
+        <i
+          v-if="!this.$store.getters.isMobile && !searchQuery"
+          class="absolute icon icon-break m-search-icon-break"
+          slot="input"
+        ></i>
         <!-- Help text -->
         <p
-          v-if="!searchQuery"
+          v-if="!searchQuery && !this.$store.getters.isMobile"
           slot="clear"
         >Don’t find what you’re looking for? Maybe use fewer words or a more general search term.
           <br>if you still have no luck you can contact our
-          <nuxt-link to="/about" class="text-grey-750">customer service</nuxt-link>.
+          <nuxt-link
+            to="/about"
+            class="text-grey-750"
+            @click.native="$store.commit('closeSearch')"
+          >customer service</nuxt-link>.
         </p>
         <!-- Amount of results text -->
         <p
@@ -23,6 +33,15 @@
           slot="clear"
         >{{ `${queriedItems.length} results for the word "${ searchQuery }"` }}</p>
       </SearchInput>
+
+      <!-- Help text -->
+      <p
+        v-if="!searchQuery && this.$store.getters.isMobile"
+        class="mt-20"
+      >Don’t find what you’re looking for? Maybe use fewer words or a more general search term.
+        <br>if you still have no luck you can contact our
+        <nuxt-link to="/about" class="text-grey-750">customer service</nuxt-link>.
+      </p>
 
       <!-- FAQ ANSWERS -->
       <div v-if="searchQuery" class="mt-8 md:mt-42px">
@@ -78,7 +97,7 @@ export default {
       })
     },
     searchPlaceholder() {
-      return this.$store.getters.isMobile ? 'Type to search' : 'Just start typing and hit       to search'
+      return this.$store.getters.isMobile ? 'Type to search' : 'Just start typing and hit      to search'
     }
   },
 }

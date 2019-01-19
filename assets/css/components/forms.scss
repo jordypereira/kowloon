@@ -45,7 +45,7 @@ $input-select-padding-x: 20px;
   }
 
   &-text-search {
-    @apply pb-3 px-2 text-2xl;
+    @apply pb-3 px-2 text-2xl font-bold;
     width: 230px;
     @screen md {
       @apply w-auto px-5;
