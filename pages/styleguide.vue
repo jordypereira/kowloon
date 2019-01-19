@@ -1,9 +1,50 @@
 <template>
   <div class="container my-12 mb-32">
     <h1 class="title mb-4">Style Guide</h1>
+
+    <!-- Colors -->
+    <h2 class="section-title my-4">Colors</h2>
+    <p>Any of these colors can be used as text or bg colors with .text-color and .bg-color</p>
+    <div class="flex flex-wrap my-4">
+      <div class="p-4" v-for="color in Object.keys(colors)" :key="color">
+        <h3 class="text-center">{{ color }}</h3>
+        <div class="h-32 w-32 rounded-lg relative" :class="`bg-${color}`">
+          <div class="absolute w-full h-full flex justify-center items-center">{{ colors[color] }}</div>
+        </div>
+      </div>
+    </div>
+    <!-- Typography -->
+    <h2 class="section-title my-4">Typography</h2>
+    <p>To make it uppercase add .uppercase</p>
+    <div class="flex flex-wrap my-4">
+      <div class="p-4">
+        <h1 class="title uppercase">title</h1>
+      </div>
+      <div class="p-4">
+        <h1 class="section-title uppercase">section-title</h1>
+      </div>
+      <div class="p-4">
+        <h1 class="sub-title">sub-title</h1>
+      </div>
+      <div class="p-4">
+        <h1 class="category-title">category-title</h1>
+      </div>
+      <div class="p-4">
+        <h1 class="faq-title">faq-title</h1>
+      </div>
+      <div class="p-4">
+        <h1 class="price">price</h1>
+      </div>
+      <div class="p-4">
+        <h1 class="text-newsletter">text-newsletter</h1>
+      </div>
+      <div class="p-4">
+        <h1 class="product-description">product-description</h1>
+      </div>
+    </div>
+    <!-- Card Sizes -->
     <h2 class="section-title mb-4">Cards</h2>
     <p>A card takes in an img, img-alt, name, price, description, category and a hoverframe. You can then add a size to it.</p>
-    <!-- Card Sizes -->
     <div class="flex flex-wrap my-4">
       <div>
         <h3 class="sub-title mb-3">Card Small</h3>
@@ -230,6 +271,10 @@
         <h3>Mini Slider</h3>
         <MiniSlider class="mb-4" url="/products/dog/detail`"/>
       </div>
+      <div class="px-4 w-3/5">
+        <h3>Related Products Slider</h3>
+        <RelatedProducts :category="category" :url="`/products/${category.name}/details`" arrows/>
+      </div>
     </div>
     <!-- Forms -->
     <h2 class="section-title my-4">Forms</h2>
@@ -255,6 +300,13 @@
         <SelectBox :options="sortOptions" v-model="sort" placeholder="Sort by relevance"/>
       </div>
     </div>
+    <!-- Links -->
+    <h2 class="section-title my-4">Links</h2>
+    <div class="flex flex-wrap my-4">
+      <div class="px-4">
+        <a href="#" class="section-link">section-link</a>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -267,6 +319,8 @@ import MiniSlider from '~/components/product/MiniSlider'
 import BaseFormCheckboxes from '@/components/forms/BaseFormCheckboxes'
 import BaseFormInputRange from '@/components/forms/BaseFormInputRange'
 import SelectBox from '@/components/SelectBox'
+import RelatedProducts from '~/components/product/RelatedProducts'
+
 
 import dogCoolingMat from '@/assets/images/products/dog_cooling_mat--thumbnail.png'
 import dogCoolingMatLarge from '@/assets/images/products/dog_cooling_mat.jpg'
@@ -284,6 +338,7 @@ export default {
       BaseFormCheckboxes,
       BaseFormInputRange,
       SelectBox,
+      RelatedProducts,
   },
   data() {
     return {
@@ -308,7 +363,7 @@ export default {
           backgroundColor: '#9a9a9a'
         }
       },
-      price: [0, 100],
+      price: [1, 100],
       sort: {},
       sortOptions: [
         {
@@ -332,6 +387,52 @@ export default {
           value: 'oldest',
         },
       ],
+      colors: {
+        'transparent': 'transparent',
+
+        'black-darker': '#252525',
+        'black-dark': '#282828',
+        'black-dark2': '#2b2b2b',
+        'black': '#323232',
+        'black-light': '#313131',
+        'grey-900': '#454545',
+        'grey-800': '#565656',
+        'grey-750': '#535353',
+        'grey-700': '#5f5f5f',
+        'grey-650': '#616161',
+        'grey-600': '#828282',
+        'grey-550': '#818181',
+        'grey': '#717171',
+        'grey-400': '#a2a2a2',
+        'grey-300': '#9a9a9a',
+        'grey-200': '#cecece',
+        'grey-100': '#cfcfcf',
+        'grey-75': '#e9e9e9',
+        'grey-50': '#f6f6f6',
+        'white': '#ffffff',
+
+        'orange': '#e27500',
+
+        'beige-dark': '#b8aa91',
+        'beige': '#e6cfb9',
+
+        'yellow': '#ffb93f',
+
+        'green': '#38c172',
+        'green-light': '#7bff81',
+
+        'blue': '#2d4aac',
+        'blue-light': '#7be5ff',
+
+        'indigo': '#8787ff',
+
+        'pink': '#ff6f9e',
+      },
+      category: {
+        name: 'Dogs',
+        shortName: 'Dog',
+        color: 'pink',
+      },
     }
   },
 }
