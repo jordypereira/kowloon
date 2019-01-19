@@ -25,7 +25,7 @@
               class="input-text"
               v-model="form.email"
             >
-            <span class="text-pink">{{ formErrors.email }}</span>
+            <span :class="errorClass">{{ formErrors.email }}</span>
           </label>
           <button class="btn-input" aria-label="Signs you up for the news letter.">OK</button>
         </form>
@@ -47,6 +47,7 @@ export default {
       formErrors: {
         email: '',
       },
+      errorClass: '',
     }
   },
   methods: {
@@ -57,7 +58,6 @@ export default {
     clearErrors() {
       this.formErrors = {
         email: '',
-        message: '',
       }
     },
     submitNewsletterForm() {
@@ -68,6 +68,7 @@ export default {
       this.clearErrors()
       if(!this.validateEmail(this.form.email)) {
         this.formErrors.email = 'Please enter a correct e-mail address.'
+        this.errorClass = 'text-pink'
         return
       }
 
@@ -78,7 +79,11 @@ export default {
           ...this.form
         }),
         axiosConfig
-      );
+      ).then(() => {
+        this.formErrors.email = 'Success!'
+        this.form.email = ''
+        this.errorClass = 'text-green'
+      });
     },
     encode (data) {
       return Object.keys(data)
