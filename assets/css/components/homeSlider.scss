@@ -9,11 +9,6 @@ $swiper-button-background-size: 5px;
 $swiper-loader-height: 3px;
 $swiper-loader-color:  rgba(27, 27, 27, 0.32);
 
-// Slide
-.swiper-slide {
-  width: auto;
-}
-
 // Bullets
 .home-bullet {
   @apply bg-white opacity-100 mr-15px border-none rounded-full w-2 h-2 inline-block;
