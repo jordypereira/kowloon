@@ -203,7 +203,7 @@ export default [
   },
   {
     id: 14,
-    name: 'Super Cooling mat',
+    name: 'Super mat',
     price: '215,49',
     dateAdded: '2019-01-16T10:20:30Z',
     img: dogCoolingMat,
@@ -219,7 +219,7 @@ export default [
   },
   {
     id: 15,
-    name: 'Ultra Cooling mat',
+    name: 'Ultra mat',
     price: '422,49',
     dateAdded: '2019-01-16T10:20:30Z',
     img: dogCoolingMat,

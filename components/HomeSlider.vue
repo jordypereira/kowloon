@@ -25,10 +25,10 @@ export default {
         swiperOption: {
           spaceBetween: 30,
           centeredSlides: true,
-          // autoplay: {
-          //   delay: 2500,
-          //   disableOnInteraction: true
-          // },
+          autoplay: {
+            delay: 2500,
+            disableOnInteraction: true
+          },
           effect: 'slide',
           loop: true,
           speed: 200,

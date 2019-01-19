@@ -1,6 +1,7 @@
 # Kowloon
 
 > Online versie: https://kowloon.eu
+Style Guide: https://kowloon.eu/styleguide
 
 ## Build Setup
 

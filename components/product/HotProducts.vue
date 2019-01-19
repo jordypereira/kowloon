@@ -10,7 +10,6 @@
         v-bind="item"
         :category="category"
         :url="`/products/${category.name}/details`"
-        class="hot-product"
         hoverFrame="details"
         md
       >
