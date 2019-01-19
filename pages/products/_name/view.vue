@@ -27,13 +27,15 @@
       <section class="mb-10px pb-5 border-b-2 border-solid border-grey-650">
         <!-- Filter toggle -->
         <ProductAdvancedFilter
-          :items="collections"
+          :itemsCheckbox="collections"
           :itemsChecked.sync="collectionsChecked"
           :color="category.color"
           :toggleFilter.sync="toggleFilter"
-          :rangeSliderOptions="rangeSliderOptions"
           :price.sync="price"
-        />
+        >
+          <span slot="checkboxesTitle" class="sub-title">By collection</span>
+          <span slot="priceTitle" class="sub-title">Price range</span>
+        </ProductAdvancedFilter>
       </section>
 
       <!-- Sort -->
@@ -148,7 +150,7 @@ export default {
           name: 'Splash \'n Fun',
         },
       ],
-      toggleFilter: true,
+      toggleFilter: false,
       price: [8, 499],
       itemsToShow: 3,
       itemsToAddPerScroll: 3,
@@ -177,23 +179,6 @@ export default {
       ],
       viewport: 'sm',
       placeholderItems: 1,
-      rangeSliderOptions: {
-        width: '100%',
-        height: 4,
-        dotSize: 18,
-        min: 8.00,
-        max: 499.00,
-        interval: 0.01,
-        useKeyboard: true,
-        tooltip: 'false',
-        enableCross: false,
-        bgStyle: {
-          backgroundColor: '#fff',
-        },
-        processStyle: {
-          backgroundColor: '#9a9a9a'
-        }
-      },
     }
   },
   computed: {

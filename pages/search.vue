@@ -1,13 +1,26 @@
 <template>
   <Overlay @closeOverlay="$store.commit('closeSearch')">
-    <div class="container text-grey-750">
+    <div class="container text-grey-750 mt-search">
+      <!-- Filter toggle -->
+      <ProductAdvancedFilter
+        :itemsCheckbox="categories"
+        :itemsChecked.sync="categoriesChecked"
+        color="other"
+        :toggleFilter.sync="toggleFilter"
+        :price.sync="price"
+        filterTitleClasses="text-search-filter"
+      >
+        <span slot="checkboxesTitle" class="text-xl text-black-dark2">Category</span>
+        <span slot="priceTitle" class="text-xl text-black-dark2">Price range</span>
+      </ProductAdvancedFilter>
+
       <!-- Input -->
       <SearchInput
         v-model="searchQuery"
         :placeholder="searchPlaceholder"
         inputFieldClasses="input-text-search text-orange"
         aria-label="Search all the products."
-        class="mt-search relative"
+        class="relative"
       >
         <!-- Enter button -->
         <i
@@ -73,6 +86,7 @@ import Overlay from '@/layouts/overlay'
 
 import FaqComponentItem from '@/components/faq/FaqComponentItem'
 import SearchInput from '@/components/forms/SearchInput'
+import ProductAdvancedFilter from '@/components/product/ProductAdvancedFilter'
 
 import faqItems from '@/services/faqItems'
 
@@ -82,12 +96,43 @@ export default {
       Overlay,
       FaqComponentItem,
       SearchInput,
+      ProductAdvancedFilter,
   },
   data() {
     return {
       searchQuery: '',
       faqItems,
       itemsToShow: 6,
+      toggleFilter: false,
+      price: [8, 499],
+      categoriesChecked: [],
+      categories: [
+        {
+          id: 1,
+          name: 'Dogs',
+          value: 'dog'
+        },
+        {
+          id: 2,
+          name: 'Cats',
+          value: 'cat'
+        },
+        {
+          id: 3,
+          name: 'Fish',
+          value: 'fish'
+        },
+        {
+          id: 4,
+          name: 'Birds',
+          value: 'bird'
+        },
+        {
+          id: 5,
+          name: 'Other',
+          value: 'other'
+        },
+      ]
     }
   },
   computed: {

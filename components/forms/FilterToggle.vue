@@ -1,6 +1,6 @@
 <template>
   <div class="flex mb-12 sm:mb-4 hover:cursor-pointer">
-    <div class="text-15px mr-10px select-none">Advanced filter</div>
+    <div class="text-15px mr-10px select-none" :class="titleClasses">Advanced filter</div>
     <div
       :class="[ (toggled) ? 'dropdown-triangle-bot' : 'dropdown-triangle-right']"
       class="self-center dropdown-triangle dropdown-small dropdown-grey-300"
@@ -16,6 +16,7 @@ export default {
         type: Boolean,
         default: false,
       },
+      titleClasses: String,
   },
 }
 </script>

@@ -46,7 +46,7 @@ body {
 }
 
 .sub-title {
-  @apply text-white text-base leading-none;
+  @apply text-base leading-none;
   line-height: 1.1;
   letter-spacing: -0.4px;
   @screen sm {
@@ -104,5 +104,13 @@ body {
   &-title {
     @extend .title;
     font-size: 40px;
+  }
+}
+
+.text-search-filter {
+  font-size: 25px;
+  @apply text-black-dark2 font-bold;
+  @screen md {
+    font-size: 25px;
   }
 }

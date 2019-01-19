@@ -4,19 +4,20 @@
     <FilterToggle
       :toggled="toggleFilter"
       @click.native="$emit('update:toggleFilter', !toggleFilter)"
+      :titleClasses="filterTitleClasses"
     />
     <div class="md:ml-16" v-if="toggleFilter">
       <!-- Collection Checkbox -->
-      <span class="sub-title">By collection</span>
+      <slot name="checkboxesTitle"/>
       <BaseFormCheckboxes
-        :items="items"
+        :items="itemsCheckbox"
         :color="color"
         v-model="localChecked"
         @input="updateChecked"
       />
 
       <!-- Price Slider -->
-      <span class="sub-title">Price range</span>
+      <slot name="priceTitle"/>
       <div class="flex flex-col md:flex-row items-center mt-3">
         <div class="md:mr-10 w-full">
           <vue-slider
@@ -46,12 +47,12 @@ import BaseFormInputRange from '@/components/forms/BaseFormInputRange'
 export default {
   name: 'ProductAdvancedFilter',
   props: {
-      items: Array,
+      itemsCheckbox: Array,
       itemsChecked: Array,
       color: String,
       toggleFilter: Boolean,
-      rangeSliderOptions: Object,
       price: Array,
+      filterTitleClasses: String,
   },
   components: {
     FilterToggle,
@@ -62,6 +63,23 @@ export default {
     return {
       localChecked: this.itemsChecked || [],
       localPrice: this.price || [],
+      rangeSliderOptions: {
+        width: '100%',
+        height: 4,
+        dotSize: 18,
+        min: 8.00,
+        max: 499.00,
+        interval: 0.01,
+        useKeyboard: true,
+        tooltip: 'false',
+        enableCross: false,
+        bgStyle: {
+          backgroundColor: '#fff',
+        },
+        processStyle: {
+          backgroundColor: '#9a9a9a'
+        }
+      },
     }
   },
   methods: {
