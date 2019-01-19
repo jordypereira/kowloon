@@ -29,6 +29,7 @@
 
 <script>
   export default {
+    name: 'SelectBox',
     props: {
       options: {
         type: [Array, Object]
