@@ -2,21 +2,14 @@
   <section>
     <h2 class="section-title uppercase">Frequently asked questions</h2>
     <div>
-      <div
-        class="bg-grey my-10px pl-23px pt-5 pr-5 pb-4 hover:cursor-pointer"
-        v-for="q in faqQuestions"
-        :key="q.id"
-        @click="toggleFaq(q.id)"
-      >
-        <div class="flex justify-between">
-          <div class="faq-title">{{ q.title }}</div>
-          <div
-            class="dropdown-triangle"
-            :class="[ (activeFaq === q.id) ? 'dropdown-triangle-bot' : 'dropdown-triangle-right']"
-          ></div>
-        </div>
-        <div v-if="activeFaq === q.id" class="ml-19px mt-11px">{{ q.description }}</div>
-      </div>
+      <FaqComponentItem
+        class="my-10px pl-23px hover:cursor-pointer"
+        v-for="item in faqItems.slice(0, itemsToShow)"
+        :key="item.id"
+        v-bind="item"
+        :toggled="activeFaq === item.id"
+        @click.native="toggleFaq(item.id)"
+      />
     </div>
     <div class="mt-8 md:mt-0 text-center md:text-right w-full">
       <a href="#" class="section-link">More questions?</a>
@@ -25,28 +18,20 @@
 </template>
 
 <script>
+import FaqComponentItem from '@/components/faq/FaqComponentItem'
+
+import faqItems from '@/services/faqItems'
+
 export default {
   name: 'FAQ',
+  components: {
+      FaqComponentItem,
+  },
   data () {
     return {
       activeFaq: 2,
-      faqQuestions: [
-        {
-          id: 1,
-          title: 'Dit is een vraag',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit..Lorem ipsum dolor sit amet, consectetur adipisicing elit..Lorem ipsum dolor sit amet, consectetur adipisicing elit..Lorem ipsum dolor sit amet, consectetur adipisicing elit..Lorem ipsum dolor sit amet, consectetur adipisicing elit..'
-        },
-        {
-          id: 2,
-          title: 'Dit is een opengeklapte vraag ',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit..Lorem ipsum dolor sit amet, consectetur adipisicing elit..Lorem ipsum dolor sit amet, consectetur adipisicing elit..Lorem ipsum dolor sit amet, consectetur adipisicing elit..Lorem ipsum dolor sit amet, consectetur adipisicing elit..'
-        },
-        {
-          id: 3,
-          title: 'Dit is een vraag',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit..Lorem ipsum dolor sit amet, consectetur adipisicing elit..Lorem ipsum dolor sit amet, consectetur adipisicing elit..Lorem ipsum dolor sit amet, consectetur adipisicing elit..Lorem ipsum dolor sit amet, consectetur adipisicing elit..'
-        },
-      ],
+      faqItems,
+      itemsToShow: 3,
     }
   },
   methods: {
