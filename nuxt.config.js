@@ -47,6 +47,9 @@ module.exports = {
   */
   modules: [
     'nuxt-purgecss',
+    '@nuxtjs/google-analytics', {
+      id: 'UA-75839523-4'
+    }
   ],
 
   purgeCSS: {
