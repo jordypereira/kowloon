@@ -47,7 +47,6 @@ export default {
     return {
       form: {
         email: '',
-        message: 'empty',
       },
       formErrors: {
         email: '',

@@ -45,7 +45,7 @@
               name="email"
               v-model="form.email"
             >
-            <span class="text-pink">{{ formErrors.email }}</span>
+            <span :class="formErrors.email.class">{{ formErrors.email.error }}</span>
           </div>
           <div class="flex flex-col mb-8">
             <label for="message" class="mb-3 sub-title">Your message</label>
@@ -57,7 +57,7 @@
               placeholder="Write your message here."
               v-model="form.message"
             ></textarea>
-            <span class="text-pink">{{ formErrors.message }}</span>
+            <span :class="formErrors.message.class">{{ formErrors.message.error }}</span>
           </div>
           <button class="btn btn-primary" aria-labelledby="Sends your message to us.">Send</button>
         </form>
@@ -89,8 +89,14 @@ export default {
         message: '',
       },
       formErrors: {
-        email: '',
-        message: '',
+        email: {
+          error: '',
+          class: '',
+        },
+        message: {
+          error: '',
+          class: '',
+        },
       },
     }
   },
@@ -104,8 +110,14 @@ export default {
     },
     clearErrors() {
       this.formErrors = {
-        email: '',
-        message: '',
+        email: {
+          error: '',
+          class: '',
+        },
+        message: {
+          error: '',
+          class: '',
+        },
       }
     },
     submitContactForm() {
@@ -115,11 +127,13 @@ export default {
       // Validate
       this.clearErrors()
       if(!this.validateEmail(this.form.email)) {
-        this.formErrors.email = 'Please enter a correct e-mail address.'
+        this.formErrors.email.error = 'Please enter a correct e-mail address.'
+        this.formErrors.email.class = 'text-pink'
         return
       }
       if(!this.validateMessage(this.form.message)) {
-        this.formErrors.message = 'Please enter a longer message.'
+        this.formErrors.message.error = 'Please enter a longer message.'
+        this.formErrors.message.class = 'text-pink'
         return
       }
 
@@ -130,7 +144,14 @@ export default {
           ...this.form
         }),
         axiosConfig
-      );
+      ).then(() => {
+          this.formErrors.message.class = 'text-green'
+          this.formErrors.message.error = 'Message has been sent!'
+          this.form = {
+            email: '',
+            message: '',
+          }
+        });
     },
     encode (data) {
       return Object.keys(data)
