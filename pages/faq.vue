@@ -10,7 +10,15 @@
         placeholder="Search on keyword"
         inputFieldClasses="input-text-faq"
         aria-label="Query the FAQ questions."
-      />
+        class="relative"
+      >
+        <!-- Enter button -->
+        <i
+          v-if="!this.$store.getters.isMobile && !searchQuery"
+          class="absolute icon icon-break m-faq-icon-break"
+          slot="input"
+        />
+      </SearchInput>
       <!-- Help text -->
       <p>Don’t find what you’re looking for?
         <br>You can always contact our
