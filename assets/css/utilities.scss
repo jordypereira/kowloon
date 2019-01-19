@@ -5,6 +5,13 @@
   }
 }
 
+.mt-search {
+  margin-top: 71px;
+  @screen md {
+    margin-top: 127px;
+  }
+}
+
 @responsive {
   .pin-l-60px {
     left: 60px;

@@ -44,6 +44,18 @@ $input-select-padding-x: 20px;
     }
   }
 
+  &-text-search {
+    @apply pb-3 px-2 text-2xl;
+    width: 230px;
+    @screen md {
+      @apply w-auto px-5;
+      font-size: 40px;
+    }
+    &::placeholder {
+      @apply opacity-100 text-orange;
+    }
+  }
+
   &-price-tag {
     @apply text-base absolute text-black-dark2 pin-b ml-3 h-full flex items-center;
   }

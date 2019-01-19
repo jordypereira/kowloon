@@ -13,7 +13,8 @@
       />
       <!-- Help text -->
       <p>Don’t find what you’re looking for?
-        <br>You can always contact our customer service. We’re happy to help you!
+        <br>You can always contact our
+        <nuxt-link to="/about" class="text-grey-750">customer service</nuxt-link>. We’re happy to help you!
       </p>
       <!-- FAQ ANSWERS -->
       <div class="mt-8 md:mt-42px">

@@ -14,9 +14,13 @@
             <i v-if="navToggle" class="block md:hidden icon icon-x-close nav-toggle-x"/>
           </div>
           <!-- Icon Search -->
-          <div class="items-center nav-search" :class="[!navToggle ? 'hidden md:flex' : 'flex']">
+          <div
+            class="items-center nav-search hover:cursor-pointer"
+            :class="[!navToggle ? 'hidden md:flex' : 'flex', $store.state.searchToggle ? 'bg-grey-75' : '']"
+            @click="$store.commit('toggleSearch')"
+          >
             <div class="w-60px flex justify-center">
-              <i class="icon icon-search"></i>
+              <i class="icon icon-search" :class="[$store.state.searchToggle ? 'bg-black' : '']"></i>
             </div>
             <span v-if="navToggle" class="text-nav text-grey-400">Search</span>
           </div>

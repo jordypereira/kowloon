@@ -1,4 +1,3 @@
 export default function ({ store }) {
-  store.commit('closeNav')
-  store.commit('closeFaq')
+  store.commit('closeAllToggles')
 }

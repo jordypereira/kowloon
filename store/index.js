@@ -1,6 +1,13 @@
 export const state = () => ({
   navToggle: false,
   faqToggle: false,
+  searchToggle: false,
+  screens: {
+    'xs': 290,
+    'sm': 576,
+    'md': 768,
+    'lg': 960,
+  },
   categories: {
     dog: {
       name: 'Dogs',
@@ -35,17 +42,36 @@ export const state = () => ({
 })
 
 export const mutations = {
+  // All
+  closeAllToggles (state) {
+    state.navToggle = false
+    state.searchToggle = false
+    state.faqToggle = false
+  },
+  // Nav
   closeNav (state) {
     state.navToggle = false
   },
   toggleNav (state) {
     state.navToggle = !state.navToggle
   },
+  // FAQ
   toggleFaq (state) {
     state.faqToggle = !state.faqToggle
+    state.navToggle = false
+    state.searchToggle = false
   },
   closeFaq (state) {
     state.faqToggle = false
+  },
+  // Search
+  toggleSearch (state) {
+    state.searchToggle = !state.searchToggle
+    state.navToggle = false
+    state.faqToggle = false
+  },
+  closeSearch (state) {
+    state.searchToggle = false
   },
 }
 
@@ -90,5 +116,11 @@ export const getters = {
   },
   getRestOfItems: () => (items, amount) => {
     return items.filter((item, i) => i === amount)
+  },
+  isMobile: state => {
+    if (window.innerWidth < state.screens.md) {
+      return true
+    }
+    return false
   },
 }

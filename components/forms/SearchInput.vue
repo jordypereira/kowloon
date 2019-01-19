@@ -17,11 +17,14 @@
     </div>
     <!-- Clear -->
     <div
-      class="flex justify-end items-center mt-4 mb-6 hover:cursor-pointer"
-      @click="$emit('input', '')"
+      class="flex items-start mt-4 mb-6"
+      :class="[$slots.clear ? 'justify-between' : 'justify-end']"
     >
-      <i class="icon icon-clear bg-grey-750 mr-6px"></i>
-      Clear
+      <slot name="clear"/>
+      <span class="flex items-center hover:cursor-pointer" @click="$emit('input', '')">
+        <i class="icon icon-clear bg-grey-750 mr-6px"></i>
+        Clear
+      </span>
     </div>
   </div>
 </template>

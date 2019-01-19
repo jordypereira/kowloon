@@ -1,7 +1,8 @@
 <template>
   <div class="relative">
     <TheCookiesBar v-if="!acceptedCookies" @acceptedCookies="acceptedCookies = true"/>
-    <TheFaqPage v-if="$store.state.faqToggle"/>
+    <SearchPage v-if="$store.state.searchToggle"/>
+    <FaqPage v-if="$store.state.faqToggle"/>
     <div class="flex bg-black">
       <TheNavBar/>
       <div class="bg-grey-900 w-full min-h-screen">
@@ -12,15 +13,18 @@
 </template>
 
 <script>
+import SearchPage from '@/pages/search'
+import FaqPage from '@/pages/faq'
+
 import TheNavBar from '@/components/TheNavBar'
 import TheCookiesBar from '@/components/TheCookiesBar'
-import TheFaqPage from '@/pages/faq'
 
 export default {
   components: {
+    SearchPage,
+    FaqPage,
     TheNavBar,
     TheCookiesBar,
-    TheFaqPage,
   },
   data() {
     return {
