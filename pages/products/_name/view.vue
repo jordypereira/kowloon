@@ -64,7 +64,7 @@
         <!-- Shown Items Counter -->
         <div v-if="viewport === 'md' || viewport === 'lg'" class="whitespace-no-wrap">
           <span class="text-grey-200">{{ category.shortName }} items:</span>
-          <span class="font-bold">{{ sortedArticles.length }} of {{ dogArticles.length }}</span>
+          <span class="font-bold">{{ itemsToShow + 1 }} of {{ dogArticles.length }}</span>
         </div>
       </div>
 
@@ -318,7 +318,7 @@ export default {
           }
         }
       } else {
-        this.itemsToShow = this.dogArticles.length
+        this.itemsToShow = this.dogArticles.length - 1
         window.removeEventListener('scroll', this.scrollListener)
       }
     }
