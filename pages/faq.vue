@@ -13,27 +13,12 @@
       <h1 class="title text-orange uppercase hidden md:block">Frequently asked questions</h1>
       <h1 class="title text-orange uppercase md:hidden" style="font-size: 40px;">Faq</h1>
       <!-- Input -->
-      <div class="flex border-b border-grey-750 mt-6 md:mt-12">
-        <label for="searchQuery">
-          <SearchIcon :strokeWidth="2"/>
-        </label>
-        <input
-          v-model="searchQuery"
-          id="searchQuery"
-          type="text"
-          placeholder="Search on keyword"
-          class="flex-grow input-text-faq"
-          aria-label="Query the FAQ questions."
-        >
-      </div>
-      <!-- Clear -->
-      <div
-        class="flex justify-end items-center mt-4 mb-6 hover:cursor-pointer"
-        @click="searchQuery = ''"
-      >
-        <i class="icon icon-clear bg-grey-750 mr-6px"></i>
-        Clear
-      </div>
+      <SearchInput
+        v-model="searchQuery"
+        placeholder="Search on keyword"
+        inputFieldClasses="input-text-faq"
+        aria-label="Query the FAQ questions."
+      />
       <!-- Help text -->
       <p>Don’t find what you’re looking for?
         <br>You can always contact our customer service. We’re happy to help you!
@@ -56,16 +41,16 @@
 </template>
 
 <script>
-import SearchIcon from '@/components/symbols/search'
 import FaqComponentItem from '@/components/faq/FaqComponentItem'
+import SearchInput from '@/components/forms/SearchInput'
 
 import faqItems from '@/services/faqItems'
 
 export default {
   name: 'FAQ',
   components: {
-      SearchIcon,
       FaqComponentItem,
+      SearchInput,
   },
   data() {
     return {
