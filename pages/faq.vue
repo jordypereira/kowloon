@@ -1,13 +1,5 @@
 <template>
-  <div class="absolute z-30 bg-white h-full opacity-95 pin-t pin-r pin-l md:pin-l-60px">
-    <!-- Close Icon -->
-    <div
-      class="absolute flex flex-col pin-r pin-t m-4 md:m-5 hover:cursor-pointer"
-      @click="$store.commit('closeFaq')"
-    >
-      <i class="icon icon-x-close bg-grey-300"></i>
-      <span class="text-grey-300">esc</span>
-    </div>
+  <Overlay @closeOverlay="$store.commit('closeFaq')">
     <div class="container mt-faq text-grey-750">
       <!-- Title -->
       <h1 class="title text-orange uppercase hidden md:block">Frequently asked questions</h1>
@@ -37,18 +29,21 @@
         />
       </div>
     </div>
-  </div>
+  </Overlay>
 </template>
 
 <script>
+import Overlay from '@/layouts/overlay'
+
 import FaqComponentItem from '@/components/faq/FaqComponentItem'
 import SearchInput from '@/components/forms/SearchInput'
 
 import faqItems from '@/services/faqItems'
 
 export default {
-  name: 'FAQ',
+  name: 'FAQPage',
   components: {
+      Overlay,
       FaqComponentItem,
       SearchInput,
   },
