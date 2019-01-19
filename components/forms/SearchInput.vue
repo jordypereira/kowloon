@@ -22,10 +22,14 @@
       :class="[$slots.clear ? 'justify-between' : 'justify-end']"
     >
       <slot name="clear"/>
-      <span class="flex items-center hover:cursor-pointer" @click="$emit('input', '')">
+      <button
+        class="flex items-center hover:cursor-pointer select-none"
+        @click="$emit('input', '')"
+        aria-labelledby="Clears the entered query text."
+      >
         <i class="icon icon-clear bg-grey-750 mr-6px"></i>
         Clear
-      </span>
+      </button>
     </div>
   </div>
 </template>
