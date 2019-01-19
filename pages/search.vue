@@ -37,6 +37,7 @@
           shadow
         />
       </div>
+      <!-- Help text -->
       <p
         class="mt-5"
         v-if="searchQuery"

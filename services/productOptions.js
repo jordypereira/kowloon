@@ -2,26 +2,26 @@ export default [
   {
     id: 1,
     name: 'Splash \'n Fun',
-    checked: false,
+    value: 'splash'
   },
   {
     id: 2,
     name: 'Luxury',
-    checked: false,
+    value: 'luxury'
   },
   {
     id: 3,
     name: 'new',
-    checked: false,
+    value: 'new'
   },
   {
     id: 4,
     name: 'on sale',
-    checked: false,
+    value: 'on-sale'
   },
   {
     id: 5,
     name: 'other',
-    checked: false,
+    value: 'other'
   },
 ]

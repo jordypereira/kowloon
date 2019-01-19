@@ -24,29 +24,15 @@
       <!-- Filter -->
       <section class="mb-10px pb-5 border-b-2 border-solid border-grey-650">
         <!-- Filter toggle -->
-        <div class="flex hover:cursor-pointer mb-12 sm:mb-4" @click="toggleFilter = !toggleFilter">
-          <div class="text-15px mr-10px select-none">Advanced filter</div>
-          <div
-            :class="[ (toggleFilter) ? 'dropdown-triangle-bot' : 'dropdown-triangle-right']"
-            class="self-center dropdown-triangle dropdown-small dropdown-grey-300"
-          ></div>
-        </div>
+        <FilterToggle :toggled="toggleFilter" @click.native="toggleFilter = !toggleFilter"/>
         <div class="md:ml-16" v-if="toggleFilter">
           <!-- Collection Checkbox -->
           <span class="sub-title">By collection</span>
-          <div class="flex flex-wrap mt-3 mb-26px">
-            <div v-for="collection in collections" :key="collection.id" class="mb-5 mr-5 flex">
-              <input
-                type="checkbox"
-                :name="collection.name"
-                :id="collection.name"
-                :v-model="collection.checked"
-                class="input input-checkbox mr-10px hover:cursor-pointer"
-                :class="`checked-${category.color}`"
-              >
-              <label :for="collection.name" class="hover:cursor-pointer">{{ collection.name }}</label>
-            </div>
-          </div>
+          <BaseFormCheckboxes
+            :items="collections"
+            :color="category.color"
+            v-model="collectionsChecked"
+          />
 
           <!-- Price Slider -->
           <span class="sub-title">Price range</span>
@@ -76,12 +62,15 @@
         <!-- Shown Items Counter -->
         <div v-if="viewport === 'md' || viewport === 'lg'" class="whitespace-no-wrap">
           <span class="text-grey-200">{{ category.shortName }} items:</span>
-          <span class="font-bold">{{ itemsToShow }} of {{ dogArticles.length }}</span>
+          <span class="font-bold">{{ sortedArticles.length }} of {{ dogArticles.length }}</span>
         </div>
       </div>
 
       <!-- Articles -->
-      <section v-if="viewport === 'lg'" class="hidden lg:flex mt-16 justify-between">
+      <section
+        v-if="viewport === 'lg' && sortedArticles.length"
+        class="hidden lg:flex mt-16 justify-between"
+      >
         <!-- The 4 Articles after the first  -->
         <div class="w-1/2">
           <HotProducts
@@ -114,6 +103,7 @@
 
       <!-- Extra cards loaded  -->
       <HotProducts
+        v-if="extraCards.length"
         :items="extraCards"
         :category="category"
         :itemsToShow="extraCardsToShow"
@@ -140,6 +130,8 @@ import HotProducts from '@/components/product/HotProducts'
 import Card from '@/components/cards/Card'
 import ProductColors from '@/components/product/ProductColors'
 import SelectBox from '@/components/SelectBox'
+import FilterToggle from '@/components/forms/FilterToggle'
+import BaseFormCheckboxes from '@/components/forms/BaseFormCheckboxes'
 
 import dogCoolingMat from '@/assets/images/products/dog_cooling_mat--thumbnail.png'
 import dogCoolingMatLarge from '@/assets/images/products/dog_cooling_mat.jpg'
@@ -157,6 +149,8 @@ export default {
     Card,
     ProductColors,
     SelectBox,
+    FilterToggle,
+    BaseFormCheckboxes,
   },
   data() {
     return {
@@ -165,6 +159,7 @@ export default {
       dogCoolingMat,
       dogCoolingMatLarge,
       dogArticles,
+      collectionsChecked: [],
       tags: [
         {
           id: 1,
@@ -228,13 +223,20 @@ export default {
       return this.$store.getters.getCategory(this.$route.params.name)
     },
     enableSroll() {
-      return (this.dogArticles.length - this.itemsToAddPerScroll) > this.itemsToShow
+      return (this.extraCards.length - this.itemsToAddPerScroll) > this.itemsToShow
     },
     sortedArticles() {
       const minPrice = parseFloat(this.price[0]) > 0 ? parseFloat(this.price[0]) : 0;
       const maxPrice = parseFloat(this.price[1]) > 0 ? parseFloat(this.price[1]) : 499;
 
       const articles = this.dogArticles.filter(article => {
+        // Checks if the article tag is in the checked tags
+        if (this.collectionsChecked.length) {
+          if (!article.tags || !this.collectionsChecked.some(checkedTag => article.tags.includes(checkedTag))) {
+            return false
+          }
+        }
+        // Checks if the article is between the price
         return (parseFloat(article.price) > minPrice && parseFloat(article.price) < maxPrice)
       })
 

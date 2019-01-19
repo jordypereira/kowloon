@@ -166,7 +166,8 @@ export default [
       'white',
       'black',
       'blue',
-    ]
+    ],
+    tags: ['luxury', 'splash'],
   },
   {
     id: 12,
@@ -181,12 +182,13 @@ export default [
       'white',
       'black',
       'blue',
-    ]
+    ],
+    tags: ['new', 'on-sale'],
   },
   {
     id: 13,
     name: 'Cooling mat',
-    price: '15,49',
+    price: '115,49',
     dateAdded: '2019-01-14T10:20:30Z',
     img: dogCoolingMat,
     imgFull: dogCoolingMatLarge,
@@ -196,12 +198,13 @@ export default [
       'white',
       'black',
       'blue',
-    ]
+    ],
+    tags: ['other', 'on-sale'],
   },
   {
     id: 14,
-    name: 'Cooling mat',
-    price: '15,49',
+    name: 'Super Cooling mat',
+    price: '215,49',
     dateAdded: '2019-01-16T10:20:30Z',
     img: dogCoolingMat,
     imgFull: dogCoolingMatLarge,
@@ -211,12 +214,13 @@ export default [
       'white',
       'black',
       'blue',
-    ]
+    ],
+    tags: ['luxury', 'on-sale'],
   },
   {
     id: 15,
-    name: 'Cooling mat',
-    price: '22,49',
+    name: 'Ultra Cooling mat',
+    price: '422,49',
     dateAdded: '2019-01-16T10:20:30Z',
     img: dogCoolingMat,
     imgFull: dogCoolingMatLarge,
@@ -226,7 +230,8 @@ export default [
       'white',
       'black',
       'blue',
-    ]
+    ],
+    tags: ['new', 'splash'],
   },
   {
     id: 16,
@@ -241,6 +246,7 @@ export default [
       'white',
       'black',
       'blue',
-    ]
+    ],
+    tags: 'splash',
   },
 ]
