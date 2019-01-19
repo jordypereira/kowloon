@@ -34,7 +34,7 @@
       </section>
 
       <!-- NewsletterBanner -->
-      <NewsletterBanner class="mt-34px mb-24"/>
+      <NewsletterBanner class="mt-34px mb-24" formName="newsletter-index"/>
     </main>
   </div>
 </template>

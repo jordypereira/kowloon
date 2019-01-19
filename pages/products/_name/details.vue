@@ -58,7 +58,7 @@
         <a href="#" class="section-link mt-4">View more</a>
       </section>
       <FaqComponent class="mb-17px"/>
-      <NewsletterBanner class="mb-4"/>
+      <NewsletterBanner class="mb-4" formName="newsletter-product-details"/>
     </main>
   </div>
 </template>
