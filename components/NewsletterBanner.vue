@@ -21,8 +21,8 @@
           <label aria-label="Enter your email for the newsletter" class="flex flex-col">
             <input
               type="text"
-              placeholder="Domain @ name.com"
               class="input-text"
+              placeholder="Domain @ name.com"
               name="email"
               v-model="form.email"
             >
@@ -44,6 +44,7 @@ export default {
     return {
       form: {
         email: '',
+        message: 'empty',
       },
       formErrors: {
         email: '',
