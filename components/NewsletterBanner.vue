@@ -13,7 +13,7 @@
         <div class="text-grey-400er mb-5">Lorum ipsum dolor sit amet</div>
         <form
           class="flex"
-          name="newsletter"
+          name="newsletter-banner"
           method="POST"
           data-netlify="true"
           @submit.prevent="submitNewsletterForm"
@@ -77,7 +77,7 @@ export default {
       axios.post(
         "/",
         this.encode({
-          "form-name": "newsletter",
+          "form-name": "newsletter-banner",
           ...this.form
         }),
         axiosConfig
