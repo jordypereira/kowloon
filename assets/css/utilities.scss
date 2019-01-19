@@ -1,5 +1,8 @@
 .mt-faq {
-  margin-top: 231px;
+  margin-top: 71px;
+  @screen md {
+    margin-top: 231px;
+  }
 }
 
 @responsive {

@@ -34,7 +34,11 @@ $input-select-padding-x: 20px;
   }
 
   &-text-faq {
-    @apply pb-3 px-5 text-3xl;
+    @apply pb-3 px-2 text-2xl;
+    width: 230px;
+    @screen md {
+      @apply w-auto px-5 text-3xl;
+    }
     &::placeholder {
       @apply opacity-100 text-grey-750;
     }

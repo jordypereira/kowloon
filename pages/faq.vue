@@ -13,13 +13,17 @@
       <h1 class="title text-orange uppercase hidden md:block">Frequently asked questions</h1>
       <h1 class="title text-orange uppercase md:hidden" style="font-size: 40px;">Faq</h1>
       <!-- Input -->
-      <div class="flex border-b border-grey-750 mt-12">
-        <SearchIcon :strokeWidth="2"/>
+      <div class="flex border-b border-grey-750 mt-6 md:mt-12">
+        <label for="searchQuery">
+          <SearchIcon :strokeWidth="2"/>
+        </label>
         <input
           v-model="searchQuery"
+          id="searchQuery"
           type="text"
           placeholder="Search on keyword"
           class="flex-grow input-text-faq"
+          aria-label="Query the FAQ questions."
         >
       </div>
       <!-- Clear -->
