@@ -251,7 +251,6 @@ export default {
     if (window.innerWidth > 576) {
       this.viewport = 'md'
       this.placeholderItems = 2
-      this.rangeSliderOptions.width = 389
       if (window.innerWidth > 768) {
         this.viewport = 'md'
         this.placeholderItems = 3
