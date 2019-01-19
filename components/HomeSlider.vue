@@ -1,7 +1,7 @@
 <template>
   <div v-swiper:mySwiper="swiperOption" class="max-h-480px">
     <div class="home-swiper-wrapper swiper-wrapper">
-      <div class="swiper-slide mr-0 md:mr-auto" v-for="item in images" :key="item.id">
+      <div class="swiper-slide mr-0" v-for="item in images" :key="item.id">
         <img :src="item.url" alt="Slider Image of a dog" class="img-cover">
 
         <div class="hidden md:block swiper-pagination w-full pin-b mb-22px" slot="pagination"></div>
@@ -25,11 +25,13 @@ export default {
         swiperOption: {
           spaceBetween: 30,
           centeredSlides: true,
-          autoplay: {
-            delay: 2500,
-            disableOnInteraction: true
-          },
-          speed: 0,
+          // autoplay: {
+          //   delay: 2500,
+          //   disableOnInteraction: true
+          // },
+          effect: 'slide',
+          loop: true,
+          speed: 200,
           roundLengths: true,
           pagination: {
             el: '.swiper-pagination',

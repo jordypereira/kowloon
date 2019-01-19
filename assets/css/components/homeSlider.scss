@@ -9,6 +9,12 @@ $swiper-button-background-size: 5px;
 $swiper-loader-height: 3px;
 $swiper-loader-color:  rgba(27, 27, 27, 0.32);
 
+// Slide
+.swiper-slide {
+  width: auto;
+}
+
+// Bullets
 .home-bullet {
   @apply bg-white opacity-100 mr-15px border-none rounded-full w-2 h-2 inline-block;
   box-shadow: 0 0 0 3px $home-bullet-border-color;
@@ -27,6 +33,7 @@ $swiper-loader-color:  rgba(27, 27, 27, 0.32);
   min-height: 175px;
 }
 
+// Arrows
 .swiper-button-prev, .swiper-button-next {
   background: none;
   @apply bg-white rounded-full;
@@ -52,6 +59,7 @@ $swiper-loader-color:  rgba(27, 27, 27, 0.32);
   right: $swiper-button-distance;
 }
 
+// Progress bar
 .swiper-loader {
   @apply absolute pin-b w-full;
   height: $swiper-loader-height;
@@ -62,7 +70,7 @@ $swiper-loader-color:  rgba(27, 27, 27, 0.32);
     background-color: $swiper-loader-color;
     height: $swiper-loader-height;
     animation-name: loader;
-    animation-duration: 2.5s;
+    animation-duration: 2.7s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
   }
