@@ -26,36 +26,14 @@
       <!-- Filter -->
       <section class="mb-10px pb-5 border-b-2 border-solid border-grey-650">
         <!-- Filter toggle -->
-        <FilterToggle :toggled="toggleFilter" @click.native="toggleFilter = !toggleFilter"/>
-        <div class="md:ml-16" v-if="toggleFilter">
-          <!-- Collection Checkbox -->
-          <span class="sub-title">By collection</span>
-          <BaseFormCheckboxes
-            :items="collections"
-            :color="category.color"
-            v-model="collectionsChecked"
-          />
-
-          <!-- Price Slider -->
-          <span class="sub-title">Price range</span>
-
-          <div class="flex flex-col md:flex-row items-center mt-3">
-            <div class="md:mr-10 w-full">
-              <vue-slider ref="slider" v-bind="rangeSliderOptions" v-model="price"></vue-slider>
-            </div>
-            <div class="flex justify-between md:justify-start w-full mt-4 md:mt-0">
-              <div class="relative">
-                <span class="input-price-tag">€</span>
-                <input type="text" v-model="price[0]" class="input-text input-xs text-center">
-              </div>
-              <span class="px-5 self-center">-</span>
-              <div class="relative">
-                <span class="input-price-tag">€</span>
-                <input type="text" v-model="price[1]" class="input-text input-xs text-center">
-              </div>
-            </div>
-          </div>
-        </div>
+        <ProductAdvancedFilter
+          :items="collections"
+          :itemsChecked.sync="collectionsChecked"
+          :color="category.color"
+          :toggleFilter.sync="toggleFilter"
+          :rangeSliderOptions="rangeSliderOptions"
+          :price.sync="price"
+        />
       </section>
 
       <!-- Sort -->
@@ -132,8 +110,7 @@ import HotProducts from '@/components/product/HotProducts'
 import Card from '@/components/cards/Card'
 import ProductColors from '@/components/product/ProductColors'
 import SelectBox from '@/components/SelectBox'
-import FilterToggle from '@/components/forms/FilterToggle'
-import BaseFormCheckboxes from '@/components/forms/BaseFormCheckboxes'
+import ProductAdvancedFilter from '@/components/product/ProductAdvancedFilter'
 
 import dogCoolingMat from '@/assets/images/products/dog_cooling_mat--thumbnail.png'
 import dogCoolingMatLarge from '@/assets/images/products/dog_cooling_mat.jpg'
@@ -151,8 +128,7 @@ export default {
     Card,
     ProductColors,
     SelectBox,
-    FilterToggle,
-    BaseFormCheckboxes,
+    ProductAdvancedFilter,
   },
   data() {
     return {
