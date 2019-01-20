@@ -8,7 +8,7 @@
     <div class="flex flex-wrap my-4">
       <div class="p-4" v-for="color in Object.keys(colors)" :key="color">
         <h3 class="text-center">{{ color }}</h3>
-        <div class="h-32 w-32 rounded-lg relative" :class="`bg-${color}`">
+        <div class="h-32 w-32 rounded-lg relative border-2 border-grey" :class="`bg-${color}`">
           <div class="absolute w-full h-full flex justify-center items-center">{{ colors[color] }}</div>
         </div>
       </div>
@@ -116,7 +116,7 @@
     </div>
     <!-- Buttons -->
     <h2 class="section-title my-4">Buttons</h2>
-    <p>You can give the button any colors with the classes bg-color and text-color.</p>
+    <p>You can give the button any color with the classes bg-color and text-color.</p>
     <div class="flex flex-wrap my-4">
       <div class="px-4">
         <h3>Button Small</h3>
@@ -124,7 +124,7 @@
       </div>
       <div class="px-4">
         <h3>Button Medium</h3>
-        <button class="btn btn-md bg-orange mt-6">ok, verder surfen</button>
+        <button class="btn btn-md bg-yellow">ok, verder surfen</button>
       </div>
       <div class="px-4">
         <h3>Button Input</h3>
@@ -132,132 +132,32 @@
       </div>
       <div class="px-4">
         <h3>Button</h3>
-        <button class="btn btn-primary" aria-labelledby="Sends your message to us.">Send</button>
+        <button class="btn bg-indigo" aria-labelledby="Sends your message to us.">Send</button>
       </div>
     </div>
     <!-- Dividers -->
     <h2 class="section-title my-4">Dividers</h2>
     <div class="flex flex-wrap my-4">
-      <div class="px-4">
+      <div class="px-4 flex flex-col items-center">
         <h3>Divider Vertical</h3>
         <div class="divider-vertical bg-white"></div>
       </div>
-      <div class="px-4">
+      <div class="px-4 flex flex-col">
         <h3>Divider Horizontal</h3>
-        <hr class="divider bg-white">
+        <div class="flex-1 flex flex-col justify-center">
+          <hr class="divider bg-white">
+        </div>
       </div>
     </div>
     <!-- Icons -->
     <h2 class="section-title my-4">Icons</h2>
     <p>You can use an icon with .icon and .icon-name. You can color them using .bg-color</p>
     <div class="flex flex-wrap my-4">
-      <div class="px-4">
-        <h3>Icon k</h3>
-        <i class="flex icon icon-k"></i>
-      </div>
-      <div class="px-4">
-        <h3>Icon k-full</h3>
-        <i class="flex icon icon-k-full"></i>
-      </div>
-      <div class="px-4">
-        <h3>Icon kowloon</h3>
-        <i class="flex icon icon-kowloon"></i>
-      </div>
-      <div class="px-4">
-        <h3>Icon hamburger</h3>
-        <i class="flex icon icon-hamburger"></i>
-      </div>
-      <div class="px-4">
-        <h3>Icon x-close</h3>
-        <i class="flex icon icon-x-close"></i>
-      </div>
-      <div class="px-4">
-        <h3>Icon search</h3>
-        <i class="flex icon icon-search"></i>
-      </div>
-      <div class="px-4">
-        <h3>Icon faq</h3>
-        <i class="flex icon icon-faq"></i>
-      </div>
-      <div class="px-4">
-        <h3>Icon mail</h3>
-        <i class="flex icon icon-mail"></i>
-      </div>
-      <div class="px-4">
-        <h3>Icon loader</h3>
-        <i class="flex icon icon-loader"></i>
-      </div>
-      <div class="px-4">
-        <h3>Icon arrow prev</h3>
-        <i class="flex icon icon-arrow icon-arrow-prev bg-white"></i>
-      </div>
-      <div class="px-4">
-        <h3>Icon arrow next</h3>
-        <i class="flex icon icon-arrow icon-arrow-next bg-white"></i>
-      </div>
-      <div class="px-4">
-        <h3>Icon sort</h3>
-        <i class="flex icon icon-sort"></i>
-      </div>
-      <div class="px-4">
-        <h3>Icon cookie</h3>
-        <i class="flex icon icon-cookie"></i>
-      </div>
-      <div class="px-4">
-        <h3>Icon crumble</h3>
-        <i class="flex icon icon-crumble"></i>
-      </div>
-      <div class="px-4">
-        <h3>Icon break</h3>
-        <i class="flex icon icon-break"></i>
-      </div>
-      <div class="px-4">
-        <h3>Icon clear</h3>
-        <i class="flex icon icon-clear"></i>
-      </div>
-      <div class="px-4">
-        <h3>Icon dog</h3>
-        <i class="flex icon icon-dog"></i>
-      </div>
-      <div class="px-4">
-        <h3>Icon dog large</h3>
-        <i class="flex icon icon-dog icon-large"></i>
-      </div>
-      <div class="px-4">
-        <h3>Icon cat</h3>
-        <i class="flex icon icon-cat"></i>
-      </div>
-      <div class="px-4">
-        <h3>Icon cat large</h3>
-        <i class="flex icon icon-cat icon-large"></i>
-      </div>
-      <div class="px-4">
-        <h3>Icon fish</h3>
-        <i class="flex icon icon-fish"></i>
-      </div>
-      <div class="px-4">
-        <h3>Icon fish large</h3>
-        <i class="flex icon icon-fish icon-large"></i>
-      </div>
-      <div class="px-4">
-        <h3>Icon bird</h3>
-        <i class="flex icon icon-bird"></i>
-      </div>
-      <div class="px-4">
-        <h3>Icon bird large</h3>
-        <i class="flex icon icon-bird icon-large"></i>
-      </div>
-      <div class="px-4">
-        <h3>Icon small-animal</h3>
-        <i class="flex icon icon-small-animal"></i>
-      </div>
-      <div class="px-4">
-        <h3>Icon small-animal large</h3>
-        <i class="flex icon icon-small-animal icon-large"></i>
-      </div>
-      <div class="px-4">
-        <h3>Icon other</h3>
-        <i class="flex icon icon-other"></i>
+      <div class="flex flex-col p-8 w-1/5" v-for="icon in icons" :key="icon">
+        <h3 class="mb-2 text-center">{{icon}}</h3>
+        <div class="flex flex-grow justify-center items-center">
+          <i class="icon" :class="icon"></i>
+        </div>
       </div>
     </div>
     <!-- Sliders -->
@@ -433,6 +333,36 @@ export default {
         shortName: 'Dog',
         color: 'pink',
       },
+      icons: [
+        'icon-k',
+        'icon-k icon-small',
+        'icon-k-full',
+        'icon-kowloon',
+        'icon-hamburger',
+        'icon-x-close',
+        'icon-search',
+        'icon-faq',
+        'icon-mail',
+        'icon-loader',
+        'icon-arrow icon-arrow-prev bg-white',
+        'icon-arrow icon-arrow-next bg-white',
+        'icon-sort',
+        'icon-cookie',
+        'icon-crumble',
+        'icon-break',
+        'icon-clear',
+        'icon-dog',
+        'icon-dog icon-large',
+        'icon-cat',
+        'icon-cat icon-large',
+        'icon-fish',
+        'icon-fish icon-large',
+        'icon-bird',
+        'icon-bird icon-large',
+        'icon-small-animal',
+        'icon-small-animal icon-large',
+        'icon-other',
+      ]
     }
   },
 }
