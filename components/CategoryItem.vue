@@ -4,6 +4,7 @@
       <nuxt-link
         :to="`/products/${category.name}/view`"
         :class="category.icon"
+        class="hover:bg-white"
         :aria-label="`Links to the ${category.name} product page.`"
       ></nuxt-link>
     </div>
