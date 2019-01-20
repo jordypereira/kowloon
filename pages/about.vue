@@ -151,7 +151,10 @@ export default {
             email: '',
             message: '',
           }
-        });
+        }).catch(() => {
+        this.formErrors.message.class = 'Something went wrong...'
+        this.formErrors.message.error = 'text-pink'
+      });
     },
     encode (data) {
       return Object.keys(data)

@@ -87,6 +87,9 @@ export default {
         this.formErrors.email = 'Success!'
         this.form.email = ''
         this.errorClass = 'text-green'
+      }).catch(() => {
+        this.formErrors.email = 'Something went wrong...'
+        this.errorClass = 'text-pink'
       });
     },
     encode (data) {
