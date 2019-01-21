@@ -11,10 +11,12 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'description', name: 'description', content: pkg.description },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'prefetch', as: 'font', href: '/fonts/Choplin-Medium-DEMO.otf' },
+      { rel: 'prefetch', as: 'font', href: '/fonts/Choplin-ExtraLight-DEMO.otf' }
     ],
     htmlAttrs: {
       lang: 'en',
@@ -58,14 +60,6 @@ module.exports = {
 
   router: {
     middleware: 'nav'
-  },
-
-  render: {
-    bundleRenderer: {
-      shouldPreload: (file, type) => {
-        return ['script', 'style', 'font'].includes(type)
-      }
-    }
   },
 
   /*
