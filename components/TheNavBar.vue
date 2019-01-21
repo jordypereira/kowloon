@@ -66,7 +66,7 @@
                   class="text-white fill-current w-60px"
                   :class="navItemClass(item)"
                 />
-                <span v-if="navToggle" class="text-nav">{{ item.name[3] }}</span>
+                <span v-if="navToggle" class="text-nav" v-html="item.name[3]"></span>
               </nuxt-link>
             </div>
           </div>
@@ -128,7 +128,7 @@ export default {
         },
         {
           color: 'blue-light',
-          name: ['small-animals', 'small animals', 'Small-Animals', 'Small Animals'],
+          name: ['small-animals', 'small animals', 'Small-Animals', 'Small&nbsp;animals'],
           icon: 'icon-small-animal-small',
           svg: HamsterSymbol,
         },
