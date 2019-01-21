@@ -60,6 +60,14 @@ module.exports = {
     middleware: 'nav'
   },
 
+  render: {
+    bundleRenderer: {
+      shouldPreload: (file, type) => {
+        return ['script', 'style', 'font'].includes(type)
+      }
+    }
+  },
+
   /*
   ** Build configuration
   */
