@@ -15,8 +15,8 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'prefetch', as: 'font', href: '/fonts/Choplin-Medium-DEMO.otf' },
-      { rel: 'prefetch', as: 'font', href: '/fonts/Choplin-ExtraLight-DEMO.otf' }
+      { rel: 'preload', as: 'font', type: 'font/otf', href: '/fonts/Choplin-Medium-DEMO.otf' },
+      { rel: 'preload', as: 'font', type: 'font/otf', href: '/fonts/Choplin-ExtraLight-DEMO.otf' }
     ],
     htmlAttrs: {
       lang: 'en',
