@@ -4,9 +4,9 @@
       <i class="icon icon-kowloon"></i>
     </header>
     <main class="container flex flex-col lg:px-0">
-      <section class="flex flex-col md:flex-row -mx-27px mb-10px">
+      <section class="flex flex-col md:flex-row mb-10px">
         <!-- Flip These On Desktop -->
-        <div class="flex flex-col md:flex-row-reverse">
+        <div class="flex flex-col md:flex-row-reverse -mx-27px">
           <!-- Product Image and Information -->
           <!-- Product Info Title -->
           <div class="px-27px">
