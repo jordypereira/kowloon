@@ -1,6 +1,7 @@
 # Kowloon
+> January 2019
 
-> Online versie: https://kowloon.eu  
+> Online version: https://kowloon.eu  
 Style Guide: https://kowloon.eu/styleguide
 
 ## Project Goal
@@ -9,6 +10,10 @@ We received a bunch of photoshop files for each page and viewport.
 The website had to follow the design pixel-perfectly.  
 It had to be built up with atomic css and reusable components.  
 The performance had to be optimized and perfect SEO.
+
+## Tech
+- Nuxt
+- Tailwind
 
 ## Build Setup
 
