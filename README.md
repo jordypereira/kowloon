@@ -1,8 +1,8 @@
-# Kowloon
+# Kowloon - Vue Front-end Commerce Site Example
 > January 2019
 
-> Online version: https://kowloon.eu  
-Style Guide: https://kowloon.eu/styleguide
+> Online version: https://kowloon.netlify.app/.  
+> Style Guide: https://kowloon.netlify.app/styleguide
 
 ## Project Goal
 My final front-end school assignment.  
@@ -10,6 +10,11 @@ We received a bunch of photoshop files for each page and viewport.
 The website had to follow the design pixel-perfectly.  
 It had to be built up with atomic css and reusable components.  
 The performance had to be optimized and perfect SEO.
+
+- Responsive
+- Design System
+- Reusable Components
+- Nuxt for SEO
 
 ## Tech
 - Nuxt
