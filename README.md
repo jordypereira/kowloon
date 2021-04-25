@@ -1,7 +1,7 @@
 # Kowloon - Vue Front-end Commerce Site Example
 > January 2019
 
-> Online version: https://kowloon.netlify.app/.  
+> Online version: https://kowloon.netlify.app/  
 > Style Guide: https://kowloon.netlify.app/styleguide
 
 ## Project Goal
